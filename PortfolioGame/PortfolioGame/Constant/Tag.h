@@ -1,17 +1,16 @@
 #ifndef TAG_H
 #define TAG_H
 
-//シーンの種類
+//シーンの種類一覧
 enum class SceneType
 {
-	None = -1,	//なし
 	Title,		//タイトル
 	Game,		//ゲーム
 	Clear,		//クリア
 	GameOver	//ゲームオーバー
 };
 
-//シーンのステップ
+//シーンのステップ一覧
 enum class SceneStep
 {
 	Initialize,	//初期化

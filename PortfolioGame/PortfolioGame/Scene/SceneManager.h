@@ -27,10 +27,10 @@ private:
 	//コンストラクタ
 	SceneManager()
 	{
-		//初期シーンの生成
+		//初期シーンとしてタイトルシーンを生成
 		current_scene = SceneFactory::Create(SceneType::Title);
 
-		//初期シーンステップを初期化に変更
+		//初期シーンステップを初期化に設定
 		current_scene_step = SceneStep::Initialize;
 	}
 

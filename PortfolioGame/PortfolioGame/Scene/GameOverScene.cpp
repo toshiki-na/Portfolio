@@ -21,5 +21,5 @@ std::unique_ptr<SceneBase> GameOverScene::Terminate()
 	//終了処理
 	
 	//シーン変更先を戻り値で返す
-	return SceneFactory::Create(SceneType::None);
+	return SceneFactory::Create(SceneType::Title);
 }

@@ -60,6 +60,6 @@ protected:
 
 protected:
 	//シーンタイプ
-	SceneType scene_type{ SceneType::None };
+	SceneType scene_type{ SceneType::Title };
 };
 #endif
