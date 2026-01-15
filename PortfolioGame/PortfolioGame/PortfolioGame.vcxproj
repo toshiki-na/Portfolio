@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
+    <ClInclude Include="Object\ObjectBase.h" />
     <ClInclude Include="ResourceManager\ResourceManager.h" />
     <ClInclude Include="Scene\ClearScene.h" />
     <ClInclude Include="Scene\GameOverScene.h" />

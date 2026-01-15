@@ -16,6 +16,15 @@
     <Filter Include="FPSController">
       <UniqueIdentifier>{1e01a54a-8d22-482f-8ed5-ac33167a6d45}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Player">
+      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Enemy">
+      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -76,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="FPSController\FPSController.h">
       <Filter>FPSController</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectBase.h">
+      <Filter>Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

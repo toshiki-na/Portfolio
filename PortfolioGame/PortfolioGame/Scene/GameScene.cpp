@@ -1,5 +1,6 @@
 ﻿#include "GameScene.h"
 #include <memory>
+#include <DXLib.h>
 #include "SceneManager.h"
 #include "SceneFactory.h"
 
