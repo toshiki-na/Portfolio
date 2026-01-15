@@ -17,4 +17,25 @@ enum class SceneStep
 	Update,		//ループ
 	Terminate	//終了
 };
+
+//リソース管理用タグ一覧
+//3Dモデル
+enum class ModelTag
+{
+	Stage,	//ステージ
+	Player,	//プレイヤー
+	Enemy,	//敵
+};
+//アニメーション
+enum class AnimationTag
+{
+};
+//2D画像
+enum class ImageTag
+{
+};
+//サウンド
+enum class AudioTag
+{
+};
 #endif

@@ -25,6 +25,9 @@
     <Filter Include="Object\Enemy">
       <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{8c9fdc98-ad88-4fe9-a626-3d5faa974f3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -48,11 +51,26 @@
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ResourceManager.cpp">
+    <ClCompile Include="ResourceManager\ResourceSystems.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="FPSController\FPSController.cpp">
       <Filter>FPSController</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Player\Player.cpp">
+      <Filter>Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ModelManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\AnimationManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\AudioManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ImageManager.cpp">
+      <Filter>ResourceManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +98,7 @@
     <ClInclude Include="Constant\Tag.h">
       <Filter>Constant</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ResourceManager.h">
+    <ClInclude Include="ResourceManager\ResourceSystems.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="FPSController\FPSController.h">
@@ -88,6 +106,24 @@
     </ClInclude>
     <ClInclude Include="Object\ObjectBase.h">
       <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Vec3.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\Player.h">
+      <Filter>Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ModelManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\AnimationManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\AudioManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ImageManager.h">
+      <Filter>ResourceManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
