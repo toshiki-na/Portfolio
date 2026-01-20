@@ -1,6 +1,7 @@
 #ifndef MODEL_MANAGER_H
 #define MODEL_MANAGER_H
 
+#include <vector>
 #include <unordered_map>
 #include "../Constant/Tag.h"
 
@@ -27,13 +28,10 @@ public:
 	void AllDelete();
 
 	//ハンドルの取得
-	int GetHandle(ModelTag tag_);
+	int GetHandle(ModelTag tag_) const;
 
 private:
 	//ハンドル一覧
 	std::unordered_map<ModelTag, int> model_handles_list;
-
-	//読み込まれているか確認用
-	std::unordered_map<ModelTag, bool> models_was_loaded_list;
 };
 #endif

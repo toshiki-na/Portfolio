@@ -11,10 +11,10 @@ class SceneManager
 //シングルトンオブジェクト*******************************
 public:
 	//唯一のインスタンスの取得
-	static SceneManager* Instance()
+	static SceneManager& Instance()
 	{
 		static SceneManager instance;
-		return &instance;
+		return instance;
 	}
 
 	//コピー&ムーブ禁止

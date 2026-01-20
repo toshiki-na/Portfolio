@@ -3,6 +3,7 @@
 
 #include "SceneBase.h"
 #include <memory>
+#include "../Constant/Tag.h"
 
 class GameScene : public SceneBase
 {

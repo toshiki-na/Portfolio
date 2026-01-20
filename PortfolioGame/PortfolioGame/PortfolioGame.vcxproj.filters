@@ -51,9 +51,6 @@
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ResourceSystems.cpp">
-      <Filter>ResourceManager</Filter>
-    </ClCompile>
     <ClCompile Include="FPSController\FPSController.cpp">
       <Filter>FPSController</Filter>
     </ClCompile>
@@ -125,7 +122,7 @@
     <ClInclude Include="ResourceManager\ImageManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ResourceFilesPass.h">
+    <ClInclude Include="ResourceManager\ResourceFiles.h">
       <Filter>Constant</Filter>
     </ClInclude>
   </ItemGroup>

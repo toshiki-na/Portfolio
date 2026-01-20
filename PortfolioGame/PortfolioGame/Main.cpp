@@ -20,7 +20,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
     {
         //シーンの実行
-        SceneManager::Instance()->Execute();
+        SceneManager::Instance().Execute();
     }
 
     // ＤＸライブラリ使用の終了処理

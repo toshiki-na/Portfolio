@@ -142,7 +142,6 @@
     <ClCompile Include="ResourceManager\AudioManager.cpp" />
     <ClCompile Include="ResourceManager\ImageManager.cpp" />
     <ClCompile Include="ResourceManager\ModelManager.cpp" />
-    <ClCompile Include="ResourceManager\ResourceSystems.cpp" />
     <ClCompile Include="Scene\ClearScene.cpp" />
     <ClCompile Include="Scene\GameOverScene.cpp" />
     <ClCompile Include="Scene\GameScene.cpp" />
@@ -159,7 +158,7 @@
     <ClInclude Include="ResourceManager\AudioManager.h" />
     <ClInclude Include="ResourceManager\ImageManager.h" />
     <ClInclude Include="ResourceManager\ModelManager.h" />
-    <ClInclude Include="ResourceManager\ResourceFilesPass.h" />
+    <ClInclude Include="ResourceManager\ResourceFiles.h" />
     <ClInclude Include="ResourceManager\ResourceSystems.h" />
     <ClInclude Include="Scene\ClearScene.h" />
     <ClInclude Include="Scene\GameOverScene.h" />
