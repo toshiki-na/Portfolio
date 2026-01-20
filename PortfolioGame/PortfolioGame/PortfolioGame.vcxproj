@@ -159,6 +159,7 @@
     <ClInclude Include="ResourceManager\AudioManager.h" />
     <ClInclude Include="ResourceManager\ImageManager.h" />
     <ClInclude Include="ResourceManager\ModelManager.h" />
+    <ClInclude Include="ResourceManager\ResourceFilesPass.h" />
     <ClInclude Include="ResourceManager\ResourceSystems.h" />
     <ClInclude Include="Scene\ClearScene.h" />
     <ClInclude Include="Scene\GameOverScene.h" />

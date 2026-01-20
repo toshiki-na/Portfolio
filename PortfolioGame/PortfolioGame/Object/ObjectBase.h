@@ -1,7 +1,7 @@
 #ifndef OBJECT_BASE_H
 #define OBJECT_BASE_H
 
-#include "../Utility/Vec3Utility.h"
+#include "../Utility/Vec3.h"
 
 class ObjectBase
 {

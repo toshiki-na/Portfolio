@@ -125,5 +125,8 @@
     <ClInclude Include="ResourceManager\ImageManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceFilesPass.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
