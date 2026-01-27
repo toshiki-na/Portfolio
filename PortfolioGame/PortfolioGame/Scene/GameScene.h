@@ -13,6 +13,8 @@ public:
 	{
 		//シーンタイプ設定
 		scene_type = SceneType::Game;
+
+		//ゲームシーンで用いるオブジェクトを生成
 	}
 
 	//デストラクタ
@@ -27,5 +29,8 @@ private:
 
 	//終了
 	std::unique_ptr<SceneBase> Terminate() override;
+
+private:
+	//ゲームシーンで用いるオブジェクト系
 };
 #endif

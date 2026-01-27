@@ -5,14 +5,18 @@
 #include "SceneManager.h"
 #include "SceneFactory.h"
 #include "../ResourceManager/ResourceSystems.h"
+#include "../TimeManager/TimeManager.h"
 
 //初期化
 void GameScene::Initialize()
 {
+	//初期化処理
 	//3Dモデルの読み込み
 	//プレイヤーの読み込み
 	ResourceSystems::Instance().GetModelManager().Load(ModelTag::Player);
-	//初期化処理
+
+	//時間管理オブジェクトの初期化
+	TimeManager::Instance().Initialize();
 
 	//初期化終了で更新へ移行
 	SceneManager::Instance().ChangeSceneStep(SceneStep::Update);
@@ -21,6 +25,9 @@ void GameScene::Initialize()
 //更新
 void GameScene::Update()
 {
+	//時間管理オブジェクトの更新
+	TimeManager::Instance().Update();
+
 	//更新処理
 }
 

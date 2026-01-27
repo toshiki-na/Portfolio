@@ -1,4 +1,5 @@
 #include <DXLib.h>
+#include "Constant/ConstantValue.h"
 #include "Scene/SceneManager.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -11,7 +12,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
     //ウィンドウモード設定
     ChangeWindowMode(true);
-    SetGraphMode(1920, 1080, 32);
+    SetGraphMode(static_cast<int>(SCREEN_WIDTH), static_cast<int>(SCREEN_HEIGHT), 32);
 
     //描画先キャンバスを裏キャンバスに指定
     SetDrawScreen(DX_SCREEN_BACK);

@@ -8,8 +8,9 @@ class ObjectBase
 public:
 	//コンストラクタ
 	ObjectBase() = default;
-	ObjectBase(Vec3 positon_):
-		position(positon_)
+	ObjectBase(Vec3 positon_, Vec3 forward_):
+		position(positon_),
+		forward(forward_)
 	{
 	}
 
@@ -25,5 +26,8 @@ public:
 protected:
 	//位置座標
 	Vec3 position;
+
+	//前方向
+	Vec3 forward;
 };
 #endif

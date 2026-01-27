@@ -28,6 +28,9 @@
     <Filter Include="Utility">
       <UniqueIdentifier>{8c9fdc98-ad88-4fe9-a626-3d5faa974f3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TimeManager">
+      <UniqueIdentifier>{273be484-6b79-40ea-9259-fdc685fa5bec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -68,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="ResourceManager\ImageManager.cpp">
       <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager\TimeManager.cpp">
+      <Filter>TimeManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,12 @@
       <Filter>ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager\ResourceFiles.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager\TimeManager.h">
+      <Filter>TimeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\ConstantValue.h">
       <Filter>Constant</Filter>
     </ClInclude>
   </ItemGroup>

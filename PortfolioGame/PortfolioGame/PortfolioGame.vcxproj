@@ -148,8 +148,10 @@
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
+    <ClCompile Include="TimeManager\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
     <ClInclude Include="Object\ObjectBase.h" />
@@ -167,6 +169,7 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TitleScene.h" />
+    <ClInclude Include="TimeManager\TimeManager.h" />
     <ClInclude Include="Utility\Vec3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
