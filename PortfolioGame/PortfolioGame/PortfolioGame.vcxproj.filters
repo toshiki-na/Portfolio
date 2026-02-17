@@ -31,6 +31,9 @@
     <Filter Include="TimeManager">
       <UniqueIdentifier>{273be484-6b79-40ea-9259-fdc685fa5bec}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Camera">
+      <UniqueIdentifier>{7bf66822-246b-4141-86c7-1f1bb7fab7bc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="TimeManager\TimeManager.cpp">
       <Filter>TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\Camera.cpp">
+      <Filter>Object\Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +142,9 @@
     </ClInclude>
     <ClInclude Include="Constant\ConstantValue.h">
       <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Camera.h">
+      <Filter>Object\Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

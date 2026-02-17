@@ -22,6 +22,10 @@ public:
 	void Draw();
 
 private:
+	//ˆÚ“®
+	void Move();
+
+private:
 	//ˆÚ“®‘¬“x(/s)
 	float speed{ 0.0f };
 };
