@@ -24,19 +24,34 @@ public:
 
 private:
 	//コンストラクタ
-	InputSystems() = default;
+	InputSystems()
+	{
+		//各入力システムの生成
+		mouse = std::make_unique<MouseInput>();
+		keybord = std::make_unique<KeyBordInput>();
+		gamepad = std::make_unique<GamePadInput>();
+	}
 
 	//デストラクタ
 	~InputSystems() = default;
 //*********************************************************
 
 public:
+	//毎フレームの開始時に実行
+	void BeginFrame();
+
+	//毎フレームの終了時に実行
+	void EndFrame();
+
+private:
 	//入力システム
 	//マウス
-	std::unique_ptr<MouseInput> mouse_input;
+	std::unique_ptr<MouseInput> mouse;
 
 	//キーボード
-	std::unique_ptr<>
+	std::unique_ptr<KeyBordInput> keybord;
 
+	//ゲームパッド
+	std::unique_ptr<GamePadInput> gamepad;
 };
 #endif

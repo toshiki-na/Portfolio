@@ -137,6 +137,10 @@
   <ItemGroup>
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="FPSController\FPSController.cpp" />
+    <ClCompile Include="Input\GamePadInput.cpp" />
+    <ClCompile Include="Input\InputSystems.cpp" />
+    <ClCompile Include="Input\KeyBoardInput.cpp" />
+    <ClCompile Include="Input\MouseInput.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Object\Player\Player.cpp" />
     <ClCompile Include="ResourceManager\AnimationManager.cpp" />
@@ -156,6 +160,10 @@
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
+    <ClInclude Include="Input\GamePadInput.h" />
+    <ClInclude Include="Input\InputSystems.h" />
+    <ClInclude Include="Input\KeyBoardInput.h" />
+    <ClInclude Include="Input\MouseInput.h" />
     <ClInclude Include="Object\ObjectBase.h" />
     <ClInclude Include="Object\Player\Player.h" />
     <ClInclude Include="ResourceManager\AnimationManager.h" />
