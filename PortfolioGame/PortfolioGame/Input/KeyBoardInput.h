@@ -11,6 +11,7 @@ public:
 	~KeyBoardInput() = default;
 
 public:
+	//キーボードのキー一覧
 	enum class Key
 	{
 		A,			//A
@@ -116,11 +117,8 @@ public:
 	};
 
 public:
-	//毎フレームの最初に実行
-	void BeginFrame();
-
-	//毎フレームの最後に実行
-	void EndFrame();
+	//更新
+	void Update();
 
 	//押されたフレームかどうかの取得
 	bool IsJustPressed(KeyBoardInput::Key key_) const;
@@ -139,6 +137,7 @@ private:
 	//キー入力の上体
 	//前フレーム
 	char pre_key_state[256]{ "0" };
+
 	//現在フレーム
 	char now_key_state[256]{ "0" };
 };

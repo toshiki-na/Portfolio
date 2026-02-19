@@ -11,28 +11,25 @@ public:
 	//コンストラクタ
 	MouseInput()
 	{
-		//マウスの位置を基準座標に置く
-		DxLib::SetMousePoint(base_x, base_y);
+		//生成時に現在のマウス位置を保存
+		DxLib::GetMousePoint(&now_position_x, &now_position_y);
 	}
 
 	//デストラクタ
 	~MouseInput() = default;
 
 public:
-	//マウスのボタンの種類
+	//マウスのボタン一覧
 	enum class Button
 	{
-		Left,
-		Right,
-		Middle,
+		Left,	//左クリック
+		Right,	//右クリック
+		Middle,	//ホイールクリック
 	};
 
 public:
-	//毎フレームの最初に実行
-	void BeginFrame();
-
-	//毎フレームの最後に実行
-	void EndFrame();
+	//更新
+	void Update();
 
 	//押されたフレームかどうかの取得
 	bool IsJustPressed(MouseInput::Button button_) const;
@@ -44,7 +41,7 @@ public:
 	bool IsJustReleased(MouseInput::Button button_) const;
 
 	//マウスの移動方向の取得(zは常に0.0f)
-	Vec3 GetMouseMoveDirection() const;
+	Vec3 GetMouseMove() const;
 
 private:
 	//各ボタンのDXライブラリのビットマスク値を取得
@@ -59,19 +56,15 @@ private:
 	int now_button_state{ 0 };
 
 	//マウス移動方向情報関連
-	//マウスの移動方向ベクトル
-	Vec3 move_direction{ 0.0f, 0.0f, 0.0f };
+	//マウスの移動ベクトル
+	Vec3 move{ Vec3::Zero()};
 
-	//画面中央をマウスの基準座標とする
-	//X座標
-	const int base_x{ static_cast<int>(SCREEN_WIDTH) / 2 };
-	//Y座標
-	const int base_y{ static_cast<int>(SCREEN_HEIGHT) / 2 };
+	//前フレームの座標
+	int pre_position_x{ 0 };
+	int pre_position_y{ 0 };
 
-	//現在マウス座標
-	//X座標
-	int now_x{ 0 };
-	//Y座標
-	int now_y{ 0 };
+	//現在フレームの座標
+	int now_position_x{ 0 };
+	int now_position_y{ 0 };
 };
 #endif

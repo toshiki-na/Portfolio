@@ -1,32 +1,23 @@
 #include "MouseInput.h"
 #include <DXLib.h>
 
-//毎フレームの最初に実行
-void MouseInput::BeginFrame()
+//更新
+void MouseInput::Update()
 {
+	//一つ前フレームの状態を保存
+	pre_button_state = now_button_state;
+	pre_position_x = now_position_x;
+	pre_position_y = now_position_y;
+
 	//現在のクリック状態の取得
 	now_button_state = DxLib::GetMouseInput();
 
 	//現在のマウス座標の取得
-	DxLib::GetMousePoint(&now_x, &now_y);
+	DxLib::GetMousePoint(&now_position_x, &now_position_y);
 
-	//移動方向ベクトルの計算
-	move_direction.x = now_x - base_x;
-	move_direction.y = now_y - base_y;
-	move_direction.z = 0.0f;
-
-	//正規化
-	move_direction = move_direction.Normalized();
-}
-
-//毎フレームの最後に実行
-void MouseInput::EndFrame()
-{
-	//現在フレームの状態を前フレーム情報として保存
-	pre_button_state = now_button_state;
-
-	//マウスの位置を基準座標に戻す
-	DxLib::SetMousePoint(base_x, base_y);
+	//マウスの移動ベクトル計算
+	move.x = static_cast<float>(now_position_x - pre_position_x);
+	move.y = static_cast<float>(now_position_y - pre_position_y);
 }
 
 //押されたフレームかどうかの取得
@@ -69,9 +60,9 @@ bool MouseInput::IsJustReleased(MouseInput::Button button_) const
 }
 
 //マウスの移動方向の取得
-Vec3 MouseInput::GetMouseMoveDirection() const
+Vec3 MouseInput::GetMouseMove() const
 {
-	return move_direction;
+	return move;
 }
 
 //各ボタンのビットマスク値を取得
@@ -90,5 +81,8 @@ int MouseInput::ToDxLibMask(Button button_) const
 	case Button::Middle:
 		return MOUSE_INPUT_MIDDLE;
 		break;
+
+	default:
+		return -1;
 	}
 }

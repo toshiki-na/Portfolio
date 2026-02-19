@@ -1,9 +1,8 @@
 #ifndef INPUT_SYSTEMS_H
 #define INPUT_SYSTEMS_H
 
-#include <memory>
 #include "MouseInput.h"
-#include "KeyBordInput.h"
+#include "KeyBoardInput.h"
 #include "GamePadInput.h"
 
 class InputSystems
@@ -24,34 +23,43 @@ public:
 
 private:
 	//コンストラクタ
-	InputSystems()
-	{
-		//各入力システムの生成
-		mouse = std::make_unique<MouseInput>();
-		keybord = std::make_unique<KeyBordInput>();
-		gamepad = std::make_unique<GamePadInput>();
-	}
+	InputSystems() = default;
 
 	//デストラクタ
 	~InputSystems() = default;
 //*********************************************************
 
 public:
-	//毎フレームの開始時に実行
-	void BeginFrame();
+	//更新
+	void Update();
 
-	//毎フレームの終了時に実行
-	void EndFrame();
+	//マウス入力システムの取得
+	inline MouseInput& GetMouseInput()
+	{
+		return mouse;
+	}
+
+	//キーボード入力システムの取得
+	inline KeyBoardInput& GetKeyBoardInput()
+	{
+		return keyboard;
+	}
+
+	//ゲームパッド入力システムの取得
+	inline GamePadInput& GetGamePadInput()
+	{
+		return gamepad;
+	}
 
 private:
 	//入力システム
 	//マウス
-	std::unique_ptr<MouseInput> mouse;
+	MouseInput mouse;
 
 	//キーボード
-	std::unique_ptr<KeyBordInput> keybord;
+	KeyBoardInput keyboard;
 
 	//ゲームパッド
-	std::unique_ptr<GamePadInput> gamepad;
+	GamePadInput gamepad;
 };
 #endif
