@@ -1,11 +1,11 @@
-#include "ImageManager.h"
+#include "ImageResourceManager.h"
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
 #include "ResourceSystems.h"
 
 //読み込み
-void ImageManager::Load(ImageTag tag_)
+void ImageResourceManager::Load(ImageTag tag_)
 {
 	//既に読み込み済みなら何もしない
 	if (image_handles_list.count(tag_) > 0)
@@ -19,7 +19,7 @@ void ImageManager::Load(ImageTag tag_)
 }
 
 //削除
-void ImageManager::Delete(ImageTag tag_)
+void ImageResourceManager::Delete(ImageTag tag_)
 {
 	//読み込み済みなら削除
 	if (image_handles_list.count(tag_) > 0)
@@ -31,7 +31,7 @@ void ImageManager::Delete(ImageTag tag_)
 }
 
 //全削除
-void ImageManager::AllDelete()
+void ImageResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : image_handles_list)
 	{
@@ -40,16 +40,13 @@ void ImageManager::AllDelete()
 	image_handles_list.clear();
 }
 
-//ハンドルの取得
-int ImageManager::GetHandle(ImageTag tag_) const
+//ハンドルの取得(エラーで-1)
+int ImageResourceManager::GetHandle(ImageTag tag_) const
 {
-	if (image_handles_list.count(tag_) > 0)
+	auto itr = image_handles_list.find(tag_);
+	if (itr != image_handles_list.end())
 	{
-		auto itr = image_handles_list.find(tag_);
 		return (*itr).second;
 	}
-	else
-	{
-		return -1;
-	}
+	return -1;
 }

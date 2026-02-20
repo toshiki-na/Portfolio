@@ -1,11 +1,11 @@
-#include "ModelManager.h"
+#include "ModelResourceManager.h"
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
 #include "ResourceSystems.h"
 
 //読み込み
-void ModelManager::Load(ModelTag tag_)
+void ModelResourceManager::Load(ModelTag tag_)
 {
 	//既に読み込み済みなら何もしない
 	if (model_handles_list.count(tag_) >0)
@@ -19,7 +19,7 @@ void ModelManager::Load(ModelTag tag_)
 }
 
 //削除
-void ModelManager::Delete(ModelTag tag_)
+void ModelResourceManager::Delete(ModelTag tag_)
 {
 	//読み込み済みなら削除
 	if (model_handles_list.count(tag_) > 0)
@@ -31,7 +31,7 @@ void ModelManager::Delete(ModelTag tag_)
 }
 
 //全削除
-void ModelManager::AllDelete()
+void ModelResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : model_handles_list)
 	{
@@ -40,16 +40,13 @@ void ModelManager::AllDelete()
 	model_handles_list.clear();
 }
 
-//ハンドルの取得
-int ModelManager::GetHandle(ModelTag tag_) const
+//ハンドルの取得(エラーで-1)
+int ModelResourceManager::GetHandle(ModelTag tag_) const
 {
-	if (model_handles_list.count(tag_) > 0)
+	auto itr = model_handles_list.find(tag_);
+	if (itr != model_handles_list.end())
 	{
-		auto itr = model_handles_list.find(tag_);
 		return (*itr).second;
 	}
-	else
-	{
-		return -1;
-	}
+	return -1;
 }

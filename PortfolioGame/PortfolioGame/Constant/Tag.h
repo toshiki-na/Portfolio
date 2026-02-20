@@ -22,7 +22,8 @@ enum class SceneStep
 //3Dモデル
 enum class ModelTag
 {
-	Stage,	//ステージ
+	Ground,	//地面
+	Wall,	//壁
 	Player,	//プレイヤー
 	Enemy,	//敵
 };

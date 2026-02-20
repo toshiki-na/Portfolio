@@ -2,10 +2,10 @@
 #define RESOURCEMANAGER_H
 
 #include "ResourceFiles.h"
-#include "ModelManager.h"
-#include "AnimationManager.h"
-#include "ImageManager.h"
-#include "AudioManager.h"
+#include "ModelResourceManager.h"
+#include "AnimationResourceManager.h"
+#include "ImageResourceManager.h"
+#include "AudioResourceManager.h"
 
 class ResourceSystems
 {
@@ -40,25 +40,25 @@ public:
 	}
 
 	//3Dモデル管理オブジェクトの取得
-	inline ModelManager& GetModelManager()
+	inline ModelResourceManager& GetModelManager()
 	{
 		return model_manager;
 	}
 
 	//アニメーション管理オブジェクトの取得
-	inline AnimationManager& GetAnimationManager() 
+	inline AnimationResourceManager& GetAnimationManager()
 	{
 		return animation_manager;
 	}
 
 	//2D画像管理オブジェクトの取得
-	inline ImageManager& GetImageManager() 
+	inline ImageResourceManager& GetImageManager()
 	{
 		return image_manager;
 	}
 
 	//サウンド管理オブジェクトの取得
-	inline AudioManager& GetAudioManager() 
+	inline AudioResourceManager& GetAudioManager()
 	{
 		return audio_manager;
 	}
@@ -68,15 +68,15 @@ private:
 	ResourceFiles resource_files;
 
 	//3Dモデル管理オブジェクト
-	ModelManager model_manager;
+	ModelResourceManager model_manager;
 
 	//アニメーション管理オブジェクト
-	AnimationManager animation_manager;
+	AnimationResourceManager animation_manager;
 
 	//2D画像管理オブジェクト
-	ImageManager image_manager;
+	ImageResourceManager image_manager;
 
 	//サウンド管理オブジェクト
-	AudioManager audio_manager;
+	AudioResourceManager audio_manager;
 };
 #endif

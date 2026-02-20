@@ -66,16 +66,16 @@
     <ClCompile Include="Object\Player\Player.cpp">
       <Filter>Object\Player</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ModelManager.cpp">
+    <ClCompile Include="ResourceManager\ModelResourceManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\AnimationManager.cpp">
+    <ClCompile Include="ResourceManager\AnimationResourceManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\AudioManager.cpp">
+    <ClCompile Include="ResourceManager\AudioResourceManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ImageManager.cpp">
+    <ClCompile Include="ResourceManager\ImageResourceManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
     <ClCompile Include="TimeManager\TimeManager.cpp">
@@ -137,16 +137,16 @@
     <ClInclude Include="Object\Player\Player.h">
       <Filter>Object\Player</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ModelManager.h">
+    <ClInclude Include="ResourceManager\ModelResourceManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\AnimationManager.h">
+    <ClInclude Include="ResourceManager\AnimationResourceManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\AudioManager.h">
+    <ClInclude Include="ResourceManager\AudioResourceManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ImageManager.h">
+    <ClInclude Include="ResourceManager\ImageResourceManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager\ResourceFiles.h">

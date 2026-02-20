@@ -1,14 +1,17 @@
-#ifndef IMAGE_MANAGER_H
-#define IMAGE_MANAGER_H
+#ifndef IMAGE_RESOURCE_MANAGER_H
+#define IMAGE_RESOURCE_MANAGER_H
 
-class ImageManager
+#include <unordered_map>
+#include "../Constant/Tag.h"
+
+class ImageResourceManager
 {
 public:
 	//コンストラクタ
-	ImageManager() = default;
+	ImageResourceManager() = default;
 
 	//デストラクタ
-	~ImageManager()
+	~ImageResourceManager()
 	{
 		//モデルの全削除
 		AllDelete();
@@ -23,7 +26,7 @@ public:
 	//全削除
 	void AllDelete();
 
-	//ハンドルの取得
+	//ハンドルの取得(エラーで-1)
 	int GetHandle(ImageTag tag_) const;
 
 private:

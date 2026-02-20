@@ -1,11 +1,11 @@
-#include "AnimationManager.h"
+#include "AnimationResourceManager.h"
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
 #include "ResourceSystems.h"
 
 //読み込み
-void AnimationManager::Load(AnimationTag tag_)
+void AnimationResourceManager::Load(AnimationTag tag_)
 {
 	//既に読み込み済みなら何もしない
 	if (animation_handles_list.count(tag_) > 0)
@@ -19,7 +19,7 @@ void AnimationManager::Load(AnimationTag tag_)
 }
 
 //削除
-void AnimationManager::Delete(AnimationTag tag_)
+void AnimationResourceManager::Delete(AnimationTag tag_)
 {
 	//読み込み済みなら削除
 	if (animation_handles_list.count(tag_) > 0)
@@ -31,7 +31,7 @@ void AnimationManager::Delete(AnimationTag tag_)
 }
 
 //全削除
-void AnimationManager::AllDelete()
+void AnimationResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : animation_handles_list)
 	{
@@ -40,16 +40,13 @@ void AnimationManager::AllDelete()
 	animation_handles_list.clear();
 }
 
-//ハンドルの取得
-int AnimationManager::GetHandle(AnimationTag tag_) const
+//ハンドルの取得(エラーで-1)
+int AnimationResourceManager::GetHandle(AnimationTag tag_) const
 {
-	if (animation_handles_list.count(tag_) > 0)
+	auto itr = animation_handles_list.find(tag_);
+	if (itr != animation_handles_list.end())
 	{
-		auto itr = animation_handles_list.find(tag_);
 		return (*itr).second;
 	}
-	else
-	{
-		return -1;
-	}
+	return -1;
 }

@@ -1,11 +1,11 @@
-#include "AudioManager.h"
+#include "AudioResourceManager.h"
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
 #include "ResourceSystems.h"
 
 //読み込み
-void AudioManager::Load(AudioTag tag_)
+void AudioResourceManager::Load(AudioTag tag_)
 {
 	//既に読み込み済みなら何もしない
 	if (audio_handles_list.count(tag_) > 0)
@@ -19,7 +19,7 @@ void AudioManager::Load(AudioTag tag_)
 }
 
 //削除
-void AudioManager::Delete(AudioTag tag_)
+void AudioResourceManager::Delete(AudioTag tag_)
 {
 	//読み込み済みなら削除
 	if (audio_handles_list.count(tag_) > 0)
@@ -31,7 +31,7 @@ void AudioManager::Delete(AudioTag tag_)
 }
 
 //全削除
-void AudioManager::AllDelete()
+void AudioResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : audio_handles_list)
 	{
@@ -40,16 +40,13 @@ void AudioManager::AllDelete()
 	audio_handles_list.clear();
 }
 
-//ハンドルの取得
-int AudioManager::GetHandle(AudioTag tag_) const
+//ハンドルの取得(エラーで-1)
+int AudioResourceManager::GetHandle(AudioTag tag_) const
 {
-	if (audio_handles_list.count(tag_) > 0)
+	auto itr = audio_handles_list.find(tag_);
+	if (itr != audio_handles_list.end())
 	{
-		auto itr = audio_handles_list.find(tag_);
 		return (*itr).second;
 	}
-	else
-	{
-		return -1;
-	}
+	return -1;
 }

@@ -1,14 +1,17 @@
-#ifndef AUDIO_MANAGER_H
-#define AUDIO_MANAGER_H
+#ifndef AUDIO_RESOURCE_MANAGER_H
+#define AUDIO_RESOURCE_MANAGER_H
 
-class AudioManager
+#include <unordered_map>
+#include "../Constant/Tag.h"
+
+class AudioResourceManager
 {
 public:
 	//コンストラクタ
-	AudioManager() = default;
+	AudioResourceManager() = default;
 
 	//デストラクタ
-	~AudioManager()
+	~AudioResourceManager()
 	{
 		//モデルの全削除
 		AllDelete();
@@ -23,7 +26,7 @@ public:
 	//全削除
 	void AllDelete();
 
-	//ハンドルの取得
+	//ハンドルの取得(エラーで-1)
 	int GetHandle(AudioTag tag_) const;
 
 private:

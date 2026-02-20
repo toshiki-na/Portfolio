@@ -1,14 +1,17 @@
-#ifndef ANIMATION_MANAGER_H
-#define ANIMATION_MANAGER_H
+#ifndef ANIMATION_RESOURCE_MANAGER_H
+#define ANIMATION_RESOURCE_MANAGER_H
 
-class AnimationManager
+#include <unordered_map>
+#include "../Constant/Tag.h"
+
+class AnimationResourceManager
 {
 public:
 	//コンストラクタ
-	AnimationManager() = default;
+	AnimationResourceManager() = default;
 
 	//デストラクタ
-	~AnimationManager()
+	~AnimationResourceManager()
 	{
 		//モデルの全削除
 		AllDelete();
@@ -23,7 +26,7 @@ public:
 	//全削除
 	void AllDelete();
 
-	//ハンドルの取得
+	//ハンドルの取得(エラーで-1)
 	int GetHandle(AnimationTag tag_) const;
 
 private:

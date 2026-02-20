@@ -1,18 +1,17 @@
-#ifndef MODEL_MANAGER_H
-#define MODEL_MANAGER_H
+#ifndef MODEL_RESOURCE_MANAGER_H
+#define MODEL_RESOURCE_MANAGER_H
 
-#include <vector>
 #include <unordered_map>
 #include "../Constant/Tag.h"
 
-class ModelManager
+class ModelResourceManager
 {
 public:
 	//コンストラクタ
-	ModelManager() = default;
+	ModelResourceManager() = default;
 
 	//デストラクタ
-	~ModelManager()
+	~ModelResourceManager()
 	{
 		//モデルの全削除
 		AllDelete();
@@ -27,7 +26,7 @@ public:
 	//全削除
 	void AllDelete();
 
-	//ハンドルの取得
+	//ハンドルの取得(エラーで-1)
 	int GetHandle(ModelTag tag_) const;
 
 private:

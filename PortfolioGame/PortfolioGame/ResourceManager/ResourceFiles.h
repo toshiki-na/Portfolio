@@ -11,9 +11,10 @@ public:
 	//3Dモデルのファイルパス保存場所
 	std::unordered_map<ModelTag, std::string> model_files_list
 	{
-		{ModelTag::Stage, {"Resource/Models/Stage.mv1"}},	//ステージ
-		{ModelTag::Player, {"Resource/Models/Player.mv1"}},	//プレイヤー
-		{ModelTag::Enemy, {"Resource/Models/Enemy.mv1"}},	//敵
+		{ModelTag::Ground, {"Resource/Models/Stage/Ground.mv1"}},	//地面
+		{ModelTag::Wall, {"Resource/Models/Stage/Wall.mv1"}},		//壁
+		{ModelTag::Player, {"Resource/Models/Player/Player.mv1"}},	//プレイヤー
+		{ModelTag::Enemy, {"Resource/Models/Enemy/Enemy.mv1"}},		//敵
 	};
 
 	//アニメーションのファイルパス保存場所
