@@ -16,10 +16,10 @@ public:
 	~Player() = default;
 	
 	//XV
-	void Update();
+	void Update() override;
 
 	//•`‰æ
-	void Draw();
+	void Draw() override;
 
 private:
 	//ˆÚ“®

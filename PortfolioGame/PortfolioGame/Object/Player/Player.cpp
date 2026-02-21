@@ -4,12 +4,14 @@
 #include "../../ResourceManager/ResourceSystems.h"
 #include "../../TimeManager/TimeManager.h"
 
+//XV
 void Player::Update()
 {
 	//ˆÚ“®
 	Move();
 }
 
+//•`‰æ
 void Player::Draw()
 {
 	MV1DrawModel(ResourceSystems::Instance().GetModelManager().GetHandle(ModelTag::Player));
