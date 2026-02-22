@@ -22,6 +22,7 @@ enum class SceneStep
 //3Dモデル
 enum class ModelTag
 {
+	Skydome,//空
 	Ground,	//地面
 	Wall,	//壁
 	Player,	//プレイヤー

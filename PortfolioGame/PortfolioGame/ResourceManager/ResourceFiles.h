@@ -13,6 +13,7 @@ public:
 	{
 		{ModelTag::Ground, {"Resource/Models/Stage/Ground.mv1"}},	//地面
 		{ModelTag::Wall, {"Resource/Models/Stage/Wall.mv1"}},		//壁
+		{ModelTag::Skydome, {"Resource/Models/Stage/Skydome.mv1"}},//空
 		{ModelTag::Player, {"Resource/Models/Player/Player.mv1"}},	//プレイヤー
 		{ModelTag::Enemy, {"Resource/Models/Enemy/Enemy.mv1"}},		//敵
 	};

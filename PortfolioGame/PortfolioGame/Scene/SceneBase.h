@@ -23,22 +23,18 @@ public:
 		case SceneStep::Initialize:
 			Initialize();
 			return nullptr;
-			break;
 
 			//ƒ‹[ƒv
 		case SceneStep::Update:
 			Update();
 			return nullptr;
-			break;
 
 			//I—¹
 		case SceneStep::Terminate:
 			return Terminate();
-			break;
 
 		default:
 			return nullptr;
-			break;
 		}
 	}
 
