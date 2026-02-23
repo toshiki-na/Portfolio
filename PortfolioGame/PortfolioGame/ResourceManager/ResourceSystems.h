@@ -1,6 +1,7 @@
 #ifndef RESOURCEMANAGER_H
 #define RESOURCEMANAGER_H
 
+#include "../Constant/Tag.h"
 #include "ResourceFiles.h"
 #include "ModelResourceManager.h"
 #include "AnimationResourceManager.h"
@@ -33,7 +34,13 @@ private:
 //*********************************************************
 
 public:
-	//リソースファイルデータを取得
+	//シーンの準備(各シーンのリソースのロード)
+	void PrepareScene(SceneType scene_type_);
+
+	//シーンの後片付け(各シーンでロードしたリソースの解放)
+	void ReleaseScene(SceneType scene_type_);
+
+	//リソースファイルデータの取得
 	inline ResourceFiles& GetResourceFiles()
 	{
 		return resource_files;

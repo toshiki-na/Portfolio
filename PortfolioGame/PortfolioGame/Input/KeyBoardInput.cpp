@@ -6,7 +6,7 @@
 void KeyBoardInput::Update()
 {
 	//現在フレームの状態を前フレーム情報として保存
-	std::strcpy(now_key_state, pre_key_state);
+	std::memcpy(now_key_state, pre_key_state, 256);
 
 	//全キーの入力状態を取得
 	DxLib::GetHitKeyStateAll(now_key_state);

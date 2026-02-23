@@ -10,12 +10,15 @@ public:
 	//コンストラクタ
 	GamePadInput()
 	{
+		//ゲームパッドの接続確認
 		if (GetConnectedGamePadCount() > 0)
 		{
+			//接続されていたなら初期値を取得
 			DxLib::GetJoypadXInputState(DX_INPUT_PAD1, &now_state);
+
+			//初期値として前フレーム状態も現状を保存
 			pre_state = now_state;
 		}
-
 	}
 
 	//デストラクタ

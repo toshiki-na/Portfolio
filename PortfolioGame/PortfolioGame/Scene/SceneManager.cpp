@@ -1,9 +1,12 @@
 #include "SceneManager.h"
-#include "SceneFactory.h"
+#include "../Input/InputSystems.h"
 
 //シーンの実行
 void SceneManager::Execute()
 {
+	//必ずどのシーンでも実行前にInput系の更新
+	InputSystems::Instance().Update();
+
 	//現在シーンの現在ステップを実行
 	std::unique_ptr<SceneBase> execute_result = current_scene->Execute(current_scene_step);
 
@@ -12,7 +15,7 @@ void SceneManager::Execute()
 	{
 		current_scene = std::move(execute_result);
 
-		//初期ステップに変更
+		//初期化ステップに変更
 		current_scene_step = SceneStep::Initialize;
 	}
 }

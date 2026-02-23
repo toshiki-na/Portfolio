@@ -28,7 +28,7 @@ private:
 	SceneManager()
 	{
 		//初期シーンとしてタイトルシーンを生成
-		current_scene = SceneFactory::Create(SceneType::Title);
+		current_scene = SceneFactory::Create(SceneType::Game);
 
 		//初期シーンステップを初期化に設定
 		current_scene_step = SceneStep::Initialize;

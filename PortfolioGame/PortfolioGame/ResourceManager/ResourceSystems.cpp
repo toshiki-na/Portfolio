@@ -1,0 +1,48 @@
+#include "ResourceSystems.h"
+#include "../Constant/Tag.h"
+
+//シーンの準備(各シーンのリソースのロード
+void ResourceSystems::PrepareScene(SceneType scene_type_)
+{
+	switch (scene_type_)
+	{
+	case SceneType::Title:
+		break;
+
+	case SceneType::Game:
+		//ステージのロード
+		model_manager.Load(ModelTag::Skydome);
+		model_manager.Load(ModelTag::Ground);
+		model_manager.Load(ModelTag::Wall);
+		break;
+
+	case SceneType::Clear:
+		break;
+
+	case SceneType::GameOver:
+		break;
+	}
+}
+
+//シーンの後片付け(各シーンでロードしたリソースの解放)
+void ResourceSystems::ReleaseScene(SceneType scene_type_)
+{
+	switch (scene_type_)
+	{
+	case SceneType::Title:
+		break;
+
+	case SceneType::Game:
+		//ステージリソースの解放
+		model_manager.Delete(ModelTag::Skydome);
+		model_manager.Delete(ModelTag::Ground);
+		model_manager.Delete(ModelTag::Wall);
+		break;
+
+	case SceneType::Clear:
+		break;
+
+	case SceneType::GameOver:
+		break;
+	}
+}

@@ -14,7 +14,7 @@ void AudioResourceManager::Load(AudioTag tag_)
 	}
 
 	//–¢“Ç‚Ýž‚Ý‚È‚ç“Ç‚Ýž‚ñ‚Å“Ç‚Ýž‚ÝÏ‚Ý“o˜^
-	int ID = MV1LoadModel(ResourceSystems::Instance().GetResourceFiles().audio_files_list[tag_].c_str());
+	int ID = DxLib::LoadSoundMem(ResourceSystems::Instance().GetResourceFiles().audio_files_list[tag_].c_str());
 	audio_handles_list.emplace(tag_, ID);
 }
 
@@ -22,10 +22,10 @@ void AudioResourceManager::Load(AudioTag tag_)
 void AudioResourceManager::Delete(AudioTag tag_)
 {
 	//“Ç‚Ýž‚ÝÏ‚Ý‚È‚çíœ
-	if (audio_handles_list.count(tag_) > 0)
+	auto itr = audio_handles_list.find(tag_);
+	if (itr != audio_handles_list.end())
 	{
-		auto itr = audio_handles_list.find(tag_);
-		MV1DeleteModel((*itr).second);
+		DxLib::DeleteSoundMem((*itr).second);
 		audio_handles_list.erase(itr);
 	}
 }
@@ -35,7 +35,7 @@ void AudioResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : audio_handles_list)
 	{
-		MV1DeleteModel(ModelHandle.second);
+		DxLib::DeleteSoundMem(ModelHandle.second);
 	}
 	audio_handles_list.clear();
 }

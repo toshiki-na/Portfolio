@@ -5,6 +5,10 @@
 #include <memory>
 #include "../Constant/Tag.h"
 
+//ゲームシーンで用いるオブジェクト
+#include "../Camera/Camera.h"
+#include "../Stage/Stage.h"
+
 class GameScene : public SceneBase
 {
 public:
@@ -15,6 +19,11 @@ public:
 		scene_type = SceneType::Game;
 
 		//ゲームシーンで用いるオブジェクトを生成
+		//カメラ
+		camera = std::make_unique<Camera>();
+
+		//ステージ
+		stage = std::make_unique<Stage>();
 	}
 
 	//デストラクタ
@@ -31,6 +40,11 @@ private:
 	std::unique_ptr<SceneBase> Terminate() override;
 
 private:
-	//ゲームシーンで用いるオブジェクト系
+	//ゲームシーンで用いるオブジェクト
+	//カメラ
+	std::unique_ptr<Camera> camera;
+
+	//ステージ
+	std::unique_ptr<Stage> stage;
 };
 #endif

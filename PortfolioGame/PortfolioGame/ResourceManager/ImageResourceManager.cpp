@@ -14,7 +14,7 @@ void ImageResourceManager::Load(ImageTag tag_)
 	}
 
 	//–¢“Ç‚Ýž‚Ý‚È‚ç“Ç‚Ýž‚ñ‚Å“Ç‚Ýž‚ÝÏ‚Ý“o˜^
-	int ID = MV1LoadModel(ResourceSystems::Instance().GetResourceFiles().image_files_list[tag_].c_str());
+	int ID = DxLib::LoadGraph(ResourceSystems::Instance().GetResourceFiles().image_files_list[tag_].c_str());
 	image_handles_list.emplace(tag_, ID);
 }
 
@@ -22,10 +22,10 @@ void ImageResourceManager::Load(ImageTag tag_)
 void ImageResourceManager::Delete(ImageTag tag_)
 {
 	//“Ç‚Ýž‚ÝÏ‚Ý‚È‚çíœ
-	if (image_handles_list.count(tag_) > 0)
+	auto itr = image_handles_list.find(tag_);
+	if (itr != image_handles_list.end())
 	{
-		auto itr = image_handles_list.find(tag_);
-		MV1DeleteModel((*itr).second);
+		DxLib::DeleteGraph((*itr).second);
 		image_handles_list.erase(itr);
 	}
 }
@@ -35,7 +35,7 @@ void ImageResourceManager::AllDelete()
 {
 	for (auto& ModelHandle : image_handles_list)
 	{
-		MV1DeleteModel(ModelHandle.second);
+		DxLib::DeleteGraph(ModelHandle.second);
 	}
 	image_handles_list.clear();
 }

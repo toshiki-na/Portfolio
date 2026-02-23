@@ -1,9 +1,6 @@
 #ifndef TIME_MANAGER_H
 #define TIME_MANAGER_H
 
-//msからsへの変換用定数
-constexpr float MILLISECONDS_TO_SECONDS = 0.001f;
-
 class TimeManager
 {
 //シングルトンオブジェクト*******************************
@@ -46,7 +43,7 @@ private:
 	float delta_time{ 0.0f };
 
 	//前フレームの時間の保存バッファ
-	float last_frame_time{ 0.0f };
+	float pre_frame_time{ 0.0f };
 
 	//現在フレームの時間の保存バッファ
 	float now_frame_time{ 0.0f };
