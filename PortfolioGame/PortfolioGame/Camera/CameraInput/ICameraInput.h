@@ -10,7 +10,7 @@ public:
 	//デストラクタ
 	virtual ~ICameraInput() = default;
 
-	//入力された視点移動ベクトルを取得
+	//視点移動入力の取得
 	virtual Vec3 GetLookInput() const = 0;
 };
 #endif

@@ -43,6 +43,9 @@
     <Filter Include="Camera\CameraInput">
       <UniqueIdentifier>{a06fea76-db49-4b54-b572-c41de99c6ef0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object\Player\PlayerInput">
+      <UniqueIdentifier>{cf460998-3ed8-4fa4-9bd9-8870e47605cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -196,6 +199,15 @@
     </ClInclude>
     <ClInclude Include="Camera\CameraInput\GamePadCameraInput.h">
       <Filter>Camera\CameraInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\PlayerInput\IPlayerInput.h">
+      <Filter>Object\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\PlayerInput\GamePadPlayerInput.h">
+      <Filter>Object\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
+      <Filter>Object\Player\PlayerInput</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -51,7 +51,13 @@ void Camera::Move()
 //回転
 void Camera::Rotate()
 {
-	//カメラを右スティックor左クリックしながらのマウス動作で回転
+	//入力のヌルチェック
+	if (input == nullptr)
+	{
+		return;
+	}
+
+	//入力の移動量から視点感度をかけて回転
 	Vec3 input_delta = input->GetLookInput() * sensitivity;
 
 	if (input_delta.LengthSq() != 0.0f)

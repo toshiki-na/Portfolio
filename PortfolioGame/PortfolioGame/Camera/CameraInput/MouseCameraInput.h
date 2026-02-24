@@ -23,7 +23,7 @@ public:
 		Vec3 result = Vec3::Zero();
 
 		//¶ƒNƒŠƒbƒN’†‚Ì‚İˆÚ“®—Ê‚ğ•Ô‚·
-		if (input.IsHeld(MouseInput::Button::Left))
+		if (input.IsHeld(MouseInput::Button::Right))
 		{
 			result = input.GetMouseMove();
 		}

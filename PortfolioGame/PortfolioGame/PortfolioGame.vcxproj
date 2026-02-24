@@ -175,6 +175,9 @@
     <ClInclude Include="Input\MouseInput.h" />
     <ClInclude Include="Object\ObjectBase.h" />
     <ClInclude Include="Object\Player\Player.h" />
+    <ClInclude Include="Object\Player\PlayerInput\GamePadPlayerInput.h" />
+    <ClInclude Include="Object\Player\PlayerInput\IPlayerInput.h" />
+    <ClInclude Include="Object\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
     <ClInclude Include="ResourceManager\AnimationResourceManager.h" />
     <ClInclude Include="ResourceManager\AudioResourceManager.h" />
     <ClInclude Include="ResourceManager\ImageResourceManager.h" />
