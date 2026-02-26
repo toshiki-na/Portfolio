@@ -2,7 +2,7 @@
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
-#include "ResourceSystems.h"
+#include "ResourceSystemManager.h"
 
 //ì«Ç›çûÇ›
 void ModelResourceManager::Load(ModelTag tag_)
@@ -14,7 +14,7 @@ void ModelResourceManager::Load(ModelTag tag_)
 	}
 	
 	//ñ¢ì«Ç›çûÇ›Ç»ÇÁì«Ç›çûÇÒÇ≈ì«Ç›çûÇ›çœÇ›ìoò^
-	int ID = DxLib::MV1LoadModel(ResourceSystems::Instance().GetResourceFiles().model_files_list[tag_].c_str());
+	int ID = DxLib::MV1LoadModel(ResourceSystemManager::Instance().GetResourceFiles().model_files_list[tag_].c_str());
 	model_handles_list.emplace(tag_, ID);
 }
 

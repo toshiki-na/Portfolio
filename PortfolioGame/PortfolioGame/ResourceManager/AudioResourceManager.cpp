@@ -2,7 +2,7 @@
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
-#include "ResourceSystems.h"
+#include "ResourceSystemManager.h"
 
 //ì«Ç›çûÇ›
 void AudioResourceManager::Load(AudioTag tag_)
@@ -14,7 +14,7 @@ void AudioResourceManager::Load(AudioTag tag_)
 	}
 
 	//ñ¢ì«Ç›çûÇ›Ç»ÇÁì«Ç›çûÇÒÇ≈ì«Ç›çûÇ›çœÇ›ìoò^
-	int ID = DxLib::LoadSoundMem(ResourceSystems::Instance().GetResourceFiles().audio_files_list[tag_].c_str());
+	int ID = DxLib::LoadSoundMem(ResourceSystemManager::Instance().GetResourceFiles().audio_files_list[tag_].c_str());
 	audio_handles_list.emplace(tag_, ID);
 }
 

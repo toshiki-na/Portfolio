@@ -6,17 +6,17 @@
 #include "../../Input/InputSystems.h"
 #include "../../Input/GamePadInput.h"
 
-class MouseCameraInput : public ICameraInput
+class GamePadCameraInput : public ICameraInput
 {
 public:
 	//コンストラクタ
-	MouseCameraInput() :
+	GamePadCameraInput() :
 		input(InputSystems::Instance().GetGamePadInput())
 	{
 	}
 
 	//デストラクタ
-	~MouseCameraInput() = default;
+	~GamePadCameraInput() override = default;
 
 	//入力された視点移動ベクトルを取得
 	Vec3 GetLookInput() const override

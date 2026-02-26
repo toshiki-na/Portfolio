@@ -2,7 +2,7 @@
 #include <string>
 #include <DXLib.h>
 #include "../Constant/Tag.h"
-#include "ResourceSystems.h"
+#include "ResourceSystemManager.h"
 
 //“Ç‚İ‚İ
 void ImageResourceManager::Load(ImageTag tag_)
@@ -14,7 +14,7 @@ void ImageResourceManager::Load(ImageTag tag_)
 	}
 
 	//–¢“Ç‚İ‚İ‚È‚ç“Ç‚İ‚ñ‚Å“Ç‚İ‚İÏ‚İ“o˜^
-	int ID = DxLib::LoadGraph(ResourceSystems::Instance().GetResourceFiles().image_files_list[tag_].c_str());
+	int ID = DxLib::LoadGraph(ResourceSystemManager::Instance().GetResourceFiles().image_files_list[tag_].c_str());
 	image_handles_list.emplace(tag_, ID);
 }
 

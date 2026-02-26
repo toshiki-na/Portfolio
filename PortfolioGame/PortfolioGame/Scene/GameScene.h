@@ -4,10 +4,7 @@
 #include "SceneBase.h"
 #include <memory>
 #include "../Constant/Tag.h"
-
-//ゲームシーンで用いるオブジェクト
-#include "../Camera/Camera.h"
-#include "../Stage/Stage.h"
+#include "SceneContext/GameSceneContext.h"
 
 class GameScene : public SceneBase
 {
@@ -17,17 +14,10 @@ public:
 	{
 		//シーンタイプ設定
 		scene_type = SceneType::Game;
-
-		//ゲームシーンで用いるオブジェクトを生成
-		//カメラ
-		camera = std::make_unique<Camera>();
-
-		//ステージ
-		stage = std::make_unique<Stage>();
 	}
 
 	//デストラクタ
-	~GameScene()override = default;
+	~GameScene() override = default;
 
 private:
 	//初期化
@@ -40,11 +30,7 @@ private:
 	std::unique_ptr<SceneBase> Terminate() override;
 
 private:
-	//ゲームシーンで用いるオブジェクト
-	//カメラ
-	std::unique_ptr<Camera> camera;
-
-	//ステージ
-	std::unique_ptr<Stage> stage;
+	//ゲームシーンで使用するオブジェクト集
+	GameSceneContext context;
 };
 #endif

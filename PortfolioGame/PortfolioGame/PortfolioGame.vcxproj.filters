@@ -16,15 +16,6 @@
     <Filter Include="FPSController">
       <UniqueIdentifier>{1e01a54a-8d22-482f-8ed5-ac33167a6d45}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object">
-      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\Player">
-      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\Enemy">
-      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utility">
       <UniqueIdentifier>{8c9fdc98-ad88-4fe9-a626-3d5faa974f3a}</UniqueIdentifier>
     </Filter>
@@ -43,8 +34,20 @@
     <Filter Include="Camera\CameraInput">
       <UniqueIdentifier>{a06fea76-db49-4b54-b572-c41de99c6ef0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Player\PlayerInput">
+    <Filter Include="Actor">
+      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actor\Player">
+      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actor\Player\PlayerInput">
       <UniqueIdentifier>{cf460998-3ed8-4fa4-9bd9-8870e47605cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Actor\Enemy">
+      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\SceneContext">
+      <UniqueIdentifier>{e6f612b6-9bfb-481a-bcb4-4574663321fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +74,6 @@
     </ClCompile>
     <ClCompile Include="FPSController\FPSController.cpp">
       <Filter>FPSController</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Player\Player.cpp">
-      <Filter>Object\Player</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager\ModelResourceManager.cpp">
       <Filter>ResourceManager</Filter>
@@ -108,8 +108,14 @@
     <ClCompile Include="Stage\Stage.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
-    <ClCompile Include="ResourceManager\ResourceSystems.cpp">
+    <ClCompile Include="ResourceManager\ResourceSystemManager.cpp">
       <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor\Player\Player.cpp">
+      <Filter>Actor\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraFactory.cpp">
+      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,20 +143,14 @@
     <ClInclude Include="Constant\Tag.h">
       <Filter>Constant</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager\ResourceSystems.h">
+    <ClInclude Include="ResourceManager\ResourceSystemManager.h">
       <Filter>ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="FPSController\FPSController.h">
       <Filter>FPSController</Filter>
     </ClInclude>
-    <ClInclude Include="Object\ObjectBase.h">
-      <Filter>Object</Filter>
-    </ClInclude>
     <ClInclude Include="Utility\Vec3.h">
       <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Player\Player.h">
-      <Filter>Object\Player</Filter>
     </ClInclude>
     <ClInclude Include="ResourceManager\ModelResourceManager.h">
       <Filter>ResourceManager</Filter>
@@ -200,14 +200,26 @@
     <ClInclude Include="Camera\CameraInput\GamePadCameraInput.h">
       <Filter>Camera\CameraInput</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Player\PlayerInput\IPlayerInput.h">
-      <Filter>Object\Player\PlayerInput</Filter>
+    <ClInclude Include="Actor\ActorBase.h">
+      <Filter>Actor</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Player\PlayerInput\GamePadPlayerInput.h">
-      <Filter>Object\Player\PlayerInput</Filter>
+    <ClInclude Include="Actor\Player\PlayerInput\GamePadPlayerInput.h">
+      <Filter>Actor\Player\PlayerInput</Filter>
     </ClInclude>
-    <ClInclude Include="Object\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
-      <Filter>Object\Player\PlayerInput</Filter>
+    <ClInclude Include="Actor\Player\PlayerInput\IPlayerInput.h">
+      <Filter>Actor\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
+      <Filter>Actor\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor\Player\Player.h">
+      <Filter>Actor\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraFactory.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneContext\GameSceneContext.h">
+      <Filter>Scene\SceneContext</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

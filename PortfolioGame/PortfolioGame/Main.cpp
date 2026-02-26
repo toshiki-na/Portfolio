@@ -17,6 +17,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     //描画先キャンバスを裏キャンバスに指定
     DxLib::SetDrawScreen(DX_SCREEN_BACK);
 
+    //初期はマウスを画面上に表示するように
+    DxLib::SetMouseDispFlag(true);
+
     //ESCキーが押されるかエラーが出るまでループします
     while (DxLib::ProcessMessage() == 0 && DxLib::CheckHitKey(KEY_INPUT_ESCAPE) == 0)
     {
