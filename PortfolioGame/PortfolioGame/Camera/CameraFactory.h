@@ -2,7 +2,6 @@
 #define CAMERA_FACTORY_H
 
 #include <memory>
-#include "../Constant/Tag.h"
 #include "Camera.h"
 
 class CameraFactory

@@ -2,12 +2,14 @@
 #define PLAYER_H
 
 #include "../CharacterBase.h"
+#include "../../Component/MovementComponent.h"
 
 class Player : public CharacterBase
 {
 public:
 	//コンストラクタ
-	Player(float x, float y, float z) :
+	Player(MovementComponent movement_) :
+		CharacterBase(movement_)
 	{
 	}
 

@@ -1,6 +1,8 @@
 #ifndef STAGE_H
 #define STAGE_H
 
+#include "StageContext/StageContext.h"
+
 class Stage
 {
 public:
@@ -12,5 +14,9 @@ public:
 
 	//描画
 	void Draw();
+
+private:
+	//ステージオブジェクト集
+	StageContext context;
 };
 #endif

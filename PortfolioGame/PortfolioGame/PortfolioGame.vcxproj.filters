@@ -34,20 +34,26 @@
     <Filter Include="Camera\CameraInput">
       <UniqueIdentifier>{a06fea76-db49-4b54-b572-c41de99c6ef0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Actor">
-      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Actor\Player">
-      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Actor\Player\PlayerInput">
-      <UniqueIdentifier>{cf460998-3ed8-4fa4-9bd9-8870e47605cc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Actor\Enemy">
-      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene\SceneContext">
       <UniqueIdentifier>{e6f612b6-9bfb-481a-bcb4-4574663321fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player">
+      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player\PlayerInput">
+      <UniqueIdentifier>{cf460998-3ed8-4fa4-9bd9-8870e47605cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Enemy">
+      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{49463674-d9c1-4db0-a8bf-04b408244298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\StageContext">
+      <UniqueIdentifier>{a610b38f-b699-4f5b-b000-9c538a7d1097}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -111,11 +117,26 @@
     <ClCompile Include="ResourceManager\ResourceSystemManager.cpp">
       <Filter>ResourceManager</Filter>
     </ClCompile>
-    <ClCompile Include="Actor\Player\Player.cpp">
-      <Filter>Actor\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Camera\CameraFactory.cpp">
       <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Player\Player.cpp">
+      <Filter>Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageFactory.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\Ground.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\Wall.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\Skydome.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageContext\StageContext.cpp">
+      <Filter>Stage\StageContext</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,26 +221,47 @@
     <ClInclude Include="Camera\CameraInput\GamePadCameraInput.h">
       <Filter>Camera\CameraInput</Filter>
     </ClInclude>
-    <ClInclude Include="Actor\ActorBase.h">
-      <Filter>Actor</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor\Player\PlayerInput\GamePadPlayerInput.h">
-      <Filter>Actor\Player\PlayerInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor\Player\PlayerInput\IPlayerInput.h">
-      <Filter>Actor\Player\PlayerInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
-      <Filter>Actor\Player\PlayerInput</Filter>
-    </ClInclude>
-    <ClInclude Include="Actor\Player\Player.h">
-      <Filter>Actor\Player</Filter>
-    </ClInclude>
     <ClInclude Include="Camera\CameraFactory.h">
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="Scene\SceneContext\GameSceneContext.h">
       <Filter>Scene\SceneContext</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\Player.h">
+      <Filter>Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterBase.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h">
+      <Filter>Character\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h">
+      <Filter>Character\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
+      <Filter>Character\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\TransformComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageFactory.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\Skydome.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\Ground.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\Wall.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\IStageObject.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageContext\StageContext.h">
+      <Filter>Stage\StageContext</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

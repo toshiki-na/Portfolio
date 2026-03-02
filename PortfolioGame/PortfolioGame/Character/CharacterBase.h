@@ -2,12 +2,14 @@
 #define OBJECT_BASE_H
 
 #include "../Utility/Vec3.h"
+#include "../Component/MovementComponent.h"
 
 class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase()
+	CharacterBase(MovementComponent movement_) :
+		movement(movement_)
 	{
 	}
 
@@ -29,5 +31,8 @@ public:
 protected:
 	//生存フラグ
 	bool active{ true };
+
+	//位置
+	MovementComponent& movement;
 };
 #endif

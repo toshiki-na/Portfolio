@@ -139,9 +139,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Actor\Player\Player.cpp" />
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Camera\CameraFactory.cpp" />
+    <ClCompile Include="Character\Player\Player.cpp" />
     <ClCompile Include="FPSController\FPSController.cpp" />
     <ClCompile Include="Input\GamePadInput.cpp" />
     <ClCompile Include="Input\InputSystems.cpp" />
@@ -159,20 +159,26 @@
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
+    <ClCompile Include="Stage\Ground.cpp" />
+    <ClCompile Include="Stage\Skydome.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
+    <ClCompile Include="Stage\StageContext\StageContext.cpp" />
+    <ClCompile Include="Stage\StageFactory.cpp" />
+    <ClCompile Include="Stage\Wall.cpp" />
     <ClCompile Include="TimeManager\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Actor\ActorBase.h" />
-    <ClInclude Include="Actor\Player\Player.h" />
-    <ClInclude Include="Actor\Player\PlayerInput\GamePadPlayerInput.h" />
-    <ClInclude Include="Actor\Player\PlayerInput\IPlayerInput.h" />
-    <ClInclude Include="Actor\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
     <ClInclude Include="Camera\Camera.h" />
     <ClInclude Include="Camera\CameraFactory.h" />
     <ClInclude Include="Camera\CameraInput\GamePadCameraInput.h" />
     <ClInclude Include="Camera\CameraInput\ICameraInput.h" />
     <ClInclude Include="Camera\CameraInput\MouseCameraInput.h" />
+    <ClInclude Include="Character\CharacterBase.h" />
+    <ClInclude Include="Character\Player\Player.h" />
+    <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h" />
+    <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h" />
+    <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
+    <ClInclude Include="Component\TransformComponent.h" />
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
@@ -194,7 +200,13 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TitleScene.h" />
+    <ClInclude Include="Stage\Ground.h" />
+    <ClInclude Include="Stage\IStageObject.h" />
+    <ClInclude Include="Stage\Skydome.h" />
     <ClInclude Include="Stage\Stage.h" />
+    <ClInclude Include="Stage\StageContext\StageContext.h" />
+    <ClInclude Include="Stage\StageFactory.h" />
+    <ClInclude Include="Stage\Wall.h" />
     <ClInclude Include="TimeManager\TimeManager.h" />
     <ClInclude Include="Utility\Vec3.h" />
   </ItemGroup>

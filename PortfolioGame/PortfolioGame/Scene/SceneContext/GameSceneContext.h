@@ -4,7 +4,7 @@
 #include <memory>
 #include "../../Camera/Camera.h"
 #include "../../Camera/CameraFactory.h"
-#include "../../Stage/Stage.h"
+#include "../../Stage/StageFactory.h"
 
 
 class GameSceneContext
@@ -13,7 +13,11 @@ public:
 	//コンストラクタ
 	GameSceneContext()
 	{
+		//カメラ生成
 		camera = CameraFactory::Create();
+
+		//ステージ生成
+		stage = StageFactory::Create();
 	}
 
 	//デストラクタ
