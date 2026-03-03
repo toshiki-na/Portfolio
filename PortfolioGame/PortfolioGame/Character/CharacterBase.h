@@ -2,14 +2,13 @@
 #define OBJECT_BASE_H
 
 #include "../Utility/Vec3.h"
-#include "../Component/MovementComponent.h"
+#include "../Component/Movement/MovementComponent.h"
 
 class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase(MovementComponent movement_) :
-		movement(movement_)
+	CharacterBase()
 	{
 	}
 

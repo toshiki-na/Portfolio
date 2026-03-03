@@ -55,6 +55,9 @@
     <Filter Include="Stage\StageContext">
       <UniqueIdentifier>{a610b38f-b699-4f5b-b000-9c538a7d1097}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\Movement">
+      <UniqueIdentifier>{a8b78fed-302a-48d6-99bd-84515476a40a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -137,6 +140,9 @@
     </ClCompile>
     <ClCompile Include="Stage\StageContext\StageContext.cpp">
       <Filter>Stage\StageContext</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\MovementComponent.cpp">
+      <Filter>Component\Movement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -242,9 +248,6 @@
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
       <Filter>Character\Player\PlayerInput</Filter>
     </ClInclude>
-    <ClInclude Include="Component\TransformComponent.h">
-      <Filter>Component</Filter>
-    </ClInclude>
     <ClInclude Include="Stage\StageFactory.h">
       <Filter>Stage</Filter>
     </ClInclude>
@@ -262,6 +265,18 @@
     </ClInclude>
     <ClInclude Include="Stage\StageContext\StageContext.h">
       <Filter>Stage\StageContext</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\MovementComponent.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\MovementSystem.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\IMoveVectorComputer.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\PlayerMoveVectorComputer.h">
+      <Filter>Component\Movement</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

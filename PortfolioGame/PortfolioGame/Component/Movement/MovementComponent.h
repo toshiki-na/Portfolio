@@ -1,19 +1,24 @@
 #ifndef MOVEMENT_COMPONENT_H
 #define MOVEMENT_COMPONENT_H
 
-#include "../Utility/Vec3.h"
+#include <memory>
+#include "../../Utility/Vec3.h"
+#include "IMoveVectorComputer.h"
 
 class MovementComponent
 {
 public:
 	//コンストラクタ
-	MovementComponent() = default;
+	MovementComponent(std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
+		move_vec_computer(std::move(move_vec_computer_))
+	{
+	}
 
 	//デストラクタ
 	~MovementComponent() = default;
 
 	//更新
-	virtual void Update() = 0;
+	virtual void Update();
 
 private:
 	//位置
@@ -27,5 +32,8 @@ private:
 
 	//移動速度(/s)
 	float speed{ 0.0f };
+
+	//移動方向入力
+	std::unique_ptr<IMoveVectorComputer> move_vec_computer;
 };
 #endif

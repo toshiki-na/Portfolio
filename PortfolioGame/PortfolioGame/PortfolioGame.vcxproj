@@ -142,6 +142,7 @@
     <ClCompile Include="Camera\Camera.cpp" />
     <ClCompile Include="Camera\CameraFactory.cpp" />
     <ClCompile Include="Character\Player\Player.cpp" />
+    <ClCompile Include="Component\Movement\MovementComponent.cpp" />
     <ClCompile Include="FPSController\FPSController.cpp" />
     <ClCompile Include="Input\GamePadInput.cpp" />
     <ClCompile Include="Input\InputSystems.cpp" />
@@ -178,7 +179,10 @@
     <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h" />
     <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h" />
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
-    <ClInclude Include="Component\TransformComponent.h" />
+    <ClInclude Include="Component\Movement\PlayerMoveVectorComputer.h" />
+    <ClInclude Include="Component\Movement\IMoveVectorComputer.h" />
+    <ClInclude Include="Component\Movement\MovementComponent.h" />
+    <ClInclude Include="Component\Movement\MovementSystem.h" />
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
