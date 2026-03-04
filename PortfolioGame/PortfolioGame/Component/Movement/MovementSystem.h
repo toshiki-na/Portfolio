@@ -7,10 +7,6 @@ public:
 	//コンストラクタ
 	MovementSystem() = default;
 
-	//デストラクタ
-	~MovementSystem() = default;
-
-
 private:
 };
 #endif

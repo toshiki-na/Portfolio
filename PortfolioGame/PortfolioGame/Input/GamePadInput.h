@@ -21,9 +21,6 @@ public:
 		}
 	}
 
-	//デストラクタ
-	~GamePadInput() = default;
-
 public:
 	//ゲームパッドのボタン一覧
 	enum class Button

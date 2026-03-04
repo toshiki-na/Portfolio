@@ -10,9 +10,6 @@ public:
 	//コンストラクタ
 	Skydome() = default;
 
-	//デストラクタ
-	~Skydome() = default;
-
 	//描画
 	void Draw()const override;
 

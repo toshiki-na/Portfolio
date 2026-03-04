@@ -6,8 +6,5 @@ class FPSController
 public:
 	//コンストラクタ
 	FPSController() = default;
-
-	//デストラクタ
-	~FPSController() = default;
 };
 #endif

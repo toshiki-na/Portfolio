@@ -14,11 +14,12 @@ public:
 	{
 	}
 
-	//デストラクタ
-	~MovementComponent() = default;
-
 	//更新
-	virtual void Update();
+	void Update();
+
+private:
+	//回転角度計算
+	void CalcYawRadian();
 
 private:
 	//位置
@@ -28,7 +29,7 @@ private:
 	Vec3 forward{ Vec3::Zero() };
 
 	//回転角度
-	float yaw_angle{ 0.0f };
+	float yaw_radian{ 0.0f };
 
 	//移動速度(/s)
 	float speed{ 0.0f };

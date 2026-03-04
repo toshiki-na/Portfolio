@@ -14,9 +14,6 @@ public:
 	{
 	}
 
-	//デストラクタ
-	~Camera() = default;
-
 public:
 	//初期化
 	void Initialize();

@@ -10,9 +10,6 @@ public:
 	//コンストラクタ
 	Wall() = default;
 
-	//デストラクタ
-	~Wall() = default;
-
 	//描画
 	void Draw()const override;
 

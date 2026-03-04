@@ -6,10 +6,10 @@
 //カメラ生成
 std::unique_ptr<Camera> CameraFactory::Create()
 {
-	//入力受付システム注入
-	//ゲームパッド
+	//入力受付システム確認
 	InputSystems& input_system = InputSystems::Instance();
 
+	//ゲームパッド
 	if (input_system.GetGamePadInput().GetConnectedGamePadCount() > 0)
 	{
 		return std::make_unique<Camera>(std::make_unique<GamePadCameraInput>());

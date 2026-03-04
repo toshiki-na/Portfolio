@@ -15,9 +15,6 @@ public:
 	{
 	}
 
-	//デストラクタ
-	~GamePadPlayerInput() override = default;
-
 	//移動方向入力の取得
 	Vec3 GetMoveInput() const override
 	{

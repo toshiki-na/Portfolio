@@ -16,9 +16,6 @@ class KeyBoardAndMousePlayerInput : public IPlayerInput
 	{
 	};
 
-	//デストラクタ
-	~KeyBoardAndMousePlayerInput() override = default;
-
 	//移動方向入力の取得
 	Vec3 GetMoveInput() const
 	{

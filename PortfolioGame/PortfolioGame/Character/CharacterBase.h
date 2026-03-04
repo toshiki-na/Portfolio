@@ -1,6 +1,7 @@
 #ifndef OBJECT_BASE_H
 #define OBJECT_BASE_H
 
+#include <memory>
 #include "../Utility/Vec3.h"
 #include "../Component/Movement/MovementComponent.h"
 
@@ -8,12 +9,10 @@ class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase()
+	CharacterBase(MovementComponent movement_) :
+		movement(std::move(movement_))
 	{
 	}
-
-	//デストラクタ
-	virtual ~CharacterBase() = default;
 
 	//更新
 	virtual void Update() = 0;
@@ -31,7 +30,7 @@ protected:
 	//生存フラグ
 	bool active{ true };
 
-	//位置
-	MovementComponent& movement;
+	//移動コンポーネント
+	MovementComponent movement;
 };
 #endif

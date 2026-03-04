@@ -18,6 +18,13 @@ enum class SceneStep
 	Terminate	//終了
 };
 
+//キャラクター一覧
+enum class CharacterType
+{
+	Player,	//プレイヤー
+	Enemy,	//敵
+};
+
 //リソース管理用タグ一覧
 //3Dモデル
 enum class ModelTag

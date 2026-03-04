@@ -10,9 +10,6 @@ public:
 	//コンストラクタ
 	Ground() = default;
 
-	//デストラクタ
-	~Ground() = default;
-
 	//描画
 	void Draw()const override;
 

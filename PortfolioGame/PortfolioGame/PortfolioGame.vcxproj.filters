@@ -58,6 +58,9 @@
     <Filter Include="Component\Movement">
       <UniqueIdentifier>{a8b78fed-302a-48d6-99bd-84515476a40a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\Movement\Player">
+      <UniqueIdentifier>{4ef5d01b-e017-47b7-96e5-ae6c06bda1b5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -143,6 +146,12 @@
     </ClCompile>
     <ClCompile Include="Component\Movement\MovementComponent.cpp">
       <Filter>Component\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp">
+      <Filter>Component\Movement\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\CharacterFactory.cpp">
+      <Filter>Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,8 +284,11 @@
     <ClInclude Include="Component\Movement\IMoveVectorComputer.h">
       <Filter>Component\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="Component\Movement\PlayerMoveVectorComputer.h">
-      <Filter>Component\Movement</Filter>
+    <ClInclude Include="Component\Movement\Player\PlayerMoveVectorComputer.h">
+      <Filter>Component\Movement\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterFactory.h">
+      <Filter>Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

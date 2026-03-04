@@ -7,9 +7,6 @@ public:
 	//コンストラクタ
 	KeyBoardInput() = default;
 
-	//デストラクタ
-	~KeyBoardInput() = default;
-
 public:
 	//キーボードのキー一覧
 	enum class Key

@@ -9,9 +9,6 @@ public:
 	//コンストラクタ
 	Stage() = default;
 
-	//デストラクタ
-	~Stage() = default;
-
 	//描画
 	void Draw();
 

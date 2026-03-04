@@ -20,9 +20,6 @@ public:
 		stage = StageFactory::Create();
 	}
 
-	//デストラクタ
-	~GameSceneContext() = default;
-
 	//カメラ
 	std::unique_ptr<Camera> camera;
 

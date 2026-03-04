@@ -28,9 +28,6 @@ public:
 		stage_objects.push_back(std::make_unique<Skydome>());
 	}
 
-	//デストラクタ
-	~StageContext() = default;
-
 	//描画
 	void Draw() const;
 

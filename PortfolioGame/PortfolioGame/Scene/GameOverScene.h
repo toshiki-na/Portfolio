@@ -15,9 +15,6 @@ public:
 		scene_type = SceneType::GameOver;
 	}
 
-	//デストラクタ
-	~GameOverScene()override = default;
-
 private:
 	//初期化
 	void Initialize() override;

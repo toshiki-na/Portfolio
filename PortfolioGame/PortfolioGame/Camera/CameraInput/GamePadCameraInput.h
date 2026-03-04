@@ -15,9 +15,6 @@ public:
 	{
 	}
 
-	//デストラクタ
-	~GamePadCameraInput() override = default;
-
 	//入力された視点移動ベクトルを取得
 	Vec3 GetLookInput() const override
 	{

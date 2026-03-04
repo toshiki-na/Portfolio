@@ -16,9 +16,6 @@ public:
 		scene_type = SceneType::Game;
 	}
 
-	//デストラクタ
-	~GameScene() override = default;
-
 private:
 	//初期化
 	void Initialize() override;

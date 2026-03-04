@@ -15,9 +15,6 @@ public:
 		DxLib::GetMousePoint(&now_position_x, &now_position_y);
 	}
 
-	//デストラクタ
-	~MouseInput() = default;
-
 public:
 	//マウスのボタン一覧
 	enum class Button
