@@ -1,6 +1,6 @@
 #include "Skydome.h"
 #include <DxLib.h>
-#include "../ResourceManager/ResourceSystemManager.h"
+#include "../../ResourceManager/ResourceSystemManager.h"
 
 //•`‰æ
 void Skydome::Draw()const

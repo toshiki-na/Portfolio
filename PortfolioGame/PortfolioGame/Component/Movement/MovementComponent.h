@@ -2,14 +2,15 @@
 #define MOVEMENT_COMPONENT_H
 
 #include <memory>
-#include "../../Utility/Vec3.h"
 #include "IMoveVectorComputer.h"
+#include "../Transform/TransformComponent.h"
 
 class MovementComponent
 {
 public:
 	//コンストラクタ
-	MovementComponent(std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
+	MovementComponent(TransformComponent& transform_, std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
+		transform(transform_),
 		move_vec_computer(std::move(move_vec_computer_))
 	{
 	}
@@ -18,23 +19,13 @@ public:
 	void Update();
 
 private:
-	//回転角度計算
-	void CalcYawRadian();
-
-private:
-	//位置
-	Vec3 position{ Vec3::Zero() };
-
-	//前方ベクトル
-	Vec3 forward{ Vec3::Zero() };
-
-	//回転角度
-	float yaw_radian{ 0.0f };
+	//位置情報
+	TransformComponent& transform;
 
 	//移動速度(/s)
 	float speed{ 0.0f };
 
-	//移動方向入力
+	//移動方向計算機
 	std::unique_ptr<IMoveVectorComputer> move_vec_computer;
 };
 #endif

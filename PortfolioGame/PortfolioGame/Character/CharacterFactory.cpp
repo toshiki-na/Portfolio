@@ -1,10 +1,25 @@
 #include "CharacterFactory.h"
 #include <memory>
+
+//タグ
 #include "../Constant/Tag.h"
+
+//キャラクター
 #include "CharacterBase.h"
 #include "Player/Player.h"
+
+//位置情報コンポーネント
+#include "../Component/Transform/TransformComponent.h"
+
+//移動コンポーネント
 #include "../Component/Movement/MovementComponent.h"
 #include "../Component/Movement/Player/PlayerMoveVectorComputer.h"
+
+//描画コンポーネント
+#include "../Component/Render/RenderComponent.h"
+#include "../Component/Render/ModelRenderer.h"
+
+//入力情報
 #include "../Input/InputSystems.h"
 #include "Player/PlayerInput/KeyBoardAndMousePlayerInput.h"
 #include "Player/PlayerInput/GamePadPlayerInput.h"
@@ -30,26 +45,50 @@ std::unique_ptr<CharacterBase> CharacterFactory::Create(CharacterType type_)
 //プレイヤー生成
 std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 {
-	//入力受付システム確認
-	InputSystems& input_system = InputSystems::Instance();
+	//初期位置
+	Vec3 init_position = Vec3::Zero();
 
-	//ゲームパッド
-	if (input_system.GetGamePadInput().GetConnectedGamePadCount() > 0)
+	//初期前方向ベクトル
+	Vec3 init_forward = Vec3(0.0f, 0.0f, -1.0f);
+
+	//初期Y軸回転角度
+	float init_yaw_radian = 0.0f;
+
+	//位置座標コンポーネント生成
+	TransformComponent transform(init_position, init_forward, init_yaw_radian);
+
+	//入力をキーボード&マウスかゲームパッドか確認
+	std::unique_ptr<IPlayerInput> input;
+
+	//ゲームパッドが接続されていればゲームパッド
+	if (InputSystems::Instance().GetGamePadInput().GetConnectedGamePadCount() > 0)
 	{
-		std::unique_ptr<IPlayerInput> input = std::make_unique<GamePadPlayerInput>();
-
-		std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input));
-
-		MovementComponent movement(std::move(move_vec_compurter));
-
-		return std::make_unique<Player>(movement);
+		//ゲームパッド
+		input = std::make_unique<GamePadPlayerInput>();
+	}
+	else
+	{
+		//キーボード&マウス
+		input = std::make_unique<KeyBoardAndMousePlayerInput>();
 	}
 
-	//キーボード&マウス
-	return std::make_unique<Player>(std::make_unique<MovementComponent>(std::make_unique<PlayerMoveVectorComputer>(std::make_unique<KeyBoardAndMousePlayerInput>())));
+	//移動方向計算機作成
+	std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input));
+
+	//移動コンポーネント作成
+	MovementComponent movement(transform, std::move(move_vec_compurter));
+
+	//描画コンポーネント生成
+	RenderComponent render(std::make_unique<ModelRenderer>(transform, ModelTag::Player));
+
+	//プレイヤー生成して返す
+	return std::make_unique<Player>(std::move(transform), std::move(movement), std::move(render));
 }
 
 //敵生成
 std::unique_ptr<CharacterBase> CharacterFactory::CreateEnemy()
 {
+	//後で実装*****
+	return nullptr;
+	//*************
 }

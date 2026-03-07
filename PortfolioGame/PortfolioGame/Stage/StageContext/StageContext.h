@@ -3,10 +3,10 @@
 
 #include <memory>
 #include <vector>
-#include "../IStageObject.h"
-#include "../Ground.h"
-#include "../Wall.h"
-#include "../Skydome.h"
+#include "../StageObject/StageObjectBase.h"
+#include "../StageObject/Ground.h"
+#include "../StageObject/Wall.h"
+#include "../StageObject/Skydome.h"
 
 class StageContext
 {
@@ -33,6 +33,6 @@ public:
 
 private:
 	//ステージオブジェクトリスト
-	std::vector<std::unique_ptr<IStageObject>> stage_objects;
+	std::vector<std::unique_ptr<StageObjectBase>> stage_objects;
 };
 #endif

@@ -144,7 +144,10 @@
     <ClCompile Include="Character\CharacterFactory.cpp" />
     <ClCompile Include="Character\Player\Player.cpp" />
     <ClCompile Include="Component\Movement\MovementComponent.cpp" />
-    <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp" />
+    <ClCompile Include="Component\Movement\MovementSystem.cpp" />
+    <ClCompile Include="Component\Render\ModelRenderer.cpp" />
+    <ClCompile Include="Component\Render\RenderComponent.cpp" />
+    <ClCompile Include="Component\Render\RenderingSystem.cpp" />
     <ClCompile Include="FPSController\FPSController.cpp" />
     <ClCompile Include="Input\GamePadInput.cpp" />
     <ClCompile Include="Input\InputSystems.cpp" />
@@ -162,12 +165,12 @@
     <ClCompile Include="Scene\SceneFactory.cpp" />
     <ClCompile Include="Scene\SceneManager.cpp" />
     <ClCompile Include="Scene\TitleScene.cpp" />
-    <ClCompile Include="Stage\Ground.cpp" />
-    <ClCompile Include="Stage\Skydome.cpp" />
     <ClCompile Include="Stage\Stage.cpp" />
     <ClCompile Include="Stage\StageContext\StageContext.cpp" />
     <ClCompile Include="Stage\StageFactory.cpp" />
-    <ClCompile Include="Stage\Wall.cpp" />
+    <ClCompile Include="Stage\StageObject\Ground.cpp" />
+    <ClCompile Include="Stage\StageObject\Skydome.cpp" />
+    <ClCompile Include="Stage\StageObject\Wall.cpp" />
     <ClCompile Include="TimeManager\TimeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +189,11 @@
     <ClInclude Include="Component\Movement\MovementComponent.h" />
     <ClInclude Include="Component\Movement\MovementSystem.h" />
     <ClInclude Include="Component\Movement\Player\PlayerMoveVectorComputer.h" />
+    <ClInclude Include="Component\Render\IRenderer.h" />
+    <ClInclude Include="Component\Render\ModelRenderer.h" />
+    <ClInclude Include="Component\Render\RenderComponent.h" />
+    <ClInclude Include="Component\Render\RenderingSystem.h" />
+    <ClInclude Include="Component\Transform\TransformComponent.h" />
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\Tag.h" />
     <ClInclude Include="FPSController\FPSController.h" />
@@ -207,13 +215,13 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TitleScene.h" />
-    <ClInclude Include="Stage\Ground.h" />
-    <ClInclude Include="Stage\IStageObject.h" />
-    <ClInclude Include="Stage\Skydome.h" />
+    <ClInclude Include="Stage\StageObjectBase.h" />
     <ClInclude Include="Stage\Stage.h" />
     <ClInclude Include="Stage\StageContext\StageContext.h" />
     <ClInclude Include="Stage\StageFactory.h" />
-    <ClInclude Include="Stage\Wall.h" />
+    <ClInclude Include="Stage\StageObject\Ground.h" />
+    <ClInclude Include="Stage\StageObject\Skydome.h" />
+    <ClInclude Include="Stage\StageObject\Wall.h" />
     <ClInclude Include="TimeManager\TimeManager.h" />
     <ClInclude Include="Utility\Vec3.h" />
   </ItemGroup>

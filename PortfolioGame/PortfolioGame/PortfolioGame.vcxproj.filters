@@ -61,6 +61,15 @@
     <Filter Include="Component\Movement\Player">
       <UniqueIdentifier>{4ef5d01b-e017-47b7-96e5-ae6c06bda1b5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\Render">
+      <UniqueIdentifier>{fbcf245d-7142-4a95-b1e4-d62776f63fc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform">
+      <UniqueIdentifier>{c256c21f-c337-43b9-9af2-251ad054eef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\StageObject">
+      <UniqueIdentifier>{7bbcb7c9-e023-4e95-986a-d7ea7013a089}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -132,26 +141,35 @@
     <ClCompile Include="Stage\StageFactory.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
-    <ClCompile Include="Stage\Ground.cpp">
-      <Filter>Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage\Wall.cpp">
-      <Filter>Stage</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage\Skydome.cpp">
-      <Filter>Stage</Filter>
-    </ClCompile>
     <ClCompile Include="Stage\StageContext\StageContext.cpp">
       <Filter>Stage\StageContext</Filter>
     </ClCompile>
     <ClCompile Include="Component\Movement\MovementComponent.cpp">
       <Filter>Component\Movement</Filter>
     </ClCompile>
-    <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp">
-      <Filter>Component\Movement\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Character\CharacterFactory.cpp">
       <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\MovementSystem.cpp">
+      <Filter>Component\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\RenderingSystem.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\RenderComponent.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\ModelRenderer.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageObject\Ground.cpp">
+      <Filter>Stage\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageObject\Skydome.cpp">
+      <Filter>Stage\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageObject\Wall.cpp">
+      <Filter>Stage\StageObject</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -260,18 +278,6 @@
     <ClInclude Include="Stage\StageFactory.h">
       <Filter>Stage</Filter>
     </ClInclude>
-    <ClInclude Include="Stage\Skydome.h">
-      <Filter>Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage\Ground.h">
-      <Filter>Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage\Wall.h">
-      <Filter>Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage\IStageObject.h">
-      <Filter>Stage</Filter>
-    </ClInclude>
     <ClInclude Include="Stage\StageContext\StageContext.h">
       <Filter>Stage\StageContext</Filter>
     </ClInclude>
@@ -289,6 +295,33 @@
     </ClInclude>
     <ClInclude Include="Character\CharacterFactory.h">
       <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\RenderingSystem.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\RenderComponent.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\IRenderer.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\ModelRenderer.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Transform\TransformComponent.h">
+      <Filter>Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObjectBase.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Ground.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Skydome.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Wall.h">
+      <Filter>Stage\StageObject</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

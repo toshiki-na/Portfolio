@@ -7,7 +7,7 @@ enum class SceneType
 	Title,		//タイトル
 	Game,		//ゲーム
 	Clear,		//クリア
-	GameOver	//ゲームオーバー
+	GameOver,	//ゲームオーバー
 };
 
 //シーンのステップ一覧
@@ -15,7 +15,7 @@ enum class SceneStep
 {
 	Initialize,	//初期化
 	Update,		//ループ
-	Terminate	//終了
+	Terminate,	//終了
 };
 
 //キャラクター一覧
@@ -23,6 +23,14 @@ enum class CharacterType
 {
 	Player,	//プレイヤー
 	Enemy,	//敵
+};
+
+//コンポーネントレイヤー
+enum class ComponentLayer
+{
+	Player,	//プレイヤー 
+	Enemy,	//敵
+	UI,		//UI
 };
 
 //リソース管理用タグ一覧

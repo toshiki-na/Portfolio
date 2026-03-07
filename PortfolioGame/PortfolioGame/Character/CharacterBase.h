@@ -3,14 +3,18 @@
 
 #include <memory>
 #include "../Utility/Vec3.h"
+#include "../Component/Transform/TransformComponent.h"
 #include "../Component/Movement/MovementComponent.h"
+#include "../Component/Render/RenderComponent.h"
 
 class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase(MovementComponent movement_) :
-		movement(std::move(movement_))
+	CharacterBase(TransformComponent transform_, MovementComponent movement_, RenderComponent render_) :
+		transform(std::move(transform_)),
+		movement(std::move(movement_)),
+		render(std::move(render_))
 	{
 	}
 
@@ -30,7 +34,13 @@ protected:
 	//生存フラグ
 	bool active{ true };
 
+	//位置座標コンポーネント
+	TransformComponent transform;
+
 	//移動コンポーネント
 	MovementComponent movement;
+
+	//描画コンポーネント
+	RenderComponent render;
 };
 #endif

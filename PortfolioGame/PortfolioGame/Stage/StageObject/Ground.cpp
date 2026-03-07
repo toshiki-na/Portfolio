@@ -1,6 +1,6 @@
 #include "Ground.h"
 #include <DxLib.h>
-#include "../ResourceManager/ResourceSystemManager.h"
+#include "../../ResourceManager/ResourceSystemManager.h"
 
 //•`‰æ
 void Ground::Draw()const

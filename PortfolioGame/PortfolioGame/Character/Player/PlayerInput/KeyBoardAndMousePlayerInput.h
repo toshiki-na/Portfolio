@@ -9,6 +9,7 @@
 
 class KeyBoardAndMousePlayerInput : public IPlayerInput
 {
+public:
 	//コンストラクタ
 	KeyBoardAndMousePlayerInput() : 
 		mouse_input(InputSystems::Instance().GetMouseInput()),

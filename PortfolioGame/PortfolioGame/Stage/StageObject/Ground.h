@@ -1,10 +1,10 @@
 #ifndef GROUND_H
 #define GROUND_H
 
-#include "IStageObject.h"
-#include "../Utility/Vec3.h"
+#include "StageObjectBase.h"
+#include "../../Utility/Vec3.h"
 
-class Ground : public IStageObject
+class Ground : public StageObjectBase
 {
 public:
 	//コンストラクタ

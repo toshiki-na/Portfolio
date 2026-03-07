@@ -1,6 +1,6 @@
 #include "Wall.h"
 #include <DxLib.h>
-#include "../ResourceManager/ResourceSystemManager.h"
+#include "../../ResourceManager/ResourceSystemManager.h"
 
 //•`‰æ
 void Wall::Draw()const

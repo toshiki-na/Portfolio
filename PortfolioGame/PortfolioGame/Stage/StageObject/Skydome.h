@@ -1,10 +1,10 @@
 #ifndef SKYDOME_H
 #define SKYDOME_H
 
-#include "IStageObject.h"
-#include "../Utility/Vec3.h"
+#include "StageObjectBase.h"
+#include "../../Utility/Vec3.h"
 
-class Skydome : public IStageObject
+class Skydome : public StageObjectBase
 {
 public:
 	//コンストラクタ

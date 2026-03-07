@@ -1,10 +1,10 @@
 #ifndef WALL_H
 #define WALL_H
 
-#include "IStageObject.h"
-#include "../Utility/Vec3.h"
+#include "StageObjectBase.h"
+#include "../../Utility/Vec3.h"
 
-class Wall : public IStageObject
+class Wall : public StageObjectBase
 {
 public:
 	//コンストラクタ

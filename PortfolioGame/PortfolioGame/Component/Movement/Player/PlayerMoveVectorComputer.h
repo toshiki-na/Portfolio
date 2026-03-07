@@ -16,7 +16,10 @@ public:
 	}
 
 	//ˆÚ“®•ûŒü‚ÌŽæ“¾
-	Vec3 GetVector() override;
+	Vec3 GetVector() override
+	{
+		return input->GetMoveInput();
+	}
 
 private:
 	std::unique_ptr<IPlayerInput> input;
