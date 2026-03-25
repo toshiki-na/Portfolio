@@ -33,6 +33,10 @@ void GameScene::Update()
 	//カメラの更新
 	context.camera->Update();
 
+
+	//キャラクター更新
+	context.character_manager->Update();
+
 	//描画処理
 	//描画画面のクリア
 	DxLib::ClearDrawScreen();

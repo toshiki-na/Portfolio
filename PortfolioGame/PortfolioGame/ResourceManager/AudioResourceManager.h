@@ -17,6 +17,12 @@ public:
 		AllDelete();
 	}
 
+	//コピー&ムーブ禁止
+	AudioResourceManager(const AudioResourceManager&) = delete;
+	AudioResourceManager& operator=(const AudioResourceManager&) = delete;
+	AudioResourceManager(AudioResourceManager&&) = delete;
+	AudioResourceManager& operator=(AudioResourceManager&&) = delete;
+
 	//読み込み
 	void Load(AudioTag tag_);
 

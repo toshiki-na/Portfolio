@@ -11,6 +11,15 @@ public:
 	//コンストラクタ
 	MovementSystem() = default;
 
+	//デストラクタ
+	~MovementSystem() = default;
+
+	//コピー&ムーブ禁止
+	MovementSystem(const MovementSystem&) = delete;
+	MovementSystem& operator=(const MovementSystem&) = delete;
+	MovementSystem(MovementSystem&&) = delete;
+	MovementSystem& operator=(MovementSystem&&) = delete;
+
 	//移動コンポーネントの登録
 	void Register(MovementComponent* component_, ComponentLayer layer_);
 
@@ -23,6 +32,6 @@ private:
 	MovementComponent* player_movement;
 
 	//敵
-	std::vector<MovementComponent*> enemy_movement;	
+	std::vector<MovementComponent*> enemy_movements;	
 };
 #endif

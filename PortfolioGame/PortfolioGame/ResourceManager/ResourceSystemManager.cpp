@@ -40,6 +40,9 @@ void ResourceSystemManager::ReleaseScene(SceneType scene_type_)
 		model_manager.Delete(ModelTag::Skydome);
 		model_manager.Delete(ModelTag::Ground);
 		model_manager.Delete(ModelTag::Wall);
+
+		//プレイヤーリソースの解放
+		model_manager.Delete(ModelTag::Player);
 		break;
 
 	case SceneType::Clear:

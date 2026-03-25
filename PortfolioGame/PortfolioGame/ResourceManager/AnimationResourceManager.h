@@ -17,6 +17,12 @@ public:
 		AllDelete();
 	}
 
+	//コピー&ムーブ禁止
+	AnimationResourceManager(const AnimationResourceManager&) = delete;
+	AnimationResourceManager& operator=(const AnimationResourceManager&) = delete;
+	AnimationResourceManager(AnimationResourceManager&&) = delete;
+	AnimationResourceManager& operator=(AnimationResourceManager&&) = delete;
+
 	//読み込み
 	void Load(AnimationTag tag_);
 

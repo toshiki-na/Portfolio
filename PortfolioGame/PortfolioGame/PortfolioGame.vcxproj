@@ -215,12 +215,12 @@
     <ClInclude Include="Scene\SceneFactory.h" />
     <ClInclude Include="Scene\SceneManager.h" />
     <ClInclude Include="Scene\TitleScene.h" />
-    <ClInclude Include="Stage\StageObjectBase.h" />
     <ClInclude Include="Stage\Stage.h" />
     <ClInclude Include="Stage\StageContext\StageContext.h" />
     <ClInclude Include="Stage\StageFactory.h" />
     <ClInclude Include="Stage\StageObject\Ground.h" />
     <ClInclude Include="Stage\StageObject\Skydome.h" />
+    <ClInclude Include="Stage\StageObject\StageObjectBase.h" />
     <ClInclude Include="Stage\StageObject\Wall.h" />
     <ClInclude Include="TimeManager\TimeManager.h" />
     <ClInclude Include="Utility\Vec3.h" />

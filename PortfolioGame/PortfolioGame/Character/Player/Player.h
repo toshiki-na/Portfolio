@@ -16,11 +16,5 @@ public:
 		)
 	{
 	}
-	
-	//XV
-	void Update() override;
-
-	//•`‰æ
-	void Draw() override;
 };
 #endif

@@ -311,9 +311,6 @@
     <ClInclude Include="Component\Transform\TransformComponent.h">
       <Filter>Component\Transform</Filter>
     </ClInclude>
-    <ClInclude Include="Stage\StageObjectBase.h">
-      <Filter>Stage\StageObject</Filter>
-    </ClInclude>
     <ClInclude Include="Stage\StageObject\Ground.h">
       <Filter>Stage\StageObject</Filter>
     </ClInclude>
@@ -321,6 +318,9 @@
       <Filter>Stage\StageObject</Filter>
     </ClInclude>
     <ClInclude Include="Stage\StageObject\Wall.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\StageObjectBase.h">
       <Filter>Stage\StageObject</Filter>
     </ClInclude>
   </ItemGroup>

@@ -17,6 +17,12 @@ public:
 		AllDelete();
 	}
 
+	//コピー&ムーブ禁止
+	ModelResourceManager(const ModelResourceManager&) = delete;
+	ModelResourceManager& operator=(const ModelResourceManager&) = delete;
+	ModelResourceManager(ModelResourceManager&&) = delete;
+	ModelResourceManager& operator=(ModelResourceManager&&) = delete;
+
 	//読み込み
 	void Load(ModelTag tag_);
 

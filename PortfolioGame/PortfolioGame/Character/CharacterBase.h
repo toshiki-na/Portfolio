@@ -30,9 +30,30 @@ public:
 		return active;
 	}
 
+	//現在HP取得
+	int GetHP() const
+	{
+		return hp;
+	}
+
+	//移動コンポーネント取得
+	MovementComponent* GetMovement()
+	{
+		return &movement;
+	}
+
+	//描画コンポーネント取得
+	RenderComponent* GetRender()
+	{
+		return &render;
+	}
+
 protected:
 	//生存フラグ
 	bool active{ true };
+
+	//HP
+	int hp{ 100 };
 
 	//位置座標コンポーネント
 	TransformComponent transform;

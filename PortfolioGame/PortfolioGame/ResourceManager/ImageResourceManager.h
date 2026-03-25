@@ -17,6 +17,12 @@ public:
 		AllDelete();
 	}
 
+	//コピー&ムーブ禁止
+	ImageResourceManager(const ImageResourceManager&) = delete;
+	ImageResourceManager& operator=(const ImageResourceManager&) = delete;
+	ImageResourceManager(ImageResourceManager&&) = delete;
+	ImageResourceManager& operator=(ImageResourceManager&&) = delete;
+
 	//読み込み
 	void Load(ImageTag tag_);
 

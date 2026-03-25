@@ -12,7 +12,7 @@ void MovementSystem::Register(MovementComponent* component_, ComponentLayer laye
 
 		//敵
 	case ComponentLayer::Enemy:
-		enemy_movement.push_back(component_);
+		enemy_movements.push_back(component_);
 		break;
 
 	default:
@@ -24,18 +24,15 @@ void MovementSystem::Register(MovementComponent* component_, ComponentLayer laye
 void MovementSystem::Update()
 {
 	//プレイヤー更新
-	if (player_movement != nullptr)
-	{
-		player_movement->Update();
-	}
+	player_movement->Update();
 
 	//敵の更新
-	for (auto& EnemyMovement : enemy_movement)
+	for (auto& EnemyMovement : enemy_movements)
 	{
 		EnemyMovement->Update();
 	}
 
 	//更新が終わったら登録された移動コンポーネントリセット
 	player_movement = nullptr;
-	enemy_movement.clear();
+	enemy_movements.clear();
 }
