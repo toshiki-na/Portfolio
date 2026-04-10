@@ -6,7 +6,7 @@
 void KeyBoardInput::Update()
 {
 	//現在フレームの状態を前フレーム情報として保存
-	std::memcpy(now_key_state, pre_key_state, 256);
+	std::memcpy(pre_key_state, now_key_state, sizeof(now_key_state));
 
 	//全キーの入力状態を取得
 	DxLib::GetHitKeyStateAll(now_key_state);
@@ -17,7 +17,7 @@ bool KeyBoardInput::IsJustPressed(KeyBoardInput::Key key_) const
 {
 	bool result = false;
 
-	if (pre_key_state[ToDxLibMask(key_)] == 0 && now_key_state[ToDxLibMask(key_)] == 1)
+	if (now_key_state[ToDxLibMask(key_)] == 1 && pre_key_state[ToDxLibMask(key_)] == 0)
 	{
 		result = true;
 	}
@@ -30,7 +30,7 @@ bool KeyBoardInput::IsHeld(KeyBoardInput::Key key_) const
 {
 	bool result = false;
 
-	if (pre_key_state[ToDxLibMask(key_)] == 1 && now_key_state[ToDxLibMask(key_)] == 1)
+	if (now_key_state[ToDxLibMask(key_)] == 1 && pre_key_state[ToDxLibMask(key_)] == 1)
 	{
 		result = true;
 	}
@@ -43,7 +43,7 @@ bool KeyBoardInput::IsJustReleased(KeyBoardInput::Key key_) const
 {
 	bool result = false;
 
-	if (pre_key_state[ToDxLibMask(key_)] == 1 && now_key_state[ToDxLibMask(key_)] == 0)
+	if (now_key_state[ToDxLibMask(key_)] == 0 && pre_key_state[ToDxLibMask(key_)] == 1)
 	{
 		result = true;
 	}

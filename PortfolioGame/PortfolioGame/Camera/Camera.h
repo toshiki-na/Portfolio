@@ -2,8 +2,10 @@
 #define CAMERA_H
 
 #include <memory>
+#include "../Constant/ConstantValue.h"
 #include "../Utility/Vec3.h"
 #include "CameraInput/ICameraInput.h"
+#include "../Component/Transform/TransformComponent.h"
 
 class Camera
 {
@@ -16,7 +18,7 @@ public:
 
 public:
 	//初期化
-	void Initialize();
+	void Initialize(TransformComponent* target_);
 
 	//更新
 	void Update();
@@ -39,10 +41,10 @@ private:
 	Vec3 position{ Vec3::Zero() };
 
 	//注視点
-	Vec3 target{ 0.0f, 100.0f, 0.0f };
+	TransformComponent* target{ nullptr };
 
 	//注視点からカメラ位置までのベクトル
-	Vec3 position_from_target{ 1.0f, 0.0f, 0.0f };
+	Vec3 position_from_target{ 0.0f, 0.0f, -1.0f };
 
 	//注視点からカメラ位置までの距離
 	float distance_form_target{ 500.0f };
@@ -53,20 +55,11 @@ private:
 	//水平方向の回転角度
 	float pitch_angle{ 0.0f };
 
-	//上方向ベクトル(Y軸正)
-	Vec3 up_vector{ 0.0f, 1.0f, 0.0f };
-
-	//視野の最近距離
-	float vision_near{ 10.0f };
-
-	//視野の最遠距離
-	float vision_far{ 100000.0f };
-
 	//視野角
 	float fov{ 60.0f };
 
 	//視点感度
-	float sensitivity{ 0.1f };
+	float sensitivity{ 0.01f };
 
 	//カメラ操作入力
 	std::unique_ptr<ICameraInput> input;

@@ -9,7 +9,8 @@ class MovementComponent
 {
 public:
 	//コンストラクタ
-	MovementComponent(std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
+	MovementComponent(float speed_, std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
+		speed(speed_),
 		move_vec_computer(std::move(move_vec_computer_))
 	{
 	}

@@ -33,6 +33,12 @@ public:
 	//キャラクターの生成
 	void Create(CharacterType type_);
 
+	//プレイヤー座標の取得
+	TransformComponent* GetPlayerTransform()
+	{
+		return player->GetTransform();
+	}
+
 	//更新
 	void Update();
 

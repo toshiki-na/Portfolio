@@ -33,6 +33,12 @@ public:
 		return hp;
 	}
 
+	//位置座標コンポーネント取得
+	TransformComponent* GetTransform()
+	{
+		return &transform;
+	}
+
 	//移動コンポーネント取得
 	MovementComponent* GetMovement()
 	{

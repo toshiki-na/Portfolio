@@ -17,7 +17,7 @@ void GameScene::Initialize()
 	ResourceSystemManager::Instance().PrepareScene(scene_type);
 
 	//カメラの初期化
-	context.camera->Initialize();
+	context.camera->Initialize(context.character_manager->GetPlayerTransform());
 
 	//初期化終了で更新へ移行
 	SceneManager::Instance().ChangeSceneStep(SceneStep::Update);

@@ -24,12 +24,12 @@ public:
 
 	if (keyboard_input.IsHeld(KeyBoardInput::Key::W))
 		{
-			result.y += 1.0f;
+			result.z += 1.0f;
 		}
 
 		if (keyboard_input.IsHeld(KeyBoardInput::Key::S))
 		{
-			result.y -= 1.0f;
+			result.z -= 1.0f;
 		}
 
 		if (keyboard_input.IsHeld(KeyBoardInput::Key::A))

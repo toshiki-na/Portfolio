@@ -22,6 +22,7 @@ public:
 	}
 
 private:
+	//ƒvƒŒƒCƒ„[“ü—Í
 	std::unique_ptr<IPlayerInput> input;
 };
 #endif

@@ -1,6 +1,9 @@
 #include "CharacterFactory.h"
 #include <memory>
 
+//初期値定数
+#include "../Constant/ConstantValue.h"
+
 //タグ
 #include "../Constant/Tag.h"
 
@@ -45,17 +48,8 @@ std::unique_ptr<CharacterBase> CharacterFactory::Create(CharacterType type_)
 //プレイヤー生成
 std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 {
-	//初期位置
-	Vec3 init_position = Vec3::Zero();
-
-	//初期前方向ベクトル
-	Vec3 init_forward = Vec3(0.0f, 0.0f, -1.0f);
-
-	//初期Y軸回転角度
-	float init_yaw_radian = 0.0f;
-
 	//位置座標コンポーネント生成
-	TransformComponent transform(init_position, init_forward, init_yaw_radian);
+	TransformComponent transform(player_initialize_position, player_initialize_forward, player_initialize_yaw_radian);
 
 	//入力をキーボード&マウスかゲームパッドか確認して生成
 	std::unique_ptr<IPlayerInput> input;
@@ -74,7 +68,7 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 	std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input));
 
 	//移動コンポーネント作成
-	MovementComponent movement(std::move(move_vec_compurter));
+	MovementComponent movement(player_move_speed, std::move(move_vec_compurter));
 
 	//描画機作成
 	std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Player);

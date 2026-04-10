@@ -42,6 +42,7 @@ public:
 	}
 
 private:
+	//ƒ}ƒEƒX“ü—Í
 	MouseInput& input;
 };
 #endif
