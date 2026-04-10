@@ -22,7 +22,7 @@ public:
 	{
 		Vec3 result = Vec3::Zero();
 
-		if (keyboard_input.IsHeld(KeyBoardInput::Key::W))
+	if (keyboard_input.IsHeld(KeyBoardInput::Key::W))
 		{
 			result.y += 1.0f;
 		}
@@ -42,7 +42,7 @@ public:
 			result.x += 1.0f;
 		}
 
-		if (result.LengthSq() >= 0.0f)
+		if (result.LengthSq() > 0.0f)
 		{
 			result = result.Normalized();
 		}

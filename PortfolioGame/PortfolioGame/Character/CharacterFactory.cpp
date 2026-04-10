@@ -57,10 +57,8 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 	//位置座標コンポーネント生成
 	TransformComponent transform(init_position, init_forward, init_yaw_radian);
 
-	//入力をキーボード&マウスかゲームパッドか確認
+	//入力をキーボード&マウスかゲームパッドか確認して生成
 	std::unique_ptr<IPlayerInput> input;
-
-	//ゲームパッドが接続されていればゲームパッド
 	if (InputSystems::Instance().GetGamePadInput().GetConnectedGamePadCount() > 0)
 	{
 		//ゲームパッド
@@ -76,13 +74,16 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 	std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input));
 
 	//移動コンポーネント作成
-	MovementComponent movement(transform, std::move(move_vec_compurter));
+	MovementComponent movement(std::move(move_vec_compurter));
+
+	//描画機作成
+	std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Player);
 
 	//描画コンポーネント生成
-	RenderComponent render(std::make_unique<ModelRenderer>(transform, ModelTag::Player));
+	RenderComponent render(std::move(renderer));
 
 	//プレイヤー生成して返す
-	return std::make_unique<Player>(std::move(transform), std::move(movement), std::move(render));
+	return std::make_unique<Player>(transform, movement, render);
 }
 
 //敵生成

@@ -11,18 +11,15 @@ class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase(TransformComponent transform_, MovementComponent movement_, RenderComponent render_) :
+	CharacterBase(TransformComponent& transform_, MovementComponent& movement_, RenderComponent& render_) :
 		transform(std::move(transform_)),
 		movement(std::move(movement_)),
 		render(std::move(render_))
 	{
+		//位置情報参照先セット
+		movement.SetTransformComponent(&transform);
+		render.SetTransformComponent(&transform);
 	}
-
-	//更新
-	virtual void Update() = 0;
-
-	//描画
-	virtual void Draw() = 0;
 
 	//生存状態取得
 	bool GetActive() const

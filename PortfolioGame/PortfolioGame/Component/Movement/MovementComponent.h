@@ -9,18 +9,20 @@ class MovementComponent
 {
 public:
 	//コンストラクタ
-	MovementComponent(TransformComponent& transform_, std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
-		transform(transform_),
+	MovementComponent(std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
 		move_vec_computer(std::move(move_vec_computer_))
 	{
 	}
+
+	//位置情報セット
+	void SetTransformComponent(TransformComponent* transform_);
 
 	//更新
 	void Update();
 
 private:
 	//位置情報
-	TransformComponent& transform;
+	TransformComponent* transform{ nullptr };
 
 	//移動速度(/s)
 	float speed{ 0.0f };

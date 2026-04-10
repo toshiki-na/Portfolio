@@ -33,9 +33,11 @@ void GameScene::Update()
 	//カメラの更新
 	context.camera->Update();
 
-
 	//キャラクター更新
 	context.character_manager->Update();
+
+	//移動コンポーネント更新
+	context.movement_system->Update();
 
 	//描画処理
 	//描画画面のクリア
@@ -43,6 +45,9 @@ void GameScene::Update()
 
 	//ステージの描画
 	context.stage->Draw();
+
+	//描画コンポーネント描画
+	context.rendering_system->Draw();
 
 	//描画画面と表示画面をフリップ
 	DxLib::ScreenFlip();

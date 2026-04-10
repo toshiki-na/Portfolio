@@ -45,7 +45,7 @@ private:
 	Vec3 position_from_target{ 1.0f, 0.0f, 0.0f };
 
 	//注視点からカメラ位置までの距離
-	float distance_form_target{ 50.0f };
+	float distance_form_target{ 500.0f };
 
 	//垂直方向の回転角度
 	float yaw_angle{ 0.0f };
@@ -57,7 +57,7 @@ private:
 	Vec3 up_vector{ 0.0f, 1.0f, 0.0f };
 
 	//視野の最近距離
-	float vision_near{ 50.0f };
+	float vision_near{ 10.0f };
 
 	//視野の最遠距離
 	float vision_far{ 100000.0f };

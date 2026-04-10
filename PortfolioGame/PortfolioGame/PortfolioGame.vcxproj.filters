@@ -135,9 +135,6 @@
     <ClCompile Include="Camera\CameraFactory.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Character\Player\Player.cpp">
-      <Filter>Character\Player</Filter>
-    </ClCompile>
     <ClCompile Include="Stage\StageFactory.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
@@ -170,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="Stage\StageObject\Wall.cpp">
       <Filter>Stage\StageObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\CharacterManager.cpp">
+      <Filter>Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -322,6 +322,9 @@
     </ClInclude>
     <ClInclude Include="Stage\StageObject\StageObjectBase.h">
       <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterManager.h">
+      <Filter>Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

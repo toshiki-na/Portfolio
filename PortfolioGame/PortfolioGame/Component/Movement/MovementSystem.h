@@ -29,7 +29,7 @@ public:
 private:
 	//登録された移動コンポーネント
 	//プレイヤー
-	MovementComponent* player_movement;
+	MovementComponent* player_movement{ nullptr };
 
 	//敵
 	std::vector<MovementComponent*> enemy_movements;	

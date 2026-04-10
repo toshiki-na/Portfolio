@@ -4,26 +4,27 @@
 #include "IRenderer.h"
 #include "../../Constant/Tag.h"
 #include "../Transform/TransformComponent.h"
-#include "../../ResourceManager/ResourceSystemManager.h"
 
 class ModelRenderer : public IRenderer
 {
 public:
 	//コンストラクタ
-	ModelRenderer(TransformComponent& transform_, ModelTag tag_) :
-		transform(transform_)
+	ModelRenderer(ModelTag tag_) :
+		tag(tag_)
 	{
-		model_handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(tag_);
 	}
+
+	//位置情報セット
+	void SetTransformComponent(TransformComponent* transform_) override;
 
 	//描画
 	void Draw() const override;
 
 private:
 	//位置座標
-	TransformComponent& transform;
+	TransformComponent* transform{ nullptr };
 
-	//描画する3Dモデルのハンドル
-	int model_handle;
+	//モデルタグ
+	ModelTag tag;
 };
 #endif

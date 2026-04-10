@@ -8,11 +8,11 @@ class Player : public CharacterBase
 {
 public:
 	//コンストラクタ
-	Player(TransformComponent transform_, MovementComponent movement_, RenderComponent render_) :
+	Player(TransformComponent& transform_, MovementComponent& movement_, RenderComponent& render_) :
 		CharacterBase(
-			std::move(transform_), 
-			std::move(movement_), 
-			std::move(render_)
+			transform_, 
+			movement_, 
+			render_
 		)
 	{
 	}

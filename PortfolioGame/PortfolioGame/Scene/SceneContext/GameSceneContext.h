@@ -35,7 +35,7 @@ public:
 		rendering_system = std::make_unique<RenderingSystem>();
 
 		//キャラクターマネージャー
-		character_manager = std::make_unique<CharacterManager>(movement_system, rendering_system);
+		character_manager = std::make_unique<CharacterManager>((*movement_system), (*rendering_system));
 
 		//プレイヤー生成
 		character_manager->Create(CharacterType::Player);

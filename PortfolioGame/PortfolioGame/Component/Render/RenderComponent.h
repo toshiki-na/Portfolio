@@ -3,6 +3,7 @@
 
 #include <memory>
 #include "IRenderer.h"
+#include "../Transform/TransformComponent.h"
 
 class RenderComponent
 {
@@ -12,6 +13,9 @@ public:
 		renderer(std::move(renderer_))
 	{ 
 	}
+
+	//位置情報セット
+	void SetTransformComponent(TransformComponent* transform_);
 
 	//描画
 	void Draw();
