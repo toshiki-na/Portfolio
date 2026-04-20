@@ -8,13 +8,12 @@ class Skydome : public StageObjectBase
 {
 public:
 	//コンストラクタ
-	Skydome() = default;
-
-	//描画
-	void Draw()const override;
-
-private:
-	//位置
-	Vec3 position{ Vec3::Zero() };
+	Skydome(TransformComponent& transform_, RenderComponent& render_) :
+		StageObjectBase(
+			transform_,
+			render_
+		)
+	{
+	};
 };
 #endif

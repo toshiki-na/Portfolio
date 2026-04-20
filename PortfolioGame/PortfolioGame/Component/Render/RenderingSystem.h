@@ -30,5 +30,8 @@ private:
 
 	//敵
 	std::vector<RenderComponent*> enemy_renders;
+
+	//ステージ
+	std::vector<RenderComponent*> stage_renders;
 };
 #endif

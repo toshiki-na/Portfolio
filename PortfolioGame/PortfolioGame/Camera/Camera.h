@@ -23,6 +23,12 @@ public:
 	//更新
 	void Update();
 
+	//注視点からカメラ位置までのベクトルの取得
+	Vec3* GetPositionFromTargetVecPtr()
+	{
+		return &position_from_target;
+	}
+
 	//視野角変更
 	void ChangeFoV(float new_fov_);
 

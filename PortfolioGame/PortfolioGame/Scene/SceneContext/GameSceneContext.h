@@ -6,7 +6,7 @@
 //オブジェクト
 #include "../../Camera/Camera.h"
 #include "../../Camera/CameraFactory.h"
-#include "../../Stage/StageFactory.h"
+#include "../../Stage/Stage.h"
 #include "../../Character/CharacterManager.h"
 
 //コンポーネントシステム
@@ -24,8 +24,6 @@ public:
 		//カメラ生成
 		camera = CameraFactory::Create();
 
-		//ステージ生成
-		stage = StageFactory::Create();
 
 		//コンポーネントシステム
 		//移動
@@ -34,11 +32,14 @@ public:
 		//描画
 		rendering_system = std::make_unique<RenderingSystem>();
 
-		//キャラクターマネージャー
+		//ステージ生成
+		stage = std::make_unique<Stage>((*rendering_system));
+
+		//キャラクターマネージャー生成
 		character_manager = std::make_unique<CharacterManager>((*movement_system), (*rendering_system));
 
 		//プレイヤー生成
-		character_manager->Create(CharacterType::Player);
+		character_manager->CreatePlayer(camera->GetPositionFromTargetVecPtr());
 	}
 
 	//デストラクタ

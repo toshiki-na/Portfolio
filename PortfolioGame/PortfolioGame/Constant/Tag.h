@@ -18,6 +18,14 @@ enum class SceneStep
 	Terminate,	//終了
 };
 
+//ステージオブジェクト一覧
+enum class StageObjectType
+{
+	SkyDome,	//空
+	Ground,		//地面
+	Wall,		//壁
+};
+
 //キャラクター一覧
 enum class CharacterType
 {
@@ -30,6 +38,7 @@ enum class ComponentLayer
 {
 	Player,	//プレイヤー 
 	Enemy,	//敵
+	Stage,	//ステージ
 	UI,		//UI
 };
 

@@ -2,7 +2,7 @@
 #include <memory>
 
 //初期値定数
-#include "../Constant/ConstantValue.h"
+#include "../Constant/InitialValue.h"
 
 //タグ
 #include "../Constant/Tag.h"
@@ -27,26 +27,8 @@
 #include "Player/PlayerInput/KeyBoardAndMousePlayerInput.h"
 #include "Player/PlayerInput/GamePadPlayerInput.h"
 
-//キャラクター生成
-std::unique_ptr<CharacterBase> CharacterFactory::Create(CharacterType type_)
-{
-	switch (type_)
-	{
-		//プレイヤー生成
-	case CharacterType::Player:
-		return CreatePlayer();
-
-		//敵生成
-	case CharacterType::Enemy:
-		return CreateEnemy();
-
-	default:
-		return nullptr;
-	}
-}
-
 //プレイヤー生成
-std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
+std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer(Vec3* camera_position_form_target_vector_)
 {
 	//位置座標コンポーネント生成
 	TransformComponent transform(player_initialize_position, player_initialize_forward, player_initialize_yaw_radian);
@@ -65,7 +47,7 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer()
 	}
 
 	//移動方向計算機作成
-	std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input));
+	std::unique_ptr<IMoveVectorComputer> move_vec_compurter = std::make_unique<PlayerMoveVectorComputer>(std::move(input), camera_position_form_target_vector_);
 
 	//移動コンポーネント作成
 	MovementComponent movement(player_move_speed, std::move(move_vec_compurter));

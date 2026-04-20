@@ -135,7 +135,7 @@
     <ClCompile Include="Camera\CameraFactory.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
-    <ClCompile Include="Stage\StageFactory.cpp">
+    <ClCompile Include="Stage\StageObjectFactory.cpp">
       <Filter>Stage</Filter>
     </ClCompile>
     <ClCompile Include="Stage\StageContext\StageContext.cpp">
@@ -159,17 +159,11 @@
     <ClCompile Include="Component\Render\ModelRenderer.cpp">
       <Filter>Component\Render</Filter>
     </ClCompile>
-    <ClCompile Include="Stage\StageObject\Ground.cpp">
-      <Filter>Stage\StageObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage\StageObject\Skydome.cpp">
-      <Filter>Stage\StageObject</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage\StageObject\Wall.cpp">
-      <Filter>Stage\StageObject</Filter>
-    </ClCompile>
     <ClCompile Include="Character\CharacterManager.cpp">
       <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp">
+      <Filter>Component\Movement\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -275,7 +269,7 @@
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
       <Filter>Character\Player\PlayerInput</Filter>
     </ClInclude>
-    <ClInclude Include="Stage\StageFactory.h">
+    <ClInclude Include="Stage\StageObjectFactory.h">
       <Filter>Stage</Filter>
     </ClInclude>
     <ClInclude Include="Stage\StageContext\StageContext.h">
@@ -325,6 +319,9 @@
     </ClInclude>
     <ClInclude Include="Character\CharacterManager.h">
       <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\InitialValue.h">
+      <Filter>Constant</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -24,12 +24,12 @@ public:
 
 	if (keyboard_input.IsHeld(KeyBoardInput::Key::W))
 		{
-			result.z += 1.0f;
+			result.y += 1.0f;
 		}
 
 		if (keyboard_input.IsHeld(KeyBoardInput::Key::S))
 		{
-			result.z -= 1.0f;
+			result.y -= 1.0f;
 		}
 
 		if (keyboard_input.IsHeld(KeyBoardInput::Key::A))
@@ -70,7 +70,10 @@ public:
 
 
 private:
+	//マウス入力
 	MouseInput& mouse_input;
+
+	//キーボード入力
 	KeyBoardInput& keyboard_input;
 };
 #endif

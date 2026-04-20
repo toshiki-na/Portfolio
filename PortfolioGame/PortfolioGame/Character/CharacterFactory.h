@@ -8,12 +8,8 @@
 class CharacterFactory
 {
 public:
-	//キャラクター生成
-	static std::unique_ptr<CharacterBase> Create(CharacterType type_);
-
-private:
 	//プレイヤー生成
-	static std::unique_ptr<CharacterBase> CreatePlayer();
+	static std::unique_ptr<CharacterBase> CreatePlayer(Vec3* camera_position_form_target_vector_);
 
 	//敵生成
 	static std::unique_ptr<CharacterBase> CreateEnemy();

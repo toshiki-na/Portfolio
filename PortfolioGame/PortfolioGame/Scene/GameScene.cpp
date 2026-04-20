@@ -30,6 +30,9 @@ void GameScene::Update()
 	//時間管理オブジェクトの更新
 	TimeManager::Instance().Update();
 
+	//ステージの描画予約
+	context.stage->Update();
+
 	//カメラの更新
 	context.camera->Update();
 
@@ -42,9 +45,6 @@ void GameScene::Update()
 	//描画処理
 	//描画画面のクリア
 	DxLib::ClearDrawScreen();
-
-	//ステージの描画
-	context.stage->Draw();
 
 	//描画コンポーネント描画
 	context.rendering_system->Draw();

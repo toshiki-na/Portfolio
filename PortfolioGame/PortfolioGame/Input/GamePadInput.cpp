@@ -1,5 +1,6 @@
 #include "GamePadInput.h"
 #include <DxLib.h>
+#include "../Constant/ConstantValue.h"
 
 //çXêV
 void GamePadInput::Update()
@@ -71,7 +72,21 @@ Vec3 GamePadInput::GetLeftStick() const
 	result.y = static_cast<float>(now_state.ThumbLY);
 	result.z = 0.0f;
 
-	result = result.Normalized();
+	//ì¸óÕÇÃóVÇ—
+	if (result.x >= -INPUT_MARGIN && result.x <= INPUT_MARGIN)
+	{
+		result.x = 0.0f;
+	}
+	if (result.y >= -INPUT_MARGIN && result.y <= INPUT_MARGIN)
+	{
+		result.y = 0.0f;
+	}
+
+	//ê≥ãKâª
+	if (result.LengthSq() > 0.0f)
+	{
+		result = result.Normalized();
+	}
 
 	return result;
 }
@@ -85,7 +100,21 @@ Vec3 GamePadInput::GetRightStick() const
 	result.y = static_cast<float>(now_state.ThumbRY);
 	result.z = 0.0f;
 
-	result = result.Normalized();
+	//ì¸óÕÇÃóVÇ—
+	if (result.x >= -INPUT_MARGIN && result.x <= INPUT_MARGIN)
+	{
+		result.x = 0.0f;
+	}
+	if (result.y >= -INPUT_MARGIN && result.y <= INPUT_MARGIN)
+	{
+		result.y = 0.0f;
+	}
+
+	//ê≥ãKâª
+	if (result.LengthSq() > 0.0f)
+	{
+		result = result.Normalized();
+	}
 
 	return result;
 }

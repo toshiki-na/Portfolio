@@ -8,13 +8,12 @@ class Wall : public StageObjectBase
 {
 public:
 	//コンストラクタ
-	Wall() = default;
-
-	//描画
-	void Draw()const override;
-
-private:
-	//位置
-	Vec3 position{ Vec3::Zero() };
+	Wall(TransformComponent& transform_, RenderComponent& render_) :
+		StageObjectBase(
+			transform_,
+			render_
+		)
+	{
+	};
 };
 #endif

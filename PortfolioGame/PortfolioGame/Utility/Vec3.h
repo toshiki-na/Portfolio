@@ -24,7 +24,7 @@ public:
 	}
 
 	//ベクトルの長さの二乗の取得
-	inline float LengthSq()const
+	inline float LengthSq() const
 	{
 		float length_squared = x * x + y * y + z * z;
 		return length_squared;
@@ -46,9 +46,20 @@ public:
 		return result;
 	}
 
+	//0ベクトル
 	inline static Vec3 Zero()
 	{
 		return Vec3{ 0.0f, 0.0f, 0.0f };
+	}
+
+	//逆ベクトル
+	inline Vec3 Negative() const
+	{
+		Vec3 result = Zero();
+		result.x = -x;
+		result.y = -y;
+		result.z = -z;
+		return result;
 	}
 
 	//DXライブラリVECTORにVec3を変換

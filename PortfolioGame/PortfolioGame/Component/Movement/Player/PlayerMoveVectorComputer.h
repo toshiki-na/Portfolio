@@ -10,19 +10,30 @@ class PlayerMoveVectorComputer : public IMoveVectorComputer
 {
 public:
 	//コンストラクタ
-	PlayerMoveVectorComputer(std::unique_ptr<IPlayerInput> input_) :
-		input(std::move(input_))
+	PlayerMoveVectorComputer(std::unique_ptr<IPlayerInput> input_, Vec3* camera_position_form_target_vector_ = nullptr) :
+		input(std::move(input_)),
+		camera_position_form_target_vector(camera_position_form_target_vector_)
 	{
 	}
 
-	//移動方向の取得
-	Vec3 GetVector() override
+	//カメラの注視点から位置までのベクトルのセット
+	void SetCameraPositionFormTargetVector(Vec3* camera_position_form_target_vector_)
 	{
-		return input->GetMoveInput();
+		camera_position_form_target_vector = camera_position_form_target_vector_;
 	}
+
+	//移動方向の取得
+	Vec3 GetVector() override;
+
+private:
+	//移動方向の計算
+	Vec3 CalculateMoveVec();
 
 private:
 	//プレイヤー入力
 	std::unique_ptr<IPlayerInput> input;
+
+	//カメラの注視点から位置までのベクトル
+	Vec3* camera_position_form_target_vector;
 };
 #endif

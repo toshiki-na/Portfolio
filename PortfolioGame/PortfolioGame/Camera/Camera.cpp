@@ -1,6 +1,6 @@
 #include "Camera.h"
 #include <DxLib.h>
-#include "../Constant/ConstantValue.h"
+#include "../Constant/InitialValue.h"
 #include "../Utility/Vec3.h"
 #include "../Component/Transform/TransformComponent.h"
 
@@ -83,8 +83,11 @@ void Camera::Rotate()
 		return;
 	}
 
-	//“ü—Í‚ÌˆÚ“®—Ê‚©‚ç‹“_Š´“x‚ğ‚©‚¯‚Ä‰ñ“]
-	Vec3 input_delta = input->GetLookInput() * sensitivity;
+	//“ü—Íæ“¾
+	Vec3 input_delta = input->GetLookInput();
+
+	//‹“_Š´“x”½‰f
+	input_delta *= sensitivity;
 
 	//ƒˆ[Šp‰ÁZ(ƒ}ƒEƒXˆÚ“®‚Æ‹t‰ñ“]‚³‚¹‚½‚¢‚Ì‚ÅŒ¸Z)
 	yaw_angle -= input_delta.x;

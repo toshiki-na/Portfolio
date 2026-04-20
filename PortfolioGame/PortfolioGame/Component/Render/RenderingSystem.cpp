@@ -15,6 +15,12 @@ void RenderingSystem::Register(RenderComponent* component_, ComponentLayer layer
 		enemy_renders.push_back(component_);
 		break;
 
+		//ステージ
+	case ComponentLayer::Stage:
+		stage_renders.push_back(component_);
+		break;
+
+		//例外
 	default:
 		break;
 	}
@@ -24,16 +30,26 @@ void RenderingSystem::Register(RenderComponent* component_, ComponentLayer layer
 //描画
 void RenderingSystem::Draw()
 {
-	//敵の更新
+	//ステージ描画
+	for (auto& StageRender : stage_renders)
+	{
+		StageRender->Draw();
+	}
+
+	//敵の描画
 	for (auto& EnemyRender : enemy_renders)
 	{
 		EnemyRender->Draw();
 	}
 
-	//プレイヤー更新
-	player_render->Draw();
+	//プレイヤー描画
+	if (player_render != nullptr)
+	{
+		player_render->Draw();
+	}
 
 	//描画が終わったら登録された描画コンポーネントリセット
 	player_render = nullptr;
 	enemy_renders.clear();
+	stage_renders.clear();
 }

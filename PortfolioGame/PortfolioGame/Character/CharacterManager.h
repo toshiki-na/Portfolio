@@ -3,7 +3,7 @@
 
 #include <memory>
 #include <vector>
-#include "../Constant/Tag.h"
+#include "../Utility/Vec3.h"
 #include "CharacterFactory.h"
 #include "CharacterBase.h"
 
@@ -30,8 +30,11 @@ public:
 	CharacterManager(CharacterManager&&) = delete;
 	CharacterManager& operator=(CharacterManager&&) = delete;
 
-	//キャラクターの生成
-	void Create(CharacterType type_);
+	//プレイヤーの生成
+	void CreatePlayer(Vec3* camera_position_form_target_vector_);
+
+	//敵の生成
+	void CreateEnemy();
 
 	//プレイヤー座標の取得
 	TransformComponent* GetPlayerTransform()

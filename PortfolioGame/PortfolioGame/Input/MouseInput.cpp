@@ -62,7 +62,25 @@ bool MouseInput::IsJustReleased(MouseInput::Button button_) const
 //マウスの移動方向の取得
 Vec3 MouseInput::GetMouseMove() const
 {
-	return move;
+	Vec3 result = move;
+
+	//入力の遊び
+	if (result.x >= -INPUT_MARGIN && result.x <= INPUT_MARGIN)
+	{
+		result.x = 0.0f;
+	}
+	if (result.y >= -INPUT_MARGIN && result.y <= INPUT_MARGIN)
+	{
+		result.y = 0.0f;
+	}
+
+	//正規化
+	if (result.LengthSq() > 0.0f)
+	{
+		result = result.Normalized();
+	}
+
+	return result;
 }
 
 //各ボタンのビットマスク値を取得

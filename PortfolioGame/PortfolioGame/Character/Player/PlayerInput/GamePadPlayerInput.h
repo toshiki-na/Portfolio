@@ -46,6 +46,7 @@ public:
 
 
 private:
+	//ゲームパッド入力
 	GamePadInput& input;
 };
 #endif

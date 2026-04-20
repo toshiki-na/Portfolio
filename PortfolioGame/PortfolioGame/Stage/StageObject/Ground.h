@@ -8,13 +8,12 @@ class Ground : public StageObjectBase
 {
 public:
 	//コンストラクタ
-	Ground() = default;
-
-	//描画
-	void Draw()const override;
-
-private:
-	//位置
-	Vec3 position{ Vec3::Zero() };
+	Ground(TransformComponent& transform_, RenderComponent& render_) :
+		StageObjectBase(
+			transform_,
+			render_
+		)
+	{
+	};
 };
 #endif
