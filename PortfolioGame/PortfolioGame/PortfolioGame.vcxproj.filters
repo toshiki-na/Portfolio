@@ -70,6 +70,9 @@
     <Filter Include="Stage\StageObject">
       <UniqueIdentifier>{7bbcb7c9-e023-4e95-986a-d7ea7013a089}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\Collider">
+      <UniqueIdentifier>{25179827-ab7d-4c11-887d-84314b60b45c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">

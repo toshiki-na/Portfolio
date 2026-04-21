@@ -1,0 +1,3 @@
+#ifndef COLLISION_SYSTEM_H
+#define COLLISION_SYSTEM_H
+#endif
