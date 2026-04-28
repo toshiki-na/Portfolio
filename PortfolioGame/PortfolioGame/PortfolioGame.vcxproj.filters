@@ -70,8 +70,14 @@
     <Filter Include="Stage\StageObject">
       <UniqueIdentifier>{7bbcb7c9-e023-4e95-986a-d7ea7013a089}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collider">
+    <Filter Include="Component\Collision">
       <UniqueIdentifier>{25179827-ab7d-4c11-887d-84314b60b45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collision\Narrow">
+      <UniqueIdentifier>{d650d305-e948-47af-acdf-50de5231154f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collision\Broad">
+      <UniqueIdentifier>{e3151200-5d72-4caa-bf5f-6f5736284a82}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +173,15 @@
     </ClCompile>
     <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp">
       <Filter>Component\Movement\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\ColliderComponent.cpp">
+      <Filter>Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\CollisionSystem.cpp">
+      <Filter>Component\Collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +340,21 @@
     </ClInclude>
     <ClInclude Include="Constant\InitialValue.h">
       <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Broad\BroadCollider.h">
+      <Filter>Component\Collision\Broad</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Narrow\NarrowCollider.h">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Narrow\NarrowColliderFactory.h">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\ColliderComponent.h">
+      <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\CollisionSystem.h">
+      <Filter>Component\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

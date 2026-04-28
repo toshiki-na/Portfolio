@@ -1,0 +1,11 @@
+#ifndef NARROW_COLLIDER_FACTORY_H
+#define NARROW_COLLIDER_FACTORY_H
+
+#include "NarrowCollider.h"
+
+class NarrowColliderFactory
+{
+	//è’ìÀîªíËÇÃê∂ê¨
+	static NarrowCollider Create();
+};
+#endif

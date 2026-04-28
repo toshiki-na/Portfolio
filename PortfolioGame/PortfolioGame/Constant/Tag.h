@@ -42,6 +42,25 @@ enum class ComponentLayer
 	UI,		//UI
 };
 
+//衝突判定形状タグ一覧
+enum class ColliderShapeTag
+{
+	Ray,	//直線
+	Sphere,	//球
+	Box,	//直方体
+};
+
+//衝突判定情報タグ一覧
+enum class ColliderInformationTag
+{
+	Position,	//位置
+	Start,		//始点
+	End,		//終点
+	Radius,		//半径
+	Scale,		//サイズ
+	Rotate,		//回転角度
+};
+
 //リソース管理用タグ一覧
 //3Dモデル
 enum class ModelTag

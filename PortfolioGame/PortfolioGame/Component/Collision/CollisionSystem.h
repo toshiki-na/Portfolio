@@ -2,6 +2,8 @@
 #define COLLISION_SYSTEM_H
 
 #include <vector>
+#include "Broad/BroadCollider.h"
+#include "Narrow/NarrowCollider.h"
 
 class CollisionSystem
 {
@@ -18,13 +20,19 @@ public:
 	CollisionSystem(CollisionSystem&&) = delete;
 	CollisionSystem& operator=(CollisionSystem&&) = delete;
 
-	//ŠÈˆÕ“–‚½‚è”»’è‚Ì“o˜^
+	//ŠÈˆÕÕ“Ë”»’è‚Ì“o˜^
+	void BroadRegister(BroadCollider* broad_collider_, ComponentLayer layer_);
 
+	//Õ“Ë”»’è‚Ì“o˜^
+	void NarrowRegister(NarrowCollider* narrow_collider_, ComponentLayer layer_);
 
 	//XV
 	void Update();
 
 private:
+
+private:
+
 
 };
 #endif

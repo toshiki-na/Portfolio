@@ -16,20 +16,20 @@ public:
 
 	//ゲッター
 	//位置取得
-	const Vec3& GetPosition() const
+	const Vec3 GetPosition() const
 	{
 		return position;
 	}
 
 	//前方ベクトル取得
-	const Vec3& GetForward() const
+	const Vec3 GetForward() const
 	{
 		return forward;
 	}
 
 
 	//回転角度取得
-	const float& GetYawRadian() const
+	const float GetYawRadian() const
 	{
 		return yaw_radian;
 	}

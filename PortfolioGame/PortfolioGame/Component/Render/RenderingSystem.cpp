@@ -24,7 +24,6 @@ void RenderingSystem::Register(RenderComponent* component_, ComponentLayer layer
 	default:
 		break;
 	}
-
 }
 
 //•`‰æ

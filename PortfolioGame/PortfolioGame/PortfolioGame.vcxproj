@@ -143,6 +143,9 @@
     <ClCompile Include="Camera\CameraFactory.cpp" />
     <ClCompile Include="Character\CharacterFactory.cpp" />
     <ClCompile Include="Character\CharacterManager.cpp" />
+    <ClCompile Include="Component\Collision\ColliderComponent.cpp" />
+    <ClCompile Include="Component\Collision\CollisionSystem.cpp" />
+    <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp" />
     <ClCompile Include="Component\Movement\MovementComponent.cpp" />
     <ClCompile Include="Component\Movement\MovementSystem.cpp" />
     <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp" />
@@ -184,6 +187,11 @@
     <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h" />
     <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h" />
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
+    <ClInclude Include="Component\Collision\Broad\BroadCollider.h" />
+    <ClInclude Include="Component\Collision\ColliderComponent.h" />
+    <ClInclude Include="Component\Collision\CollisionSystem.h" />
+    <ClInclude Include="Component\Collision\Narrow\NarrowCollider.h" />
+    <ClInclude Include="Component\Collision\Narrow\NarrowColliderFactory.h" />
     <ClInclude Include="Component\Movement\IMoveVectorComputer.h" />
     <ClInclude Include="Component\Movement\MovementComponent.h" />
     <ClInclude Include="Component\Movement\MovementSystem.h" />
