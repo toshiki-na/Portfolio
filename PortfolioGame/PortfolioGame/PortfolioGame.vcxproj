@@ -143,6 +143,7 @@
     <ClCompile Include="Camera\CameraFactory.cpp" />
     <ClCompile Include="Character\CharacterFactory.cpp" />
     <ClCompile Include="Character\CharacterManager.cpp" />
+    <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp" />
     <ClCompile Include="Component\Collision\ColliderComponent.cpp" />
     <ClCompile Include="Component\Collision\CollisionSystem.cpp" />
     <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h" />
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h" />
     <ClInclude Include="Component\Collision\Broad\BroadCollider.h" />
+    <ClInclude Include="Component\Collision\Broad\BroadColliderFactory.h" />
     <ClInclude Include="Component\Collision\ColliderComponent.h" />
     <ClInclude Include="Component\Collision\CollisionSystem.h" />
     <ClInclude Include="Component\Collision\Narrow\NarrowCollider.h" />

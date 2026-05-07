@@ -1,7 +1,8 @@
 #include "NarrowColliderFactory.h"
+#include <memory>
 #include "NarrowCollider.h"
 
-NarrowCollider NarrowColliderFactory::Create()
+std::unique_ptr<NarrowCollider> NarrowColliderFactory::Create()
 {
 	//Õ“Ë”»’è‚Ì¶¬
 }

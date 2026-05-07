@@ -2,6 +2,7 @@
 #define COLLISION_SYSTEM_H
 
 #include <vector>
+#include "ColliderComponent.h"
 #include "Broad/BroadCollider.h"
 #include "Narrow/NarrowCollider.h"
 
@@ -20,19 +21,27 @@ public:
 	CollisionSystem(CollisionSystem&&) = delete;
 	CollisionSystem& operator=(CollisionSystem&&) = delete;
 
-	//簡易衝突判定の登録
-	void BroadRegister(BroadCollider* broad_collider_, ComponentLayer layer_);
-
-	//衝突判定の登録
-	void NarrowRegister(NarrowCollider* narrow_collider_, ComponentLayer layer_);
+	//衝突判定コンポーネントの登録
+	void Register(ColliderComponent* component_, ComponentLayer layer_);
 
 	//更新
 	void Update();
 
 private:
+	//簡易衝突判定
+	bool BroadCollision(BroadCollider* collider_01_, BroadCollider* collider_02_);
+
+	//衝突判定
+	bool NarrowCollision(NarrowCollider* collider_01_, NarrowCollider* collider_02_);
 
 private:
+	//プレイヤー衝突判定コンポーネント
+	ColliderComponent* player_collider{ nullptr };
 
+	//武器衝突判定コンポーネント
+	ColliderComponent* weapon_collider{ nullptr };
 
+	//敵衝突判定コンポーネント
+	std::vector<ColliderComponent*> enemy_colliders;
 };
 #endif

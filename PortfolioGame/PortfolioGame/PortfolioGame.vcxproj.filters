@@ -183,6 +183,9 @@
     <ClCompile Include="Component\Collision\CollisionSystem.cpp">
       <Filter>Component\Collision</Filter>
     </ClCompile>
+    <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp">
+      <Filter>Component\Collision\Broad</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\ClearScene.h">
@@ -355,6 +358,9 @@
     </ClInclude>
     <ClInclude Include="Component\Collision\CollisionSystem.h">
       <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Broad\BroadColliderFactory.h">
+      <Filter>Component\Collision\Broad</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

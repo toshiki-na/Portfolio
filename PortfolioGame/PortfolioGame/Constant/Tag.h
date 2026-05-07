@@ -37,6 +37,7 @@ enum class CharacterType
 enum class ComponentLayer
 {
 	Player,	//プレイヤー 
+	Weapon,	//武器
 	Enemy,	//敵
 	Stage,	//ステージ
 	UI,		//UI
