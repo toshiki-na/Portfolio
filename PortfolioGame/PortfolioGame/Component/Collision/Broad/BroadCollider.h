@@ -8,10 +8,12 @@ struct BroadCollider
 {
 public:
 	//コンストラクタ
-	BroadCollider(Vec3 positon_ = Vec3::Zero(), Vec3 scale_ = Vec3::Zero(), float object_height_ = 0.0f) :
+	BroadCollider(Vec3 positon_ = Vec3::Zero(), Vec3 scale_ = Vec3::Zero()) :
 		positon(positon_),
 		scale(scale_)
 	{
+		//y軸方向にはスケールの半分追加
+		positon.y += scale.y / 2.0f;
 	}
 
 	//位置座標
@@ -19,8 +21,5 @@ public:
 
 	//立幅・横幅スケール
 	Vec3 scale;
-
-	//オブジェクトの高さ
-	float object_height{ 0.0f };
 };
 #endif

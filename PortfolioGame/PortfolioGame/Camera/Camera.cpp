@@ -3,6 +3,8 @@
 #include "../Constant/InitialValue.h"
 #include "../Utility/Vec3.h"
 #include "../Component/Transform/TransformComponent.h"
+#include "../ResourceManager/ResourceSystemManager.h"
+#include "../ResourceManager/ModelResourceManager.h"
 
 //初期化
 void Camera::Initialize(TransformComponent* target_)
@@ -32,7 +34,6 @@ void Camera::Initialize(TransformComponent* target_)
 
 	//視野角を初期値に
 	DxLib::SetupCamera_Perspective(fov * DIGREE_TO_RADIAN);
-
 }
 
 //更新
@@ -65,13 +66,54 @@ void Camera::Move()
 	if (target != nullptr) //ヌルチェック
 	{
 		//注視点補正(高さ上げ)
-		Vec3 correct_target_position = target->GetPosition() + camera_target_offset;
+		Vec3 adjust_target_position = target->GetPosition() + camera_target_offset;
 
-		//カメラ位置を計算
-		position = correct_target_position + (position_from_target * distance_form_target);
+		//次フレームのカメラ位置を計算
+		Vec3 next_position = adjust_target_position + (position_from_target * distance_form_target);
+
+		//地形との衝突判定
+		//地形のモデルハンドル取得
+		ModelResourceManager& model_resource_manager = ResourceSystemManager::Instance().GetModelManager();
+		int wall_handle = model_resource_manager.GetHandle(ModelTag::Wall);
+		int ground_hande = model_resource_manager.GetHandle(ModelTag::Ground);
+
+		//壁との衝突判定
+		DxLib::MV1_COLL_RESULT_POLY wall_coll_result = DxLib::MV1CollCheck_Line(wall_handle, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
+
+		//当たっていたら壁の手前で停止
+		if (wall_coll_result.HitFlag == 1)
+		{
+			Vec3 wall_coll_position;
+			wall_coll_position.x = wall_coll_result.HitPosition.x;
+			wall_coll_position.y = wall_coll_result.HitPosition.y;
+			wall_coll_position.z = wall_coll_result.HitPosition.z;
+
+			next_position = adjust_target_position + (position_from_target * (distance_form_target - (wall_coll_position - next_position).Length()));
+		}
+
+		//床との衝突判定
+		DxLib::MV1_COLL_RESULT_POLY ground_coll_result = DxLib::MV1CollCheck_Line(ground_hande, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
+
+		//当たっていたらその地点が次の移動地点
+		if (ground_coll_result.HitFlag == 1)
+		{
+			Vec3 ground_coll_position;
+			ground_coll_position.x = ground_coll_result.HitPosition.x;
+			ground_coll_position.y = ground_coll_result.HitPosition.y;
+			ground_coll_position.z = ground_coll_result.HitPosition.z;
+
+			next_position = adjust_target_position + (position_from_target * (distance_form_target - (ground_coll_position - next_position).Length()));
+		}
+
+		//地面にめり込まないように補正
+		if (next_position.y <= 0.0f)
+		{
+			next_position.y = 25.0f;
+		}
+
 
 		//座標と注視点、上方向を指定
-		DxLib::SetCameraPositionAndTargetAndUpVec(position.ToDXLibVECTOR(), correct_target_position.ToDXLibVECTOR(), up_vector.ToDXLibVECTOR());
+		DxLib::SetCameraPositionAndTargetAndUpVec(next_position.ToDXLibVECTOR(), adjust_target_position.ToDXLibVECTOR(), up_vector.ToDXLibVECTOR());
 	}
 }
 

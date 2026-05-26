@@ -1,9 +1,9 @@
 #include "RenderingSystem.h"
 
 //描画コンポーネントの登録
-void RenderingSystem::Register(RenderComponent* component_, ComponentLayer layer_)
+void RenderingSystem::Register(RenderComponent* component_)
 {
-	switch (layer_)
+	switch (component_->GetLayer())
 	{
 		//プレイヤー
 	case ComponentLayer::Player:

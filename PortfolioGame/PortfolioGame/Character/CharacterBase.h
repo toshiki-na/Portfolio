@@ -3,38 +3,46 @@
 
 #include <memory>
 #include "../Utility/Vec3.h"
+#include "../Constant/Tag.h"
+#include "ICharacterInput.h"
+#include "../Component/State/StateComponent.h"
 #include "../Component/Transform/TransformComponent.h"
 #include "../Component/Movement/MovementComponent.h"
 #include "../Component/Render/RenderComponent.h"
+#include "../Component/Animation/AnimatorComponent.h"
 
 class CharacterBase
 {
 public:
 	//コンストラクタ
-	CharacterBase(TransformComponent& transform_, MovementComponent& movement_, RenderComponent& render_) :
+	CharacterBase(std::unique_ptr<ICharacterInput> input_, StateComponent& state_, TransformComponent& transform_, MovementComponent& movement_, AnimatorComponent& animator_, RenderComponent& render_) :
+		input(std::move(input_)),
+		state(std::move(state_)),
 		transform(std::move(transform_)),
 		movement(std::move(movement_)),
+		animator(std::move(animator_)),
 		render(std::move(render_))
 	{
-		//位置情報参照先セット
-		movement.SetTransformComponent(&transform);
+		//各コンポーネントに必要な参照先を設定
+		movement.SetComponent(&state, &transform);
+		animator.SetStateComponennt(&state);
 		render.SetTransformComponent(&transform);
 	}
 
 	//生存状態取得
 	bool GetActive() const
 	{
-		return active;
+		return state.IsActive();
 	}
 
 	//現在HP取得
 	int GetHP() const
 	{
-		return hp;
+		return state.GetHP();
 	}
 
 	//位置座標コンポーネント取得
-	TransformComponent* GetTransform()
+	TransformComponent*  GetTransform()
 	{
 		return &transform;
 	}
@@ -45,6 +53,12 @@ public:
 		return &movement;
 	}
 
+	//アニメーションコンポーネント取得
+	AnimatorComponent* GetAnimator()
+	{
+		return &animator;
+	}
+
 	//描画コンポーネント取得
 	RenderComponent* GetRender()
 	{
@@ -52,11 +66,14 @@ public:
 	}
 
 protected:
-	//生存フラグ
-	bool active{ true };
+	//キャラクターの種類タグ(各キャラクターオブジェクトのコンストラクタで設定)
+	CharacterType character_type{ CharacterType::None };
 
-	//HP
-	int hp{ 100 };
+	//入力
+	std::unique_ptr<ICharacterInput> input{ nullptr };
+
+	//状態コンポーネント
+	StateComponent state;
 
 	//位置座標コンポーネント
 	TransformComponent transform;
@@ -64,6 +81,9 @@ protected:
 	//移動コンポーネント
 	MovementComponent movement;
 
+	//アニメーションコンポーネント
+	AnimatorComponent animator;
+	
 	//描画コンポーネント
 	RenderComponent render;
 };

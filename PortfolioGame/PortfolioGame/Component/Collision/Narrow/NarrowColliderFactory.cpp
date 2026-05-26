@@ -5,4 +5,5 @@
 std::unique_ptr<NarrowCollider> NarrowColliderFactory::Create()
 {
 	//Õ“Ë”»’è‚Ì¶¬
+	return nullptr;
 }

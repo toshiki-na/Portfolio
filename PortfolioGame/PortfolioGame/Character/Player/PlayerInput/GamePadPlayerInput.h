@@ -1,12 +1,12 @@
 #ifndef GAMEPAD_PLAYER_INPUT_H
 #define GAMEPAD_PLAYER_INPUT_H
 
-#include "IPlayerInput.h"
+#include "../../ICharacterInput.h"
 #include "../../../Utility/Vec3.h"
 #include "../../../Input/InputSystems.h"
 #include "../../../Input/GamePadInput.h"
 
-class GamePadPlayerInput : public IPlayerInput
+class GamePadPlayerInput : public ICharacterInput
 {
 public:
 	//コンストラクタ

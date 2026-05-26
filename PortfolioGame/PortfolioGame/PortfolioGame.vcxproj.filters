@@ -13,9 +13,6 @@
     <Filter Include="ResourceManager">
       <UniqueIdentifier>{062a0d80-cbff-483f-b8bd-fe78c7e6275a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FPSController">
-      <UniqueIdentifier>{1e01a54a-8d22-482f-8ed5-ac33167a6d45}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Utility">
       <UniqueIdentifier>{8c9fdc98-ad88-4fe9-a626-3d5faa974f3a}</UniqueIdentifier>
     </Filter>
@@ -79,6 +76,24 @@
     <Filter Include="Component\Collision\Broad">
       <UniqueIdentifier>{e3151200-5d72-4caa-bf5f-6f5736284a82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Component\Collision\SweepAndPrune">
+      <UniqueIdentifier>{52f2070f-ebe6-413e-98cd-85f545961677}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation">
+      <UniqueIdentifier>{4f0ac1fc-0907-4083-bcfc-faf691ffe327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\State">
+      <UniqueIdentifier>{8b66b473-5eca-4cec-b10e-2ef310f38317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Movement\Enemy">
+      <UniqueIdentifier>{4add9bb3-8c5a-42af-92ac-8c6f6e333c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation\Player">
+      <UniqueIdentifier>{dac661ce-b418-4d10-aec4-f142043c7916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation\Enemy">
+      <UniqueIdentifier>{25a0045d-f454-4917-a3e5-684e9db53452}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -101,9 +116,6 @@
     </ClCompile>
     <ClCompile Include="Scene\TitleScene.cpp">
       <Filter>Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="FPSController\FPSController.cpp">
-      <Filter>FPSController</Filter>
     </ClCompile>
     <ClCompile Include="ResourceManager\ModelResourceManager.cpp">
       <Filter>ResourceManager</Filter>
@@ -171,7 +183,7 @@
     <ClCompile Include="Character\CharacterManager.cpp">
       <Filter>Character</Filter>
     </ClCompile>
-    <ClCompile Include="Component\Movement\Player\PlayerMoveVectorComputer.cpp">
+    <ClCompile Include="Component\Movement\Player\PlayerMovementComputer.cpp">
       <Filter>Component\Movement\Player</Filter>
     </ClCompile>
     <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp">
@@ -185,6 +197,21 @@
     </ClCompile>
     <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp">
       <Filter>Component\Collision\Broad</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\AnimationSystem.cpp">
+      <Filter>Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\AnimatorComponent.cpp">
+      <Filter>Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\Enemy\EnemyMovementComputer.cpp">
+      <Filter>Component\Movement\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\Player\PlayerAnimation.cpp">
+      <Filter>Component\Animation\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\Enemy\EnemyAnimation.cpp">
+      <Filter>Component\Animation\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,9 +241,6 @@
     </ClInclude>
     <ClInclude Include="ResourceManager\ResourceSystemManager.h">
       <Filter>ResourceManager</Filter>
-    </ClInclude>
-    <ClInclude Include="FPSController\FPSController.h">
-      <Filter>FPSController</Filter>
     </ClInclude>
     <ClInclude Include="Utility\Vec3.h">
       <Filter>Utility</Filter>
@@ -284,9 +308,6 @@
     <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h">
       <Filter>Character\Player\PlayerInput</Filter>
     </ClInclude>
-    <ClInclude Include="Character\Player\PlayerInput\IPlayerInput.h">
-      <Filter>Character\Player\PlayerInput</Filter>
-    </ClInclude>
     <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
       <Filter>Character\Player\PlayerInput</Filter>
     </ClInclude>
@@ -302,10 +323,10 @@
     <ClInclude Include="Component\Movement\MovementSystem.h">
       <Filter>Component\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="Component\Movement\IMoveVectorComputer.h">
+    <ClInclude Include="Component\Movement\IMovementComputer.h">
       <Filter>Component\Movement</Filter>
     </ClInclude>
-    <ClInclude Include="Component\Movement\Player\PlayerMoveVectorComputer.h">
+    <ClInclude Include="Component\Movement\Player\PlayerMovementComputer.h">
       <Filter>Component\Movement\Player</Filter>
     </ClInclude>
     <ClInclude Include="Character\CharacterFactory.h">
@@ -361,6 +382,36 @@
     </ClInclude>
     <ClInclude Include="Component\Collision\Broad\BroadColliderFactory.h">
       <Filter>Component\Collision\Broad</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\SweepAndPrune\SAPBuffer.h">
+      <Filter>Component\Collision\SweepAndPrune</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\IAnimation.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\AnimationSystem.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\State\StateComponent.h">
+      <Filter>Component\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\AnimatorComponent.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\ICharacterInput.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Enemy\Enemy.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\Enemy\EnemyMovementComputer.h">
+      <Filter>Component\Movement\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\Player\PlayerAnimation.h">
+      <Filter>Component\Animation\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\Enemy\EnemyAnimation.h">
+      <Filter>Component\Animation\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

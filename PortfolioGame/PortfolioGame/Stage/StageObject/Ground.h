@@ -2,7 +2,9 @@
 #define GROUND_H
 
 #include "StageObjectBase.h"
+#include <DXLib.h>
 #include "../../Utility/Vec3.h"
+#include "../../ResourceManager/ResourceSystemManager.h"
 
 class Ground : public StageObjectBase
 {
@@ -14,6 +16,8 @@ public:
 			render_
 		)
 	{
+		//Õ“Ë”»’è‚Ì€”õ
+		DxLib::MV1SetupCollInfo(ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Ground));
 	};
 };
 #endif

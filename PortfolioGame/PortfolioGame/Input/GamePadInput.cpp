@@ -68,8 +68,8 @@ Vec3 GamePadInput::GetLeftStick() const
 {
 	Vec3 result;
 
-	result.x = static_cast<float>(now_state.ThumbLX);
-	result.y = static_cast<float>(now_state.ThumbLY);
+	result.x = static_cast<float>(now_state.ThumbLX) / 32768.0f;
+	result.y = static_cast<float>(now_state.ThumbLY) / 32768.0f;
 	result.z = 0.0f;
 
 	//“ü—Í‚Ì—V‚Ñ
@@ -96,8 +96,8 @@ Vec3 GamePadInput::GetRightStick() const
 {
 	Vec3 result;
 
-	result.x = static_cast<float>(now_state.ThumbRX);
-	result.y = static_cast<float>(now_state.ThumbRY);
+	result.x = static_cast<float>(now_state.ThumbRX) / 32768.0f;
+	result.y = static_cast<float>(now_state.ThumbRY) / 32768.0f;
 	result.z = 0.0f;
 
 	//“ü—Í‚Ì—V‚Ñ

@@ -1,13 +1,13 @@
 #ifndef KEYBOARD_AND_MOUSE_PLAYER_INPUT_H
 #define KEYBOARD_AND_MOUSE_PLAYER_INPUT_H
 
-#include "IPlayerInput.h"
+#include "../../ICharacterInput.h"
 #include "../../../Utility/Vec3.h"
 #include "../../../Input/InputSystems.h"
 #include "../../../Input/MouseInput.h"
 #include "../../../Input/KeyBoardInput.h"
 
-class KeyBoardAndMousePlayerInput : public IPlayerInput
+class KeyBoardAndMousePlayerInput : public ICharacterInput
 {
 public:
 	//コンストラクタ

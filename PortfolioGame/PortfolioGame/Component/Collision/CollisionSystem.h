@@ -3,8 +3,7 @@
 
 #include <vector>
 #include "ColliderComponent.h"
-#include "Broad/BroadCollider.h"
-#include "Narrow/NarrowCollider.h"
+#include "SweepAndPrune/SAPBuffer.h"
 
 class CollisionSystem
 {
@@ -13,7 +12,7 @@ public:
 	CollisionSystem() = default;
 
 	//デストラクタ
-	CollisionSystem() = default;
+	~CollisionSystem() = default;
 
 	//コピー&ムーブ禁止
 	CollisionSystem(const CollisionSystem&) = delete;
@@ -22,26 +21,44 @@ public:
 	CollisionSystem& operator=(CollisionSystem&&) = delete;
 
 	//衝突判定コンポーネントの登録
-	void Register(ColliderComponent* component_, ComponentLayer layer_);
+	void Register(ColliderComponent* component_);
 
 	//更新
 	void Update();
 
 private:
 	//簡易衝突判定
-	bool BroadCollision(BroadCollider* collider_01_, BroadCollider* collider_02_);
+	void SAPBroadCollision();
+
+	//YZ軸方向のAABB衝突判定
+	bool CheackYZAABBCollision(SAPBuffer sap_01_, SAPBuffer sap_02_);
 
 	//衝突判定
-	bool NarrowCollision(NarrowCollider* collider_01_, NarrowCollider* collider_02_);
+	void NarrowCollision();
+
+	//線分と線分の衝突判定
+	void CheackCollisionRayAndRay(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+
+	//球と球の衝突判定
+	void CheackCollisionSphereAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+
+	//OBBとOBBの衝突判定
+	void CheackCollisionOBBAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+
+	//線分と球の衝突判定
+	void CheackCollisionRayAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+
+	//線分とOBBの衝突判定
+	void CheackCollisionRayAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+
+	//球とOBBの衝突判定
+	void CheackCollisionSphereAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
 
 private:
-	//プレイヤー衝突判定コンポーネント
-	ColliderComponent* player_collider{ nullptr };
+	//登録された衝突判定
+	std::vector<SAPBuffer> registered_colliders;
 
-	//武器衝突判定コンポーネント
-	ColliderComponent* weapon_collider{ nullptr };
-
-	//敵衝突判定コンポーネント
-	std::vector<ColliderComponent*> enemy_colliders;
+	//衝突判定ペア
+	std::vector<std::pair<ColliderComponent*, ColliderComponent*>> narrow_collision_pairs;
 };
 #endif

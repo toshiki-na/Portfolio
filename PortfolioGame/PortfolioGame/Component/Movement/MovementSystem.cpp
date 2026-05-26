@@ -1,9 +1,9 @@
 #include "MovementSystem.h"
 
 //移動コンポーネントの登録
-void MovementSystem::Register(MovementComponent* component_, ComponentLayer layer_)
+void MovementSystem::Register(MovementComponent* component_)
 {
-	switch (layer_)
+	switch (component_->GetLayer())
 	{
 		//プレイヤー
 	case ComponentLayer::Player:

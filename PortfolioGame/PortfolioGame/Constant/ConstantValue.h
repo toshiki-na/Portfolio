@@ -3,7 +3,7 @@
 
 #include <numbers>
 
-/*’è”éŒ¾êŠ*/
+/* ’è”éŒ¾êŠ */
 
 //‰æ–Ê‚Ìc‰¡•
 constexpr float SCREEN_WIDTH = 1600.0f;
@@ -16,5 +16,5 @@ constexpr float MILLISECONDS_TO_SECONDS = 0.001f;
 constexpr float DIGREE_TO_RADIAN = static_cast<float>(std::numbers::pi) / 180.0f;
 
 //“ü—Í‚Ì—V‚Ñ’l
-constexpr float INPUT_MARGIN = 0.1f;
+constexpr float INPUT_MARGIN = 0.5f;
 #endif

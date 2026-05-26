@@ -20,6 +20,10 @@ public:
 	{
 		return position;
 	}
+	Vec3* GetPositionPtr()
+	{
+		return &position;
+	}
 
 	//前方ベクトル取得
 	const Vec3 GetForward() const

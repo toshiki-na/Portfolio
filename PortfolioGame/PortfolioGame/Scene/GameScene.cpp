@@ -19,6 +19,9 @@ void GameScene::Initialize()
 	//カメラの初期化
 	context.camera->Initialize(context.character_manager->GetPlayerTransform());
 
+	//ライト設定
+	DxLib::CreateDirLightHandle(VGet(0.0f, -1.0f, 0.0f));
+
 	//初期化終了で更新へ移行
 	SceneManager::Instance().ChangeSceneStep(SceneStep::Update);
 }
@@ -42,6 +45,9 @@ void GameScene::Update()
 	//移動コンポーネント更新
 	context.movement_system->Update();
 
+	//アニメーションコンポーネント更新
+	context.animation_system->Update();
+
 	//描画処理
 	//描画画面のクリア
 	DxLib::ClearDrawScreen();
@@ -60,6 +66,13 @@ std::unique_ptr<SceneBase> GameScene::Terminate()
 	//リソースの解放
 	ResourceSystemManager::Instance().ReleaseScene(scene_type);
 
-	//シーン変更先を戻り値で返す
-	return SceneFactory::Create(SceneType::Title);
+	//次シーンを返す
+	//プレイヤーのHPが0ならゲームオーバーシーンへ
+	if (context.character_manager->GetPlayerHP() == 0)
+	{
+		return SceneFactory::Create(SceneType::GameOver);
+	}
+	
+	//プレイヤーのHPが0以外で終了するならゲームクリアシーンへ
+	return SceneFactory::Create(SceneType::Clear);
 }

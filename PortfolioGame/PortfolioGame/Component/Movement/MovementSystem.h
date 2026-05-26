@@ -21,7 +21,7 @@ public:
 	MovementSystem& operator=(MovementSystem&&) = delete;
 
 	//移動コンポーネントの登録
-	void Register(MovementComponent* component_, ComponentLayer layer_);
+	void Register(MovementComponent* component_);
 
 	//更新
 	void Update();

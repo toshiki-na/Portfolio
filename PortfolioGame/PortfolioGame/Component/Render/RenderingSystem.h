@@ -18,7 +18,7 @@ public:
 	RenderingSystem& operator=(RenderingSystem&&) = delete;
 
 	//•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì“o˜^
-	void Register(RenderComponent* component_, ComponentLayer layer_);
+	void Register(RenderComponent* component_);
 
 	//•`‰æ
 	void Draw();
@@ -26,7 +26,7 @@ public:
 private:
 	//“o˜^‚³‚ê‚½•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
 	//ƒvƒŒƒCƒ„[
-	RenderComponent* player_render;
+	RenderComponent* player_render{ nullptr };
 
 	//“G
 	std::vector<RenderComponent*> enemy_renders;

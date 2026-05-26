@@ -19,7 +19,7 @@ public:
 	//ƒxƒNƒgƒ‹‚Ì’·‚³‚ÌŽæ“¾
 	inline float Length() const
 	{
-		float length = sqrtf(x * x + y * y + z * z);
+		float length = std::sqrt(x * x + y * y + z * z);
 		return length;
 	}
 

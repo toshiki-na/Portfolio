@@ -37,7 +37,7 @@ std::unique_ptr<StageObjectBase> StageObjectFactory::Create(StageObjectType type
 		std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Skydome);
 
 		//描画コンポーネント生成
-		RenderComponent render(std::move(renderer));
+		RenderComponent render(std::move(renderer), ComponentLayer::Stage);
 
 		//空を生成して返す
 		return std::make_unique<Skydome>(transform, render);
@@ -53,7 +53,7 @@ std::unique_ptr<StageObjectBase> StageObjectFactory::Create(StageObjectType type
 		std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Ground);
 
 		//描画コンポーネント生成
-		RenderComponent render(std::move(renderer));
+		RenderComponent render(std::move(renderer), ComponentLayer::Stage);
 
 		//地面を生成して返す
 		return std::make_unique<Skydome>(transform, render);
@@ -69,7 +69,7 @@ std::unique_ptr<StageObjectBase> StageObjectFactory::Create(StageObjectType type
 		std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Wall);
 
 		//描画コンポーネント生成
-		RenderComponent render(std::move(renderer));
+		RenderComponent render(std::move(renderer), ComponentLayer::Stage);
 
 		//壁を生成して返す
 		return std::make_unique<Skydome>(transform, render);

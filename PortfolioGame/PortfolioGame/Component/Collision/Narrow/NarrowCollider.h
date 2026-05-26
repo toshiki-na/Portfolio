@@ -8,9 +8,6 @@
 struct NarrowCollider
 {
 public:
-	//コンストラクタ
-	NarrowCollider() = default;
-
 	//形状タグ
 	ColliderShapeTag shape;
 

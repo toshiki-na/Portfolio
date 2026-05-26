@@ -2,33 +2,42 @@
 #define MOVEMENT_COMPONENT_H
 
 #include <memory>
-#include "IMoveVectorComputer.h"
+#include "../../Constant/Tag.h"
+#include "IMovementComputer.h"
+#include "../State/StateComponent.h"
 #include "../Transform/TransformComponent.h"
 
 class MovementComponent
 {
 public:
 	//コンストラクタ
-	MovementComponent(float speed_, std::unique_ptr<IMoveVectorComputer> move_vec_computer_) :
-		speed(speed_),
-		move_vec_computer(std::move(move_vec_computer_))
+	MovementComponent(ComponentLayer layer_, std::unique_ptr<IMovementComputer> movement_computer_) :
+		layer(layer_),
+		movement_computer(std::move(movement_computer_))
 	{
 	}
 
-	//位置情報セット
-	void SetTransformComponent(TransformComponent* transform_);
+	//動態計算機に必要なコンポーネントの設定
+	void SetComponent(StateComponent* state_, TransformComponent* transform_)
+	{
+		movement_computer->SetStateComponent(state_);
+		movement_computer->SetTransformComponent(transform_);
+	}
+
+	//コンポーネントレイヤー取得
+	ComponentLayer GetLayer() const
+	{
+		return layer;
+	}
 
 	//更新
 	void Update();
 
 private:
-	//位置情報
-	TransformComponent* transform{ nullptr };
+	//コンポーネントレイヤー
+	ComponentLayer layer;
 
-	//移動速度(/s)
-	float speed{ 0.0f };
-
-	//移動方向計算機
-	std::unique_ptr<IMoveVectorComputer> move_vec_computer;
+	//動態計算機
+	std::unique_ptr<IMovementComputer> movement_computer;
 };
 #endif

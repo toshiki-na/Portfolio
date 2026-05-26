@@ -10,8 +10,9 @@
 #include "../../Character/CharacterManager.h"
 
 //コンポーネントシステム
-#include "../Component/Movement/MovementSystem.h"
-#include "../Component/Render/RenderingSystem.h"
+#include "../../Component/Movement/MovementSystem.h"
+#include "../../Component/Animation/AnimationSystem.h"
+#include "../../Component/Render/RenderingSystem.h"
 
 
 
@@ -24,10 +25,12 @@ public:
 		//カメラ生成
 		camera = CameraFactory::Create();
 
-
 		//コンポーネントシステム
 		//移動
 		movement_system = std::make_unique<MovementSystem>();
+
+		//アニメーション
+		animation_system = std::make_unique<AnimationSystem>();
 
 		//描画
 		rendering_system = std::make_unique<RenderingSystem>();
@@ -36,10 +39,10 @@ public:
 		stage = std::make_unique<Stage>((*rendering_system));
 
 		//キャラクターマネージャー生成
-		character_manager = std::make_unique<CharacterManager>((*movement_system), (*rendering_system));
+		character_manager = std::make_unique<CharacterManager>(*movement_system, *animation_system, *rendering_system);
 
 		//プレイヤー生成
-		character_manager->CreatePlayer(camera->GetPositionFromTargetVecPtr());
+		character_manager->CreateCharacter(CharacterType::Player, camera->GetPositionFromTargetVecPtr());
 	}
 
 	//デストラクタ
@@ -64,6 +67,9 @@ public:
 	//コンポーネントシステム
 	//移動
 	std::unique_ptr<MovementSystem> movement_system;
+
+	//アニメーション
+	std::unique_ptr<AnimationSystem> animation_system;
 
 	//描画
 	std::unique_ptr<RenderingSystem> rendering_system;

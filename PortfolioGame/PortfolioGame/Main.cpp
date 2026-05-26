@@ -14,11 +14,14 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     DxLib::ChangeWindowMode(true);
     DxLib::SetGraphMode(static_cast<int>(SCREEN_WIDTH), static_cast<int>(SCREEN_HEIGHT), 32);
 
-    //描画先キャンバスを裏キャンバスに指定
-    DxLib::SetDrawScreen(DX_SCREEN_BACK);
+    //ウィンドウタイトルの変更
+    SetMainWindowText("3Dアクションゲーム");
 
     //初期はマウスを画面上に表示するように
     DxLib::SetMouseDispFlag(true);
+
+    //描画先キャンバスを裏キャンバスに指定
+    DxLib::SetDrawScreen(DX_SCREEN_BACK);
 
     //ESCキーが押されるかエラーが出るまでループします
     while (DxLib::ProcessMessage() == 0 && DxLib::CheckHitKey(KEY_INPUT_ESCAPE) == 0)
