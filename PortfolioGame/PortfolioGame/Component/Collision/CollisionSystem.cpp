@@ -25,18 +25,13 @@ void CollisionSystem::SAPBroadCollision()
 {
 	//SweepAndPrune衝突判定
 	//x軸最小頂点をソート
-	std::sort(registered_colliders.begin(), registered_colliders.end(),
-		[](SAPBuffer buffer_01, SAPBuffer buffer_02)
-		{
-			return buffer_01.min_vertex.x < buffer_02.min_vertex.x;
-		}
-	);
+	SortCollidersXMinimum();
 
-	//最小頂点のxが小さい順でソート済みなので配列の前の簡易衝突判定の最大頂点のxよりも最小頂点のxが小さい簡易衝突判定はx軸方向で交差しているので衝突している可能性がある
 	for (int i = 0; i < registered_colliders.size() - 1; i++)
 	{
-		for (int j = 1; j < registered_colliders.size(); j++)
+		for (int j = i; j < registered_colliders.size(); j++)
 		{
+			//X軸の最大、最小頂点間に最小頂点があるオブジェクトとは当たってる可能性あり
 			if (registered_colliders[j].min_vertex.x <= registered_colliders[i].max_vertex.x)
 			{
 				//Y軸、Z軸方向のAABB衝突判定
@@ -54,6 +49,19 @@ void CollisionSystem::SAPBroadCollision()
 		}
 	}
 
+}
+
+//X軸最小頂点をソート
+void CollisionSystem::SortCollidersXMinimum()
+{
+	std::sort(
+		registered_colliders.begin(), 
+		registered_colliders.end(),
+		[](SAPBuffer buffer_01, SAPBuffer buffer_02)
+		{
+			return buffer_01.min_vertex.x < buffer_02.min_vertex.x;
+		}
+	);
 }
 
 //YZ軸方向のAABB衝突判定
@@ -79,11 +87,11 @@ void CollisionSystem::NarrowCollision()
 {
 	for (auto& NarrowCollisionPair : narrow_collision_pairs)
 	{
-		ColliderComponent* collider_01 = NarrowCollisionPair.first;
-		ColliderComponent* collider_02 = NarrowCollisionPair.second;
+		NarrowCollider narrow_collider_01 = NarrowCollisionPair.first->GetNarrowCollider();
+		NarrowCollider narrow_collider_02 = NarrowCollisionPair.second->GetNarrowCollider();
 
-		ColliderShapeTag collider_01_shape = collider_01->GetNarrowCollider().shape;
-		ColliderShapeTag collider_02_shape = collider_02->GetNarrowCollider().shape;
+		ColliderShapeTag collider_01_shape = narrow_collider_01.shape;
+		ColliderShapeTag collider_02_shape = narrow_collider_02.shape;
 
 		//線分と線分の衝突判定
 		if (collider_01_shape == ColliderShapeTag::Ray && collider_02_shape == ColliderShapeTag::Ray)
@@ -141,83 +149,5 @@ void CollisionSystem::NarrowCollision()
 				CheackCollisionSphereAndOBB(collider_02, collider_01);
 			}
 		}
-	}
-}
-
-//線分と線分の衝突判定
-void CollisionSystem::CheackCollisionRayAndRay(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Ray || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Ray)
-	{
-		//形状不一致で衝突判定終了
-		return;
-	}
-}
-
-//球と球の衝突判定
-void CollisionSystem::CheackCollisionSphereAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Sphere || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Sphere)
-	{
-		//形状不一致で衝突判定終了
-		return;
-	}
-
-	//衝突判定情報から距離と半径の2乗を取得
-	NarrowCollider narrow_collider_01 = collider_01_->GetNarrowCollider();
-	NarrowCollider narrow_collider_02 = collider_02_->GetNarrowCollider();
-	float distance_sq = (narrow_collider_01.information[ColliderInformationTag::Position] - narrow_collider_02.information[ColliderInformationTag::Position]).LengthSq();
-	float total_radius_sq = (narrow_collider_01.information[ColliderInformationTag::Radius] - narrow_collider_02.information[ColliderInformationTag::Radius]).LengthSq();
-
-	//衝突判定
-	if (distance_sq <= total_radius_sq)
-	{
-		//衝突している
-	}
-}
-
-//OBBとOBBの衝突判定
-void CollisionSystem::CheackCollisionOBBAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{	
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Box || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Box)
-	{
-		//形状不一致で衝突判定終了
-		return;
-	}
-}
-
-//線分と球の衝突判定
-void CollisionSystem::CheackCollisionRayAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Ray || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Sphere)
-	{
-		//形状不一致で衝突判定終了
-		return;
-	}
-}
-
-//線分とOBBの衝突判定
-void CollisionSystem::CheackCollisionRayAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{	
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Ray || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Box)
-	{
-		//形状不一致で衝突判定終了
-		return;
-	}
-}
-
-//球とOBBの衝突判定
-void CollisionSystem::CheackCollisionSphereAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_)
-{
-	//形状再確認
-	if (collider_01_->GetNarrowCollider().shape != ColliderShapeTag::Sphere || collider_02_->GetNarrowCollider().shape != ColliderShapeTag::Box)
-	{
-		//形状不一致で衝突判定終了
-		return;
 	}
 }

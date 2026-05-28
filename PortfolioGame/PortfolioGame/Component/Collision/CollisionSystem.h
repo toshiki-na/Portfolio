@@ -30,6 +30,9 @@ private:
 	//簡易衝突判定
 	void SAPBroadCollision();
 
+	//X軸方向に最小頂点ソート
+	void SortCollidersXMinimum();
+
 	//YZ軸方向のAABB衝突判定
 	bool CheackYZAABBCollision(SAPBuffer sap_01_, SAPBuffer sap_02_);
 
@@ -37,22 +40,22 @@ private:
 	void NarrowCollision();
 
 	//線分と線分の衝突判定
-	void CheackCollisionRayAndRay(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionRayAndRay(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 	//球と球の衝突判定
-	void CheackCollisionSphereAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionSphereAndSphere(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 	//OBBとOBBの衝突判定
-	void CheackCollisionOBBAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionOBBAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 	//線分と球の衝突判定
-	void CheackCollisionRayAndSphere(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionRayAndSphere(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 	//線分とOBBの衝突判定
-	void CheackCollisionRayAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionRayAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 	//球とOBBの衝突判定
-	void CheackCollisionSphereAndOBB(ColliderComponent* collider_01_, ColliderComponent* collider_02_);
+	bool CheackCollisionSphereAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
 
 private:
 	//登録された衝突判定

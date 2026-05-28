@@ -83,9 +83,7 @@ inline Vec3 operator+(const Vec3& vec01_, const Vec3& vec02_)
 //ベクトル同士の加算代入
 inline Vec3& operator+=(Vec3& vec01_, const Vec3& vec02_)
 {
-	vec01_.x += vec02_.x;
-	vec01_.y += vec02_.y;
-	vec01_.z += vec02_.z;
+	vec01_ = vec01_ + vec02_;
 	return vec01_;
 }
 
@@ -102,9 +100,7 @@ inline Vec3 operator-(const Vec3& vec01_, const Vec3& vec02_)
 //ベクトル同士の減算代入
 inline Vec3& operator-=(Vec3& vec01_, const Vec3& vec02_)
 {
-	vec01_.x -= vec02_.x;
-	vec01_.y -= vec02_.y;
-	vec01_.z -= vec02_.z;
+	vec01_ = vec01_ - vec02_;
 	return vec01_;
 }
 
@@ -130,10 +126,25 @@ inline Vec3 operator*(float magnification_, const Vec3& vec_)
 //ベクトルのスカラー倍代入
 inline Vec3& operator*=(Vec3& vec_, float magnification_)
 {
-	vec_.x *= magnification_;
-	vec_.y *= magnification_;
-	vec_.z *= magnification_;
+	vec_ = vec_ * magnification_;
 	return vec_;
+}
+
+//ベクトルのベクトル倍
+inline Vec3 operator*(const Vec3& vec_01_, const Vec3& vec_02_)
+{
+	Vec3 result;
+	result.x = vec_01_.x * vec_02_.x;
+	result.y = vec_01_.y * vec_02_.y;
+	result.z = vec_01_.z * vec_02_.z;
+	return result;
+}
+
+//ベクトルのベクトル倍代入
+inline Vec3& operator*=(Vec3& vec_01_, const Vec3& vec_02_)
+{
+	vec_01_ = vec_01_ * vec_02_;
+	return vec_01_;
 }
 
 class Vec3Math

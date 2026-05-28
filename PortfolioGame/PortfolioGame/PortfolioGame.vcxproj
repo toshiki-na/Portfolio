@@ -150,6 +150,7 @@
     <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp" />
     <ClCompile Include="Component\Collision\ColliderComponent.cpp" />
     <ClCompile Include="Component\Collision\CollisionSystem.cpp" />
+    <ClCompile Include="Component\Collision\CollisionSystemNarrowCollision.cpp" />
     <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp" />
     <ClCompile Include="Component\Movement\Enemy\EnemyMovementComputer.cpp" />
     <ClCompile Include="Component\Movement\MovementComponent.cpp" />

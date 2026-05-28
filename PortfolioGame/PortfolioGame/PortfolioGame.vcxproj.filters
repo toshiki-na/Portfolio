@@ -213,6 +213,9 @@
     <ClCompile Include="Component\Animation\Enemy\EnemyAnimation.cpp">
       <Filter>Component\Animation\Enemy</Filter>
     </ClCompile>
+    <ClCompile Include="Component\Collision\CollisionSystemNarrowCollision.cpp">
+      <Filter>Component\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene\ClearScene.h">
