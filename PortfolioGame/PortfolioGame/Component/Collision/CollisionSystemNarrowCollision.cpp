@@ -73,8 +73,6 @@ bool CollisionSystem::CheackCollisionOBBAndOBB(NarrowCollider& collider_01_, Nar
 		{-0.5f, -0.5f, -0.5f}, //¶‰ºè‘O
 		{-0.5f, -0.5f,  0.5f}, //¶‰º‰œ
 	};
-
-
 }
 
 //ü•ª‚Æ‹…‚ÌÕ“Ë”»’è

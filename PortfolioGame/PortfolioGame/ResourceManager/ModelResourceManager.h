@@ -2,6 +2,8 @@
 #define MODEL_RESOURCE_MANAGER_H
 
 #include <unordered_map>
+#include <array>
+#include "../Constant/InitialValue.h"
 #include "../Constant/Tag.h"
 
 class ModelResourceManager
@@ -33,10 +35,13 @@ public:
 	void AllDelete();
 
 	//ハンドルの取得(エラーで-1)
-	int GetHandle(ModelTag tag_) const;
+	int GetHandle(ModelTag tag_, int index_ = 0) const;
 
 private:
 	//ハンドル一覧
-	std::unordered_map<ModelTag, int> model_handles_list;
+	std::unordered_map<ModelTag, int> model_handles;
+
+	//敵用複製ハンドル
+	std::array<int, max_enemy_count> enemy_handles{ -1 };
 };
 #endif

@@ -7,10 +7,11 @@ class TransformComponent
 {
 public:
 	//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	TransformComponent(Vec3 position_ = Vec3::Zero(), Vec3 forward_ = Vec3::Zero(), float yaw_radian_ = 0.0f) :
+	TransformComponent(Vec3 position_ = Vec3::Zero(), Vec3 forward_ = Vec3::Zero(), float yaw_radian_ = 0.0f, Vec3 scale_ = Vec3{ 1.0f, 1.0f, 1.0f }) :
 		position(position_),
 		forward(forward_),
-		yaw_radian(yaw_radian_)
+		yaw_radian(yaw_radian_),
+		scale(scale_)
 	{
 	}
 
@@ -31,6 +32,11 @@ public:
 		return forward;
 	}
 
+	//Šgk—¦æ“¾
+	const Vec3 GetScale() const
+	{
+		return scale;
+	}
 
 	//‰ñ“]Šp“xæ“¾
 	const float GetYawRadian() const
@@ -59,6 +65,16 @@ public:
 		forward = Vec3(x_, y_, z_);
 	}
 
+	//Šgk—¦•ÏX
+	void SetScale(Vec3 scale_)
+	{
+		scale = scale_;
+	}
+	void SetScale(float x_, float y_, float z_)
+	{
+		scale = Vec3(x_, y_, z_);
+	}
+
 	//‰ñ“]Šp“x•ÏX
 	void SetYawRadian(float yaw_radian_)
 	{
@@ -71,6 +87,9 @@ private:
 
 	//‘O•ûƒxƒNƒgƒ‹
 	Vec3 forward;
+
+	//Šgk—¦
+	Vec3 scale;
 
 	//‰ñ“]Šp“x
 	float yaw_radian;

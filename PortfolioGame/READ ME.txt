@@ -1,7 +1,6 @@
 READ ME
-「」
 開発環境
-Visual Studio 2022(v143)
+VisualStudio2022Community(Ver )
 
 使用ライブラリ
 DXライブラリ(Ver 3.24d)

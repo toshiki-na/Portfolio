@@ -12,7 +12,7 @@ class ColliderComponent
 {
 public:
 	//コンストラクタ
-	ColliderComponent(std::unique_ptr<BroadCollider> broad_collider_, std::unique_ptr<NarrowCollider> narrow_collider_, std::function<void(ComponentLayer, int)> hit_function_, ComponentLayer layer_) :
+	ColliderComponent(std::unique_ptr<BroadCollider> broad_collider_, std::unique_ptr<NarrowCollider> narrow_collider_, std::function<void(ComponentLayer)> hit_function_, ComponentLayer layer_) :
 		broad_collider(std::move(broad_collider_)),
 		narrow_collider(std::move(narrow_collider_)),
 		hit_function(hit_function_),
@@ -44,6 +44,9 @@ public:
 		return *narrow_collider;
 	}
 
+	//衝突処理
+	void ReceveHit(ComponentLayer layer_);
+
 	//更新
 	void Update();
 
@@ -61,6 +64,6 @@ private:
 	std::unique_ptr<NarrowCollider> narrow_collider;
 
 	//衝突時のイベント関数
-	std::function<void(ComponentLayer, int)> hit_function{ nullptr };
+	std::function<void(ComponentLayer)> hit_function{ nullptr };
 };
 #endif

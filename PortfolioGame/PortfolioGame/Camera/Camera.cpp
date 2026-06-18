@@ -73,12 +73,12 @@ void Camera::Move()
 
 		//地形との衝突判定
 		//地形のモデルハンドル取得
-		ModelResourceManager& model_resource_manager = ResourceSystemManager::Instance().GetModelManager();
-		int wall_handle = model_resource_manager.GetHandle(ModelTag::Wall);
-		int ground_hande = model_resource_manager.GetHandle(ModelTag::Ground);
+		int wall_model_handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Wall);
+		int ground_model_hande = ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Ground);
+
 
 		//壁との衝突判定
-		DxLib::MV1_COLL_RESULT_POLY wall_coll_result = DxLib::MV1CollCheck_Line(wall_handle, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
+		DxLib::MV1_COLL_RESULT_POLY wall_coll_result = DxLib::MV1CollCheck_Line(wall_model_handle, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
 
 		//当たっていたら壁の手前で停止
 		if (wall_coll_result.HitFlag == 1)
@@ -92,7 +92,7 @@ void Camera::Move()
 		}
 
 		//床との衝突判定
-		DxLib::MV1_COLL_RESULT_POLY ground_coll_result = DxLib::MV1CollCheck_Line(ground_hande, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
+		DxLib::MV1_COLL_RESULT_POLY ground_coll_result = DxLib::MV1CollCheck_Line(ground_model_hande, -1, position.ToDXLibVECTOR(), next_position.ToDXLibVECTOR());
 
 		//当たっていたらその地点が次の移動地点
 		if (ground_coll_result.HitFlag == 1)
@@ -104,13 +104,6 @@ void Camera::Move()
 
 			next_position = adjust_target_position + (position_from_target * (distance_form_target - (ground_coll_position - next_position).Length()));
 		}
-
-		//地面にめり込まないように補正
-		if (next_position.y <= 0.0f)
-		{
-			next_position.y = 25.0f;
-		}
-
 
 		//座標と注視点、上方向を指定
 		DxLib::SetCameraPositionAndTargetAndUpVec(next_position.ToDXLibVECTOR(), adjust_target_position.ToDXLibVECTOR(), up_vector.ToDXLibVECTOR());
@@ -138,13 +131,13 @@ void Camera::Rotate()
 	pitch_angle -= input_delta.y;
 
 	//ピッチ角の上下限範囲内調整
-	if (pitch_angle > pitch_angle_rimit)
+	if (pitch_angle > pitch_angle_limit)
 	{
-		pitch_angle = pitch_angle_rimit;
+		pitch_angle = pitch_angle_limit;
 	}
-	if (pitch_angle < -pitch_angle_rimit)
+	if (pitch_angle < -pitch_angle_limit)
 	{
-		pitch_angle = -pitch_angle_rimit;
+		pitch_angle = -pitch_angle_limit;
 	}
 
 	//ピッチ角とヨー角から注視点からの位置ベクトルを計算

@@ -65,7 +65,7 @@ private:
 	float fov{ 60.0f };
 
 	//‹“_Š´“x
-	float sensitivity{ 0.01f };
+	float sensitivity{ 0.02f };
 
 	//ƒJƒƒ‰‘€ì“ü—Í
 	std::unique_ptr<ICameraInput> input;

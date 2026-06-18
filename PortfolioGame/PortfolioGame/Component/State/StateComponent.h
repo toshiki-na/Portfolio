@@ -32,9 +32,9 @@ public:
 	}
 
 	//生存フラグ変更
-	void ChangeActive()
+	void SetActive(bool active_)
 	{
-		active = false;
+		active = active_;
 	}
 
 	//生存フラグ取得

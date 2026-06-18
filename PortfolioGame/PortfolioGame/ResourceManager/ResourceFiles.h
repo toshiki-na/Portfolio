@@ -9,7 +9,7 @@ struct ResourceFiles
 {
 public:
 	//3Dモデルのファイルパス保存場所
-	std::unordered_map<ModelTag, std::string> model_files_list
+	std::unordered_map<ModelTag, std::string> model_files
 	{
 		{ModelTag::Ground, {"Resource/Models/Stage/Ground/Ground.mv1"}},	//地面
 		{ModelTag::Wall, {"Resource/Models/Stage/Wall/Wall.mv1"}},			//壁
@@ -19,7 +19,7 @@ public:
 	};
 
 	//アニメーションのファイルパス保存場所
-	std::unordered_map<AnimationTag, std::string> animation_files_list
+	std::unordered_map<AnimationTag, std::string> animation_files
 	{
 		{AnimationTag::PlayerIdle, {"Resource/Animations/Player/Idle.mv1"}},		//プレイヤー待機
 		{AnimationTag::PlayerMove, {"Resource/Animations/Player/Run.mv1"}},			//プレイヤーの移動
@@ -36,12 +36,12 @@ public:
 	};
 
 	//2D画像のファイルパス保存場所
-	std::unordered_map<ImageTag, std::string> image_files_list
+	std::unordered_map<ImageTag, std::string> image_files
 	{
 	};
 
 	//サウンドのファイルパス保存場所
-	std::unordered_map<AudioTag, std::string> audio_files_list
+	std::unordered_map<AudioTag, std::string> audio_files
 	{
 	};
 };

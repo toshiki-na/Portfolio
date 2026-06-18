@@ -9,7 +9,8 @@ class ModelRenderer : public IRenderer
 {
 public:
 	//コンストラクタ
-	ModelRenderer(ModelTag tag_) :
+	ModelRenderer(ModelTag tag_, int index_ = 0) :
+		index(index_),
 		tag(tag_)
 	{
 	}
@@ -23,6 +24,9 @@ public:
 private:
 	//位置座標
 	TransformComponent* transform{ nullptr };
+
+	//オブジェクトプールインデックス
+	int index;
 
 	//モデルタグ
 	ModelTag tag;

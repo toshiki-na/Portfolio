@@ -60,7 +60,7 @@ bool MouseInput::IsJustReleased(MouseInput::Button button_) const
 }
 
 //マウスの移動方向の取得
-Vec3 MouseInput::GetMouseMove() const
+Vec3 MouseInput::GetMouseMove(bool return_pre_position_)
 {
 	Vec3 result = move;
 
@@ -78,6 +78,14 @@ Vec3 MouseInput::GetMouseMove() const
 	if (result.LengthSq() > 0.0f)
 	{
 		result = result.Normalized();
+	}
+
+	//元の位置に戻す処理をする
+	if (return_pre_position_)
+	{
+		DxLib::SetMousePoint(pre_position_x, pre_position_y);
+		now_position_x = pre_position_x;
+		now_position_y = pre_position_y;
 	}
 
 	return result;

@@ -43,6 +43,9 @@ public:
 
 		//プレイヤー生成
 		character_manager->CreateCharacter(CharacterType::Player, camera->GetPositionFromTargetVecPtr());
+
+		//敵生成
+		character_manager->CreateCharacter(CharacterType::Enemy, character_manager->GetPlayerTransform()->GetPositionPtr());
 	}
 
 	//デストラクタ
@@ -53,7 +56,6 @@ public:
 	GameSceneContext& operator=(const GameSceneContext&) = delete;
 	GameSceneContext(GameSceneContext&&) = delete;
 	GameSceneContext& operator=(GameSceneContext&&) = delete;
-
 
 	//カメラ
 	std::unique_ptr<Camera> camera;

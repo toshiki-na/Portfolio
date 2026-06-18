@@ -16,8 +16,8 @@ public:
 	//デストラクタ
 	~PlayerAnimation()
 	{
-		//ハンドルの破棄
-		handles.clear();
+		//アニメーションのタグ参照配列の破棄
+		animation_tags.clear();
 	}
 
 	//状態セット
@@ -35,7 +35,7 @@ private:
 	void Initialize();
 
 	//アニメーションの変更
-	void Change(StateType stage_) override;
+	void Change(StateType state_) override;
 
 private:
 	bool first_time_update{ true };
@@ -46,11 +46,8 @@ private:
 	//1フレーム前の状態
 	StateType pre_state{ StateType::Idle };
 
-	//モデルのハンドル
-	int model_handle{ 0 };
-
-	//アニメーションのハンドル
-	std::unordered_map<StateType, int> handles;
+	//アニメーションのタグ参照用
+	std::unordered_map<StateType, AnimationTag> animation_tags;
 
 	//アニメーションをアタッチするインデックス
 	int anim_index{ 0 };

@@ -6,18 +6,17 @@
 //初期化
 void EnemyAnimation::Initialize()
 {
-	//モデルハンドルの設定
-	model_handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Enemy);
-
 	//プレイヤーのアニメーションハンドルの設定
-	AnimationResourceManager& animation_resource_manager = ResourceSystemManager::Instance().GetAnimationManager();
-	handles.emplace(StateType::Idle, animation_resource_manager.GetHandle(AnimationTag::EnemyIdle));
-	handles.emplace(StateType::Move, animation_resource_manager.GetHandle(AnimationTag::EnemyMove));
-	handles.emplace(StateType::Attack01, animation_resource_manager.GetHandle(AnimationTag::EnemyAttack));
-	handles.emplace(StateType::Dead, animation_resource_manager.GetHandle(AnimationTag::EnemyDead));
+	animation_tags.emplace(StateType::Idle, AnimationTag::EnemyIdle);
+	animation_tags.emplace(StateType::Move, AnimationTag::EnemyMove);
+	animation_tags.emplace(StateType::Attack01, AnimationTag::EnemyAttack);
+	animation_tags.emplace(StateType::Dead, AnimationTag::EnemyDead);
+
+	//モデルハンドルの取得
+	int model_handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Enemy, index);
 
 	//待機アニメーションをアタッチ
-	anim_index = DxLib::MV1AttachAnim(model_handle, 0, handles[StateType::Idle]);
+	anim_index = DxLib::MV1AttachAnim(model_handle, 0, ResourceSystemManager::Instance().GetAnimationManager().GetHandle(AnimationTag::EnemyIdle));
 
 	//アニメーション時間の初期値設定
 	anim_time = 0.0f;
@@ -30,11 +29,14 @@ void EnemyAnimation::Initialize()
 //アニメーションの変更
 void EnemyAnimation::Change(StateType state_)
 {
+	//モデルハンドルの取得
+	int model_handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Enemy, index);
+
 	//アニメーションのデタッチ
 	DxLib::MV1DetachAnim(model_handle, anim_index);
 
 	//変更アニメーションのアタッチ
-	anim_index = DxLib::MV1AttachAnim(model_handle, 0, handles[state_]);
+	anim_index = DxLib::MV1AttachAnim(model_handle, 0, ResourceSystemManager::Instance().GetAnimationManager().GetHandle(animation_tags[state_]));
 
 	//総時間の取得
 	anim_total_time = DxLib::MV1GetAttachAnimTotalTime(model_handle, anim_index);
@@ -93,7 +95,7 @@ void EnemyAnimation::Update()
 			//死亡アニメーション終わりなら生存フラグをfalseに
 			else if (state->GetState() == StateType::Dead)
 			{
-				state->ChangeActive();
+				state->SetActive(false);
 			}
 			//それ以外なら待機に
 			else
@@ -112,5 +114,5 @@ void EnemyAnimation::Update()
 	pre_state = now_state;
 
 	//アニメーション適用
-	DxLib::MV1SetAttachAnimTime(model_handle, anim_index, anim_time);
+	DxLib::MV1SetAttachAnimTime(ResourceSystemManager::Instance().GetModelManager().GetHandle(ModelTag::Enemy, index), anim_index, anim_time);
 }

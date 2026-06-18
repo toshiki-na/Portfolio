@@ -213,7 +213,7 @@
     <ClCompile Include="Component\Animation\Enemy\EnemyAnimation.cpp">
       <Filter>Component\Animation\Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Component\Collision\CollisionSystemNarrowCollision.cpp">
+    <ClCompile Include="Component\Collision\NarrowCollisionComputer.cpp">
       <Filter>Component\Collision</Filter>
     </ClCompile>
   </ItemGroup>
@@ -415,6 +415,12 @@
     </ClInclude>
     <ClInclude Include="Component\Animation\Enemy\EnemyAnimation.h">
       <Filter>Component\Animation\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Quaternion.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\NarrowCollisionComputer.h">
+      <Filter>Component\Collision</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

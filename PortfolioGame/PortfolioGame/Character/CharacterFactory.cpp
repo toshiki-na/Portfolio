@@ -38,25 +38,6 @@
 #include "Player/PlayerInput/KeyBoardAndMousePlayerInput.h"
 #include "Player/PlayerInput/GamePadPlayerInput.h"
 
-//キャラクター生成
-std::unique_ptr<CharacterBase> CharacterFactory::Create(CharacterType type_, Vec3* vector_)
-{
-	switch (type_)
-	{
-		//プレイヤー生成
-	case CharacterType::Player:
-		return CreatePlayer(vector_);
-
-		//敵生成
-	case CharacterType::Enemy:
-		return CreateEnemy(vector_);
-
-	default:
-		return nullptr;
-	}
-}
-
-
 //プレイヤー生成
 std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer(Vec3* camera_position_form_target_vector_)
 {
@@ -102,7 +83,7 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreatePlayer(Vec3* camera_posit
 }
 
 //敵生成
-std::unique_ptr<CharacterBase> CharacterFactory::CreateEnemy(Vec3* player_position_)
+std::unique_ptr<CharacterBase> CharacterFactory::CreateEnemy(Vec3* player_position_, int index_)
 {
 	//状態コンポーネント生成
 	StateComponent state;
@@ -141,13 +122,13 @@ std::unique_ptr<CharacterBase> CharacterFactory::CreateEnemy(Vec3* player_positi
 	MovementComponent movement(ComponentLayer::Enemy, std::move(movement_compurter));
 
 	//描画機作成
-	std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Enemy);
+	std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Enemy, index_);
 
 	//描画コンポーネント生成
 	RenderComponent render(std::move(renderer), ComponentLayer::Enemy);
 
 	//敵アニメーション作成
-	std::unique_ptr<IAnimation> animation = std::make_unique<EnemyAnimation>();
+	std::unique_ptr<IAnimation> animation = std::make_unique<EnemyAnimation>(index_);
 
 	//アニメーションコンポーネント生成
 	AnimatorComponent animator(std::move(animation));

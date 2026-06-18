@@ -38,13 +38,16 @@ public:
 	bool IsJustReleased(MouseInput::Button button_) const;
 
 	//マウスの移動方向の取得(zは常に0.0f)
-	Vec3 GetMouseMove() const;
+	Vec3 GetMouseMove(bool return_pre_position_);
 
 private:
 	//各ボタンのDXライブラリのビットマスク値を取得
 	int ToDxLibMask(Button button_) const;
 
 private:
+	//情報取得状態
+
+
 	//マウスの入力状態
 	//前フレーム
 	int pre_button_state{ 0 };

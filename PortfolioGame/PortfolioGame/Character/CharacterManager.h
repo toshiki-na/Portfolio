@@ -2,7 +2,8 @@
 #define CHARACTER_MANAGER_H
 
 #include <memory>
-#include <vector>
+#include <array>
+#include "../Constant/InitialValue.h"
 #include "../Utility/Vec3.h"
 #include "CharacterFactory.h"
 #include "CharacterBase.h"
@@ -60,16 +61,12 @@ private:
 	//“G‚Ì©“®¶¬
 	void AutoEnemySpawn();
 
-	//€–S“G‚Ìíœ
-	void DeleteDeadEnemy();
-
-
 private:
 	//ƒvƒŒƒCƒ„[
 	std::unique_ptr<CharacterBase> player;
 
 	//“G
-	std::vector<std::unique_ptr<CharacterBase>> enemies_list;
+	std::array<std::unique_ptr<CharacterBase>, max_enemy_count> enemies;
 
 	//ƒRƒ“ƒ|[ƒlƒ“ƒgƒVƒXƒeƒ€
 	//ˆÚ“®
@@ -81,8 +78,8 @@ private:
 	//•`‰æ
 	RenderingSystem& rendering_system;
 
-	//“G‚Ì‘¶¬”
-	int spawn_enemy_count{ 0 };
+	//¶‘¶‚µ‚Ä‚é“G‚Ì”
+	int arrive_enemy_count{ 0 };
 
 	//“G‚Ì¶¬ŠÔŠu
 	float enemy_spawn_interval{ 20.0f };
@@ -90,7 +87,10 @@ private:
 	//¶¬ŠÔŠu‚ÌŒv‘ª—p
 	float enemy_spawn_interval_counter{ 0.0f };
 
-	//Œ»İ‚ÌŒo‰ßŠÔ
-	float now_game_time{ 0.0f };
+	//1•ª–ˆ‚Ì“G‚Ì¶¬ŠÔŠu‚ÌŒ¸­—Ê
+	float enemy_spawn_interval_decrease_par_minute{ 1.0f };
+
+	//“G‚Ì¶¬ŠÔŠuŒ¸­‚ÌŒv‘ª—p
+	float enemy_spawn_interval_decrease_counter{ 0.0f };
 };
 #endif

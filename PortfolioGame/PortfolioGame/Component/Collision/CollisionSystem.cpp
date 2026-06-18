@@ -27,9 +27,9 @@ void CollisionSystem::SAPBroadCollision()
 	//x軸最小頂点をソート
 	SortCollidersXMinimum();
 
-	for (int i = 0; i < registered_colliders.size() - 1; i++)
+	for (int i = 0; i < registered_colliders.size() - 1; ++i)
 	{
-		for (int j = i; j < registered_colliders.size(); j++)
+		for (int j = i; j < registered_colliders.size(); ++j)
 		{
 			//X軸の最大、最小頂点間に最小頂点があるオブジェクトとは当たってる可能性あり
 			if (registered_colliders[j].min_vertex.x <= registered_colliders[i].max_vertex.x)
@@ -96,19 +96,29 @@ void CollisionSystem::NarrowCollision()
 		//線分と線分の衝突判定
 		if (collider_01_shape == ColliderShapeTag::Ray && collider_02_shape == ColliderShapeTag::Ray)
 		{
-			CheackCollisionRayAndRay(collider_01, collider_02);
+			if (narrow_collision_computer.CheackCollisionRayAndRay(narrow_collider_01, narrow_collider_02))
+			{
+				//衝突通知
+				NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+				NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+			}
 		}
 
 		//球と球の衝突判定
 		if (collider_01_shape == ColliderShapeTag::Sphere && collider_02_shape == ColliderShapeTag::Sphere)
 		{
-			CheackCollisionSphereAndSphere(collider_01, collider_02);
+			if (narrow_collision_computer.CheackCollisionSphereAndSphere(narrow_collider_01, narrow_collider_02))
+			{
+				//衝突通知
+				NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+				NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+			}
 		}
 
 		//OBBとOBBの衝突判定
 		if (collider_01_shape == ColliderShapeTag::Box && collider_02_shape == ColliderShapeTag::Box)
 		{
-			CheackCollisionOBBAndOBB(collider_01, collider_02);
+			narrow_collision_computer.CheackCollisionOBBAndOBB(narrow_collider_01, narrow_collider_02);
 		}
 
 		//線分と球の衝突判定
@@ -116,11 +126,21 @@ void CollisionSystem::NarrowCollision()
 		{
 			if (collider_01_shape == ColliderShapeTag::Ray)
 			{
-				CheackCollisionRayAndSphere(collider_01, collider_02);
+				if (narrow_collision_computer.CheackCollisionRayAndSphere(narrow_collider_01, narrow_collider_02))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 			else
 			{
-				CheackCollisionRayAndSphere(collider_02, collider_01);
+				if (narrow_collision_computer.CheackCollisionRayAndSphere(narrow_collider_02, narrow_collider_01))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 		}
 
@@ -129,11 +149,21 @@ void CollisionSystem::NarrowCollision()
 		{
 			if (collider_01_shape == ColliderShapeTag::Ray)
 			{
-				CheackCollisionRayAndOBB(collider_01, collider_02);
+				if (narrow_collision_computer.CheackCollisionRayAndOBB(narrow_collider_01, narrow_collider_02))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 			else
 			{
-				CheackCollisionRayAndOBB(collider_02, collider_01);
+				if (narrow_collision_computer.CheackCollisionRayAndOBB(narrow_collider_02, narrow_collider_01))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 		}
 
@@ -142,11 +172,21 @@ void CollisionSystem::NarrowCollision()
 		{
 			if (collider_01_shape == ColliderShapeTag::Sphere)
 			{
-				CheackCollisionSphereAndOBB(collider_01, collider_02);
+				if (narrow_collision_computer.CheackCollisionSphereAndOBB(narrow_collider_01, narrow_collider_02))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 			else
 			{
-				CheackCollisionSphereAndOBB(collider_02, collider_01);
+				if (narrow_collision_computer.CheackCollisionSphereAndOBB(narrow_collider_02, narrow_collider_01))
+				{
+					//衝突通知
+					NarrowCollisionPair.first->ReceveHit(NarrowCollisionPair.second->GetLayer());
+					NarrowCollisionPair.second->ReceveHit(NarrowCollisionPair.first->GetLayer());
+				}
 			}
 		}
 	}

@@ -47,7 +47,7 @@ std::unique_ptr<StageObjectBase> StageObjectFactory::Create(StageObjectType type
 	case StageObjectType::Ground:
 	{
 		//位置座標コンポーネント生成
-		TransformComponent transform;
+		TransformComponent transform = TransformComponent(Vec3::Zero(), Vec3::Zero(), 0.0f, Vec3{ 2.0f, 1.0f, 3.5f });
 
 		//描画機作成
 		std::unique_ptr<IRenderer> renderer = std::make_unique<ModelRenderer>(ModelTag::Ground);

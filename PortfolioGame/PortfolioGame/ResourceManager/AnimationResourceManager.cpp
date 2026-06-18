@@ -14,7 +14,7 @@ void AnimationResourceManager::Load(AnimationTag tag_)
 	}
 
 	//ñ¢ì«Ç›çûÇ›Ç»ÇÁì«Ç›çûÇÒÇ≈ì«Ç›çûÇ›çœÇ›ìoò^
-	int ID = DxLib::MV1LoadModel(ResourceSystemManager::Instance().GetResourceFiles().animation_files_list[tag_].c_str());
+	int ID = DxLib::MV1LoadModel(ResourceSystemManager::Instance().GetResourceFiles().animation_files[tag_].c_str());
 	animation_handles_list.emplace(tag_, ID);
 }
 

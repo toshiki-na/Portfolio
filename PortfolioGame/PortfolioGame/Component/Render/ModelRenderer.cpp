@@ -11,13 +11,11 @@ void ModelRenderer::SetTransformComponent(TransformComponent* transform_)
 //•`‰æ
 void ModelRenderer::Draw() const
 {
-	int handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(tag);
+	//ƒ‚ƒfƒ‹ƒnƒ“ƒhƒ‹‚ÌŽæ“¾
+	int handle = ResourceSystemManager::Instance().GetModelManager().GetHandle(tag , index);
 
-	//’n–Ê‚ÌŠg‘å
-	if (tag == ModelTag::Ground)
-	{
-		DxLib::MV1SetScale(handle, VGet(2.0f, 1.0f, 3.5f));
-	}
+	//Šgk
+	DxLib::MV1SetScale(handle, transform->GetScale().ToDXLibVECTOR());
 
 	//‰ñ“]Šp“x’²®
 	DxLib::MV1SetRotationXYZ(handle, DxLib::VGet(0.0f, transform->GetYawRadian(), 0.0f));

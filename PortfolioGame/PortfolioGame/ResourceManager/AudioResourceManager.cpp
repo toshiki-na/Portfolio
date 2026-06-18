@@ -14,7 +14,7 @@ void AudioResourceManager::Load(AudioTag tag_)
 	}
 
 	//–¢“Ç‚İ‚İ‚È‚ç“Ç‚İ‚ñ‚Å“Ç‚İ‚İÏ‚İ“o˜^
-	int ID = DxLib::LoadSoundMem(ResourceSystemManager::Instance().GetResourceFiles().audio_files_list[tag_].c_str());
+	int ID = DxLib::LoadSoundMem(ResourceSystemManager::Instance().GetResourceFiles().audio_files[tag_].c_str());
 	audio_handles_list.emplace(tag_, ID);
 }
 

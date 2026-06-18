@@ -21,6 +21,9 @@ public:
 	{
 		//キャラクタータイプ設定
 		character_type = CharacterType::Enemy;
+
+		//初期は非生存状態で生成
+		state.SetActive(false);
 	}
 };
 #endif

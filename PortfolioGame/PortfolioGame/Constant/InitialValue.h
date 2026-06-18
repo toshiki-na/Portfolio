@@ -18,7 +18,7 @@ constexpr float vision_near = 50.0f;
 constexpr float vision_far = 100000.0f;
 
 //ピッチ角の上限
-constexpr float pitch_angle_rimit = 89.9f * DIGREE_TO_RADIAN;
+constexpr float pitch_angle_limit = 85.0f * DIGREE_TO_RADIAN;
 
 //キャラクター関係初期値
 //キャラクター半径
@@ -41,7 +41,10 @@ constexpr Vec3 player_initialize_position = Vec3(0.0f, 0.0f, 0.0f);
 //移動速度
 constexpr float player_move_speed = 300.0f;
 
-//敵関係初期値
+//敵関係初期値 
+//最大生成数
+constexpr int max_enemy_count = 300;
+
 //位置
 constexpr Vec3 enemy_initialize_position_01 = Vec3{ 1200.0f, 0.0f, 0.0f};
 constexpr Vec3 enemy_initialize_position_02 = Vec3{ -1200.0f, 0.0f, 0.0f };
@@ -53,7 +56,4 @@ constexpr float enemy_move_speed = 300.0f;
 
 //攻撃射程
 constexpr float enemy_attack_range = 200.0f;
-
-//最大生成数
-constexpr int max_enemy_count = 300;
 #endif

@@ -11,13 +11,16 @@ class EnemyAnimation : public IAnimation
 {
 public:
 	//コンストラクタ
-	EnemyAnimation() = default;
+	EnemyAnimation(int index_):
+		index(index_)
+	{
+	}
 
 	//デストラクタ
 	~EnemyAnimation()
 	{
-		//ハンドルの破棄
-		handles.clear();
+		//アニメーションのタグ参照配列の破棄
+		animation_tags.clear();
 	}
 
 	//状態セット
@@ -46,11 +49,11 @@ private:
 	//1フレーム前の状態
 	StateType pre_state{ StateType::Idle };
 
-	//モデルのハンドル
-	int model_handle{ 0 };
+	//オブジェクトプールインデックス
+	int index;
 
 	//アニメーションのハンドル
-	std::unordered_map<StateType, int> handles;
+	std::unordered_map<StateType, AnimationTag> animation_tags;
 
 	//アニメーションをアタッチするインデックス
 	int anim_index{ 0 };

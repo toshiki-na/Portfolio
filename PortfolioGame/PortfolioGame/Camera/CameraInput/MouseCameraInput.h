@@ -29,7 +29,7 @@ public:
 		//右クリック中のみ移動量を返す
 		if (input.IsHeld(MouseInput::Button::Right))
 		{
-			result = input.GetMouseMove();
+			result = input.GetMouseMove(true);
 		}
 
 		//右クリックが離されたらマウスカーソルを表示

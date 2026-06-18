@@ -4,6 +4,7 @@
 #include <vector>
 #include "ColliderComponent.h"
 #include "SweepAndPrune/SAPBuffer.h"
+#include "NarrowCollisionComputer.h"
 
 class CollisionSystem
 {
@@ -39,29 +40,14 @@ private:
 	//Õ“Ë”»’è
 	void NarrowCollision();
 
-	//ü•ª‚Æü•ª‚ÌÕ“Ë”»’è
-	bool CheackCollisionRayAndRay(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
-	//‹…‚Æ‹…‚ÌÕ“Ë”»’è
-	bool CheackCollisionSphereAndSphere(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
-	//OBB‚ÆOBB‚ÌÕ“Ë”»’è
-	bool CheackCollisionOBBAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
-	//ü•ª‚Æ‹…‚ÌÕ“Ë”»’è
-	bool CheackCollisionRayAndSphere(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
-	//ü•ª‚ÆOBB‚ÌÕ“Ë”»’è
-	bool CheackCollisionRayAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
-	//‹…‚ÆOBB‚ÌÕ“Ë”»’è
-	bool CheackCollisionSphereAndOBB(NarrowCollider& collider_01_, NarrowCollider& collider_02_);
-
 private:
 	//“o˜^‚³‚ê‚½Õ“Ë”»’è
 	std::vector<SAPBuffer> registered_colliders;
 
 	//Õ“Ë”»’èƒyƒA
 	std::vector<std::pair<ColliderComponent*, ColliderComponent*>> narrow_collision_pairs;
+
+	//Õ“Ë”»’èŒvZ‹@
+	NarrowCollisionComputer narrow_collision_computer;
 };
 #endif
