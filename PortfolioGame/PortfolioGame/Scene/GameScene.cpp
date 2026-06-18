@@ -1,11 +1,16 @@
 ﻿#include "GameScene.h"
 #include <memory>
 #include <DXLib.h>
+
+//システム系
+#include "../TimeManager/TimeManager.h"
+#include "../Debug/FPSCounter.h"
+
+//ゲーム系
 #include "../Constant/Tag.h"
 #include "SceneManager.h"
 #include "SceneFactory.h"
 #include "../ResourceManager/ResourceSystemManager.h"
-#include "../TimeManager/TimeManager.h"
 
 //初期化
 void GameScene::Initialize()
@@ -33,6 +38,9 @@ void GameScene::Update()
 	//時間管理オブジェクトの更新
 	TimeManager::Instance().Update();
 
+	//FPS計測オブジェクトの更新
+	FPSCounter::Instance().Update();
+
 	//ステージの描画予約
 	context.stage->Update();
 
@@ -54,6 +62,9 @@ void GameScene::Update()
 
 	//描画コンポーネント描画
 	context.rendering_system->Draw();
+
+	//FPSの描画
+	FPSCounter::Instance().Draw();
 
 	//描画画面と表示画面をフリップ
 	DxLib::ScreenFlip();

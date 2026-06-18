@@ -5,6 +5,7 @@ class TimeManager
 {
 //シングルトンオブジェクト*******************************
 public:
+	//唯一のインスタンスの取得
 	static TimeManager& Instance()
 	{
 		static TimeManager instance;

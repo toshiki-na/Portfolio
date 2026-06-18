@@ -94,6 +94,9 @@
     <Filter Include="Component\Animation\Enemy">
       <UniqueIdentifier>{25a0045d-f454-4917-a3e5-684e9db53452}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{ac07fa02-1741-4b48-85ca-a457abc87519}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -215,6 +218,9 @@
     </ClCompile>
     <ClCompile Include="Component\Collision\NarrowCollisionComputer.cpp">
       <Filter>Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\FPSCounter.cpp">
+      <Filter>Debug</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +427,9 @@
     </ClInclude>
     <ClInclude Include="Component\Collision\NarrowCollisionComputer.h">
       <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug\FPSCounter.h">
+      <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

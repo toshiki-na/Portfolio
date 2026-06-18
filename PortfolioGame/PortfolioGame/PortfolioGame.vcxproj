@@ -159,6 +159,7 @@
     <ClCompile Include="Component\Render\ModelRenderer.cpp" />
     <ClCompile Include="Component\Render\RenderComponent.cpp" />
     <ClCompile Include="Component\Render\RenderingSystem.cpp" />
+    <ClCompile Include="Debug\FPSCounter.cpp" />
     <ClCompile Include="Input\GamePadInput.cpp" />
     <ClCompile Include="Input\InputSystems.cpp" />
     <ClCompile Include="Input\KeyBoardInput.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\InitialValue.h" />
     <ClInclude Include="Constant\Tag.h" />
+    <ClInclude Include="Debug\FPSCounter.h" />
     <ClInclude Include="Input\GamePadInput.h" />
     <ClInclude Include="Input\InputSystems.h" />
     <ClInclude Include="Input\KeyBoardInput.h" />
