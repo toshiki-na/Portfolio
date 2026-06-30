@@ -76,9 +76,6 @@
     <Filter Include="Component\Collision\Broad">
       <UniqueIdentifier>{e3151200-5d72-4caa-bf5f-6f5736284a82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Component\Collision\SweepAndPrune">
-      <UniqueIdentifier>{52f2070f-ebe6-413e-98cd-85f545961677}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Component\Animation">
       <UniqueIdentifier>{4f0ac1fc-0907-4083-bcfc-faf691ffe327}</UniqueIdentifier>
     </Filter>
@@ -198,9 +195,6 @@
     <ClCompile Include="Component\Collision\CollisionSystem.cpp">
       <Filter>Component\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp">
-      <Filter>Component\Collision\Broad</Filter>
-    </ClCompile>
     <ClCompile Include="Component\Animation\AnimationSystem.cpp">
       <Filter>Component\Animation</Filter>
     </ClCompile>
@@ -221,6 +215,15 @@
     </ClCompile>
     <ClCompile Include="Debug\FPSCounter.cpp">
       <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\CollisionDebugView.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Player\Player.cpp">
+      <Filter>Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\Enemy\Enemy.cpp">
+      <Filter>Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -389,12 +392,6 @@
     <ClInclude Include="Component\Collision\CollisionSystem.h">
       <Filter>Component\Collision</Filter>
     </ClInclude>
-    <ClInclude Include="Component\Collision\Broad\BroadColliderFactory.h">
-      <Filter>Component\Collision\Broad</Filter>
-    </ClInclude>
-    <ClInclude Include="Component\Collision\SweepAndPrune\SAPBuffer.h">
-      <Filter>Component\Collision\SweepAndPrune</Filter>
-    </ClInclude>
     <ClInclude Include="Component\Animation\IAnimation.h">
       <Filter>Component\Animation</Filter>
     </ClInclude>
@@ -429,6 +426,9 @@
       <Filter>Component\Collision</Filter>
     </ClInclude>
     <ClInclude Include="Debug\FPSCounter.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug\CollisionDebugView.h">
       <Filter>Debug</Filter>
     </ClInclude>
   </ItemGroup>

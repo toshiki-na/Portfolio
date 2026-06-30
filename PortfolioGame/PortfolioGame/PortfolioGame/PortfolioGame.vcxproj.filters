@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main">
+      <UniqueIdentifier>{52495491-f7a4-4f09-8407-22ee01daa902}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{264171e2-a275-4614-a843-0332dfe7ac3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constant">
+      <UniqueIdentifier>{067f74c3-1dfb-4502-9104-f33ccc62af1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ResourceManager">
+      <UniqueIdentifier>{062a0d80-cbff-483f-b8bd-fe78c7e6275a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{8c9fdc98-ad88-4fe9-a626-3d5faa974f3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TimeManager">
+      <UniqueIdentifier>{273be484-6b79-40ea-9259-fdc685fa5bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input">
+      <UniqueIdentifier>{26d7d493-0e8c-4f4e-9493-52a9e581b731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{7bf66822-246b-4141-86c7-1f1bb7fab7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage">
+      <UniqueIdentifier>{957aeb4c-0c4d-4fe6-9b54-b1fa373cdf2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera\CameraInput">
+      <UniqueIdentifier>{a06fea76-db49-4b54-b572-c41de99c6ef0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\SceneContext">
+      <UniqueIdentifier>{e6f612b6-9bfb-481a-bcb4-4574663321fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{f8c82712-033b-43b9-95c1-b5dc807e3fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player">
+      <UniqueIdentifier>{98462111-9514-4d7d-ac0c-e785a803c890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player\PlayerInput">
+      <UniqueIdentifier>{cf460998-3ed8-4fa4-9bd9-8870e47605cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Enemy">
+      <UniqueIdentifier>{8de836f2-ebe6-4e1d-ad93-1e6ed4e78eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{49463674-d9c1-4db0-a8bf-04b408244298}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\StageContext">
+      <UniqueIdentifier>{a610b38f-b699-4f5b-b000-9c538a7d1097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Movement">
+      <UniqueIdentifier>{a8b78fed-302a-48d6-99bd-84515476a40a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Movement\Player">
+      <UniqueIdentifier>{4ef5d01b-e017-47b7-96e5-ae6c06bda1b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Render">
+      <UniqueIdentifier>{fbcf245d-7142-4a95-b1e4-d62776f63fc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform">
+      <UniqueIdentifier>{c256c21f-c337-43b9-9af2-251ad054eef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Stage\StageObject">
+      <UniqueIdentifier>{7bbcb7c9-e023-4e95-986a-d7ea7013a089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collision">
+      <UniqueIdentifier>{25179827-ab7d-4c11-887d-84314b60b45c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collision\Narrow">
+      <UniqueIdentifier>{d650d305-e948-47af-acdf-50de5231154f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Collision\Broad">
+      <UniqueIdentifier>{e3151200-5d72-4caa-bf5f-6f5736284a82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation">
+      <UniqueIdentifier>{4f0ac1fc-0907-4083-bcfc-faf691ffe327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\State">
+      <UniqueIdentifier>{8b66b473-5eca-4cec-b10e-2ef310f38317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Movement\Enemy">
+      <UniqueIdentifier>{4add9bb3-8c5a-42af-92ac-8c6f6e333c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation\Player">
+      <UniqueIdentifier>{dac661ce-b418-4d10-aec4-f142043c7916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Animation\Enemy">
+      <UniqueIdentifier>{25a0045d-f454-4917-a3e5-684e9db53452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Debug">
+      <UniqueIdentifier>{ac07fa02-1741-4b48-85ca-a457abc87519}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\ClearScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameOverScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\GameScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneFactory.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene\TitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ModelResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\AnimationResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\AudioResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ImageResourceManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager\TimeManager.cpp">
+      <Filter>TimeManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\MouseInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\KeyBoardInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\GamePadInput.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Input\InputSystems.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\Stage.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager\ResourceSystemManager.cpp">
+      <Filter>ResourceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera\CameraFactory.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageObjectFactory.cpp">
+      <Filter>Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage\StageContext\StageContext.cpp">
+      <Filter>Stage\StageContext</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\MovementComponent.cpp">
+      <Filter>Component\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\CharacterFactory.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\MovementSystem.cpp">
+      <Filter>Component\Movement</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\RenderingSystem.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\RenderComponent.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Render\ModelRenderer.cpp">
+      <Filter>Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Character\CharacterManager.cpp">
+      <Filter>Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\Player\PlayerMovementComputer.cpp">
+      <Filter>Component\Movement\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\Narrow\NarrowColliderFactory.cpp">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\ColliderComponent.cpp">
+      <Filter>Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\CollisionSystem.cpp">
+      <Filter>Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\AnimationSystem.cpp">
+      <Filter>Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\AnimatorComponent.cpp">
+      <Filter>Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Movement\Enemy\EnemyMovementComputer.cpp">
+      <Filter>Component\Movement\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\Player\PlayerAnimation.cpp">
+      <Filter>Component\Animation\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Animation\Enemy\EnemyAnimation.cpp">
+      <Filter>Component\Animation\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Component\Collision\NarrowCollisionComputer.cpp">
+      <Filter>Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\FPSCounter.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\CollisionDebugView.cpp">
+      <Filter>Debug</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scene\ClearScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameOverScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\GameScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneBase.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneFactory.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\TitleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\Tag.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceSystemManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Vec3.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ModelResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\AnimationResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\AudioResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ImageResourceManager.h">
+      <Filter>ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager\ResourceFiles.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager\TimeManager.h">
+      <Filter>TimeManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\ConstantValue.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\InputSystems.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\MouseInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\KeyBoardInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Input\GamePadInput.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\Stage.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraInput\ICameraInput.h">
+      <Filter>Camera\CameraInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraInput\MouseCameraInput.h">
+      <Filter>Camera\CameraInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraInput\GamePadCameraInput.h">
+      <Filter>Camera\CameraInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\CameraFactory.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene\SceneContext\GameSceneContext.h">
+      <Filter>Scene\SceneContext</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\Player.h">
+      <Filter>Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterBase.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\PlayerInput\GamePadPlayerInput.h">
+      <Filter>Character\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Player\PlayerInput\KeyBoardAndMousePlayerInput.h">
+      <Filter>Character\Player\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObjectFactory.h">
+      <Filter>Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageContext\StageContext.h">
+      <Filter>Stage\StageContext</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\MovementComponent.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\MovementSystem.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\IMovementComputer.h">
+      <Filter>Component\Movement</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\Player\PlayerMovementComputer.h">
+      <Filter>Component\Movement\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterFactory.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\RenderingSystem.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\RenderComponent.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\IRenderer.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Render\ModelRenderer.h">
+      <Filter>Component\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Transform\TransformComponent.h">
+      <Filter>Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Ground.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Skydome.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\Wall.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage\StageObject\StageObjectBase.h">
+      <Filter>Stage\StageObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\CharacterManager.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant\InitialValue.h">
+      <Filter>Constant</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Broad\BroadCollider.h">
+      <Filter>Component\Collision\Broad</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Narrow\NarrowCollider.h">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\Narrow\NarrowColliderFactory.h">
+      <Filter>Component\Collision\Narrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\ColliderComponent.h">
+      <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\CollisionSystem.h">
+      <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\IAnimation.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\AnimationSystem.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\State\StateComponent.h">
+      <Filter>Component\State</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\AnimatorComponent.h">
+      <Filter>Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\ICharacterInput.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Character\Enemy\Enemy.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Movement\Enemy\EnemyMovementComputer.h">
+      <Filter>Component\Movement\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\Player\PlayerAnimation.h">
+      <Filter>Component\Animation\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Animation\Enemy\EnemyAnimation.h">
+      <Filter>Component\Animation\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Quaternion.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Component\Collision\NarrowCollisionComputer.h">
+      <Filter>Component\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug\FPSCounter.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug\CollisionDebugView.h">
+      <Filter>Debug</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

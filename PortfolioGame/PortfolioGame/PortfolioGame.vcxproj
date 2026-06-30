@@ -143,11 +143,12 @@
     <ClCompile Include="Camera\CameraFactory.cpp" />
     <ClCompile Include="Character\CharacterFactory.cpp" />
     <ClCompile Include="Character\CharacterManager.cpp" />
+    <ClCompile Include="Character\Enemy\Enemy.cpp" />
+    <ClCompile Include="Character\Player\Player.cpp" />
     <ClCompile Include="Component\Animation\AnimationSystem.cpp" />
     <ClCompile Include="Component\Animation\AnimatorComponent.cpp" />
     <ClCompile Include="Component\Animation\Enemy\EnemyAnimation.cpp" />
     <ClCompile Include="Component\Animation\Player\PlayerAnimation.cpp" />
-    <ClCompile Include="Component\Collision\Broad\BroadColliderFactory.cpp" />
     <ClCompile Include="Component\Collision\ColliderComponent.cpp" />
     <ClCompile Include="Component\Collision\CollisionSystem.cpp" />
     <ClCompile Include="Component\Collision\NarrowCollisionComputer.cpp" />
@@ -159,6 +160,7 @@
     <ClCompile Include="Component\Render\ModelRenderer.cpp" />
     <ClCompile Include="Component\Render\RenderComponent.cpp" />
     <ClCompile Include="Component\Render\RenderingSystem.cpp" />
+    <ClCompile Include="Debug\CollisionDebugView.cpp" />
     <ClCompile Include="Debug\FPSCounter.cpp" />
     <ClCompile Include="Input\GamePadInput.cpp" />
     <ClCompile Include="Input\InputSystems.cpp" />
@@ -201,13 +203,11 @@
     <ClInclude Include="Component\Animation\AnimatorComponent.h" />
     <ClInclude Include="Component\Animation\Player\PlayerAnimation.h" />
     <ClInclude Include="Component\Collision\Broad\BroadCollider.h" />
-    <ClInclude Include="Component\Collision\Broad\BroadColliderFactory.h" />
     <ClInclude Include="Component\Collision\ColliderComponent.h" />
     <ClInclude Include="Component\Collision\CollisionSystem.h" />
     <ClInclude Include="Component\Collision\NarrowCollisionComputer.h" />
     <ClInclude Include="Component\Collision\Narrow\NarrowCollider.h" />
     <ClInclude Include="Component\Collision\Narrow\NarrowColliderFactory.h" />
-    <ClInclude Include="Component\Collision\SweepAndPrune\SAPBuffer.h" />
     <ClInclude Include="Component\Movement\Enemy\EnemyMovementComputer.h" />
     <ClInclude Include="Component\Movement\IMovementComputer.h" />
     <ClInclude Include="Component\Movement\MovementComponent.h" />
@@ -222,6 +222,7 @@
     <ClInclude Include="Constant\ConstantValue.h" />
     <ClInclude Include="Constant\InitialValue.h" />
     <ClInclude Include="Constant\Tag.h" />
+    <ClInclude Include="Debug\CollisionDebugView.h" />
     <ClInclude Include="Debug\FPSCounter.h" />
     <ClInclude Include="Input\GamePadInput.h" />
     <ClInclude Include="Input\InputSystems.h" />
